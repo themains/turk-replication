@@ -1,0 +1,2424 @@
+                                                       ___  ____  ____  ____  ____(R)
+                                                      /__    /   ____/   /   ____/   
+                                                     ___/   /   /___/   /   /___/    
+                                                       Statistics/Data Analysis      
+      
+             troll |  -.0029787   .0073555    -0.40   0.686     -.017404    .0114466
+             _cons |   .0212342   .0036519     5.81   0.000     .0140723    .0283962
+      ------------------------------------------------------------------------------
+      
+     1 . 
+     2 . * Overall measure of bad actors:
+     3 . gen badactor = 0
+      
+     4 . replace badactor = 1 if funny == 1 | likely_troll == 1
+      (493 real changes made)
+      
+     5 . tab badactor
+      
+         badactor |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,507       75.35       75.35
+                1 |        493       24.65      100.00
+      ------------+-----------------------------------
+            Total |      2,000      100.00
+      
+     6 . 
+      end of do-file
+      
+     7 . clear
+      
+     8 . log using c:dissert.log
+      -------------------------------------------------------------------------------------------------------------------------------------------------------
+            name:  <unnamed>
+             log:  /Users/carrieroush/Dropbox/turk/replication_public/data/c:dissert.log
+        log type:  text
+       opened on:   5 Mar 2021, 11:00:36
+      
+     9 . do "/var/folders/4n/3bt7kbhs6vgdxb_199pp1pk80000gn/T//SD41461.000000"
+      
+    10 . 
+    11 . ** Set WD
+    12 . cd "~/Dropbox/turk/replication_public/data/"
+      /Users/carrieroush/Dropbox/turk/replication_public/data
+      
+    13 . 
+    14 . ** Load data
+    15 . insheet using "turk_08_17_2018/turk_recoded_public.csv", clear names
+      (212 vars, 2,000 obs)
+      
+    16 . 
+    17 . **Generating dummies for various indicators of low quality responding from IPs
+    18 . **The "tabs" lead to numbers produced in Table 1
+    19 . **These numbers are also repeated in row 1 of Table 3
+    20 . 
+    21 . gen black=1 if blacklisted=="TRUE"
+      (1,679 missing values generated)
+      
+    22 . replace black=0 if blacklisted=="FALSE"
+      (1,670 real changes made)
+      
+    23 . tab black
+      
+            black |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,670       83.88       83.88
+                1 |        321       16.12      100.00
+      ------------+-----------------------------------
+            Total |      1,991      100.00
+      
+    24 . 
+    25 . gen miss=1 if missing_ip=="TRUE"
+      (1,991 missing values generated)
+      
+    26 . replace miss=0 if missing_ip=="FALSE"
+      (1,991 real changes made)
+      
+    27 . tab miss
+      
+             miss |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,991       99.55       99.55
+                1 |          9        0.45      100.00
+      ------------+-----------------------------------
+            Total |      2,000      100.00
+      
+    28 . 
+    29 . gen dup=1 if duplicated=="TRUE"
+      (1,894 missing values generated)
+      
+    30 . replace dup=0 if duplicated=="FALSE"
+      (1,885 real changes made)
+      
+    31 . tab dup
+      
+              dup |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,885       94.68       94.68
+                1 |        106        5.32      100.00
+      ------------+-----------------------------------
+            Total |      1,991      100.00
+      
+    32 . 
+    33 . gen foreign=1 if foreign_ip=="TRUE"
+      (1,881 missing values generated)
+      
+    34 . replace foreign=0 if foreign_ip=="FALSE"
+      (1,870 real changes made)
+      
+    35 . tab foreign
+      
+          foreign |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,870       94.02       94.02
+                1 |        119        5.98      100.00
+      ------------+-----------------------------------
+            Total |      1,989      100.00
+      
+    36 . 
+    37 . *any of the above
+    38 . gen funny=1 if funny_ip=="TRUE"
+      (1,594 missing values generated)
+      
+    39 . replace funny=0 if funny_ip=="FALSE"
+      (1,594 real changes made)
+      
+    40 . tab funny
+      
+            funny |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,594       79.70       79.70
+                1 |        406       20.30      100.00
+      ------------+-----------------------------------
+            Total |      2,000      100.00
+      
+    41 . 
+    42 . **Generating dummies for low-incidence screener questions
+    43 . **The "tabs" lead to numbers produced in Table 2
+    44 . 
+    45 . gen prosthetic_troll=0 if prosthetic=="0"|prosthetic=="NA"
+      (91 missing values generated)
+      
+    46 . replace prosthetic_troll=1 if prosthetic=="1"
+      (91 real changes made)
+      
+    47 . tab prosthetic_troll 
+      
+      prosthetic_ |
+            troll |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,909       95.45       95.45
+                1 |         91        4.55      100.00
+      ------------+-----------------------------------
+            Total |      2,000      100.00
+      
+    48 . 
+    49 . gen blind_troll=0 if blind=="0"|blind=="NA"
+      (184 missing values generated)
+      
+    50 . replace blind_troll=1 if blind=="1"
+      (184 real changes made)
+      
+    51 . tab blind_troll 
+      
+      blind_troll |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,816       90.80       90.80
+                1 |        184        9.20      100.00
+      ------------+-----------------------------------
+            Total |      2,000      100.00
+      
+    52 . 
+    53 . gen deaf_troll=0 if deaf=="0"|blind=="NA"
+      (109 missing values generated)
+      
+    54 . replace deaf_troll=1 if deaf=="1"
+      (109 real changes made)
+      
+    55 . tab deaf_troll
+      
+       deaf_troll |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,891       94.55       94.55
+                1 |        109        5.45      100.00
+      ------------+-----------------------------------
+            Total |      2,000      100.00
+      
+    56 . 
+    57 . gen gang_resp_troll=0 if gang_resp=="0"|gang_resp=="NA"
+      (88 missing values generated)
+      
+    58 . replace gang_resp_troll=1 if gang_resp=="1"
+      (88 real changes made)
+      
+    59 . tab gang_resp_troll
+      
+      gang_resp_t |
+             roll |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,912       95.60       95.60
+                1 |         88        4.40      100.00
+      ------------+-----------------------------------
+            Total |      2,000      100.00
+      
+    60 . 
+    61 . gen gang_fam_troll=0 if gang_fam=="0"|gang_fam=="NA"
+      (123 missing values generated)
+      
+    62 . replace gang_fam_troll=1 if gang_fam=="1"
+      (123 real changes made)
+      
+    63 . tab gang_fam_troll 
+      
+      gang_fam_tr |
+              oll |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,877       93.85       93.85
+                1 |        123        6.15      100.00
+      ------------+-----------------------------------
+            Total |      2,000      100.00
+      
+    64 . 
+    65 . gen troll_sleep=0 if sleep=="0"|sleep=="NA"
+      (28 missing values generated)
+      
+    66 . replace troll_sleep=1 if sleep=="1"
+      (28 real changes made)
+      
+    67 . tab troll_sleep
+      
+      troll_sleep |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,972       98.60       98.60
+                1 |         28        1.40      100.00
+      ------------+-----------------------------------
+            Total |      2,000      100.00
+      
+    68 . 
+    69 . ***************************************************************
+    70 . *see figure_1.do in replication files for estimates of trolling
+    71 . ***************************************************************
+    72 . 
+    73 . **Two or more rare behaviors/traits
+    74 . 
+    75 . egen troll_index=rowtotal(prosthetic_troll blind_troll deaf_troll gang_resp_troll gang_fam_troll troll_sleep)
+      
+    76 . tab troll_index
+      
+      troll_index |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,676       83.80       83.80
+                1 |        199        9.95       93.75
+                2 |         52        2.60       96.35
+                3 |         19        0.95       97.30
+                4 |          9        0.45       97.75
+                5 |         43        2.15       99.90
+                6 |          2        0.10      100.00
+      ------------+-----------------------------------
+            Total |      2,000      100.00
+      
+    77 . gen likely_troll=1 if troll_index>1
+      (1,875 missing values generated)
+      
+    78 . replace likely_troll=0 if troll_index<2
+      (1,875 real changes made)
+      
+    79 . tab likely_troll
+      
+      likely_trol |
+                l |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,875       93.75       93.75
+                1 |        125        6.25      100.00
+      ------------+-----------------------------------
+            Total |      2,000      100.00
+      
+    80 . 
+    81 . **Proportion of bad actors (classified by bad IPs or trolls)
+    82 . gen troll=0 if likely_troll==0 & funny==0
+      (493 missing values generated)
+      
+    83 . replace troll=1 if likely_troll==1|funny==1
+      (493 real changes made)
+      
+    84 . tab troll
+      
+            troll |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,507       75.35       75.35
+                1 |        493       24.65      100.00
+      ------------+-----------------------------------
+            Total |      2,000      100.00
+      
+    85 .         *24.65%, noted in Table 4, row 1
+    86 . 
+    87 . ** Generate self-reported sincerity measure
+    88 . gen insincere_dummy = .
+      (2,000 missing values generated)
+      
+    89 . replace insincere_dummy = 1 if trolling == "3" |trolling == "4"| trolling == "5" 
+      (175 real changes made)
+      
+    90 . replace insincere_dummy = 0 if trolling == "1"| trolling == "2"
+      (1,815 real changes made)
+      
+    91 . tab insincere_dummy
+      
+      insincere_d |
+             ummy |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,815       91.21       91.21
+                1 |        175        8.79      100.00
+      ------------+-----------------------------------
+            Total |      1,990      100.00
+      
+    92 . *8.79% admit to responding insincerely "always" or "almost always" - reported in manuscript
+    93 . 
+    94 . ** Association between various measures of LQ responding
+    95 . tab insincere_dummy likely_troll, col chi
+      
+      +-------------------+
+      | Key               |
+      |-------------------|
+      |     frequency     |
+      | column percentage |
+      +-------------------+
+      
+      insincere_ |     likely_troll
+           dummy |         0          1 |     Total
+      -----------+----------------------+----------
+               0 |     1,742         73 |     1,815 
+                 |     93.40      58.40 |     91.21 
+      -----------+----------------------+----------
+               1 |       123         52 |       175 
+                 |      6.60      41.60 |      8.79 
+      -----------+----------------------+----------
+           Total |     1,865        125 |     1,990 
+                 |    100.00     100.00 |    100.00 
+      
+                Pearson chi2(1) = 178.9712   Pr = 0.000
+      
+    96 .         *93% of people not tagged for trolling "never" or "rarely" answer humorously/insincerely - reported in manuscript
+    97 . tab insincere_dummy likely_troll, col chi
+      
+      +-------------------+
+      | Key               |
+      |-------------------|
+      |     frequency     |
+      | column percentage |
+      +-------------------+
+      
+      insincere_ |     likely_troll
+           dummy |         0          1 |     Total
+      -----------+----------------------+----------
+               0 |     1,742         73 |     1,815 
+                 |     93.40      58.40 |     91.21 
+      -----------+----------------------+----------
+               1 |       123         52 |       175 
+                 |      6.60      41.60 |      8.79 
+      -----------+----------------------+----------
+           Total |     1,865        125 |     1,990 
+                 |    100.00     100.00 |    100.00 
+      
+                Pearson chi2(1) = 178.9712   Pr = 0.000
+      
+    98 .         *58% of 125 tolls say they answer sincerely
+    99 .         tab funny likely_troll
+      
+                 |     likely_troll
+           funny |         0          1 |     Total
+      -----------+----------------------+----------
+               0 |     1,507         87 |     1,594 
+               1 |       368         38 |       406 
+      -----------+----------------------+----------
+           Total |     1,875        125 |     2,000 
+      
+   100 . tab funny likely_troll, col chi
+      
+      +-------------------+
+      | Key               |
+      |-------------------|
+      |     frequency     |
+      | column percentage |
+      +-------------------+
+      
+                 |     likely_troll
+           funny |         0          1 |     Total
+      -----------+----------------------+----------
+               0 |     1,507         87 |     1,594 
+                 |     80.37      69.60 |     79.70 
+      -----------+----------------------+----------
+               1 |       368         38 |       406 
+                 |     19.63      30.40 |     20.30 
+      -----------+----------------------+----------
+           Total |     1,875        125 |     2,000 
+                 |    100.00     100.00 |    100.00 
+      
+                Pearson chi2(1) =   8.4067   Pr = 0.004
+      
+   101 . *how many people from bad IP addresses reported being insincere? 38/406 = 9.4% - reported in manuscript
+   102 . *how many people from non-suspicious IP addresses admitted to being insincere? 87/1594 = 5.45% - reported in manuscript
+   103 .         
+   104 . ** Timing
+   105 . replace durationinseconds = "" if durationinseconds == "NA"
+      (9 real changes made)
+      
+   106 . destring durationinseconds, gen(time)
+      durationinseconds: all characters numeric; time generated as int
+      (9 missing values generated)
+      
+   107 . sum time, d
+      
+                                  time
+      -------------------------------------------------------------
+            Percentiles      Smallest
+       1%          204            138
+       5%          284            148
+      10%          330            160       Obs               1,991
+      25%          426            162       Sum of Wgt.       1,991
+      
+      50%          573                      Mean           679.5495
+                              Largest       Std. Dev.      410.3904
+      75%          785           3310
+      90%         1173           3315       Variance       168420.3
+      95%         1463           3418       Skewness       2.614865
+      99%         2290           4404       Kurtosis       14.04696
+      
+   108 .         *median response time = 573 seconds, or about 9 minutes and 33 seconds
+   109 .         *generating outlier variables based on "time outside whiskers" in the box plot
+   110 .         *anything outside 167% of the IQR gets classified as "fast" or "slow"
+   111 .         *25th percentile = 426; 75th percentile = 785   
+   112 .         
+   113 . display (573 - 426) * (5/3) /* 245 */
+      245
+      
+   114 . gen fast = 0
+      
+   115 . replace fast = 1 if time <= 245
+      (41 real changes made)
+      
+   116 . tab fast
+      
+             fast |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,959       97.95       97.95
+                1 |         41        2.05      100.00
+      ------------+-----------------------------------
+            Total |      2,000      100.00
+      
+   117 . *2.05% are fast
+   118 .         
+   119 . display (785 - 573) * (5/3) + 785 /* 1138 */
+      1138.3333
+      
+   120 . gen slow = 0
+      
+   121 . replace slow = 1 if time > 1138
+      (233 real changes made)
+      
+   122 . tab slow
+      
+             slow |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,767       88.35       88.35
+                1 |        233       11.65      100.00
+      ------------+-----------------------------------
+            Total |      2,000      100.00
+      
+   123 . *11.65% are slow 
+   124 . 
+   125 . * Are suspicious respondents faster or slower? 
+   126 . 
+   127 . reg time troll /* trolls 166 seconds slower */
+      
+            Source |       SS           df       MS      Number of obs   =     1,991
+      -------------+----------------------------------   F(1, 1989)      =     61.67
+             Model |    10078406         1    10078406   Prob > F        =    0.0000
+          Residual |   325078019     1,989  163437.918   R-squared       =    0.0301
+      -------------+----------------------------------   Adj R-squared   =    0.0296
+             Total |   335156425     1,990  168420.314   Root MSE        =    404.27
+      
+      ------------------------------------------------------------------------------
+              time |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+             troll |    165.864   21.12189     7.85   0.000     124.4407    207.2874
+             _cons |   639.2289   10.41405    61.38   0.000     618.8053    659.6525
+      ------------------------------------------------------------------------------
+      
+   128 . reg slow troll /*beta = 0.14, p<.001 - reported in manuscript */
+      
+            Source |       SS           df       MS      Number of obs   =     2,000
+      -------------+----------------------------------   F(1, 1998)      =     71.98
+             Model |   7.1579439         1   7.1579439   Prob > F        =    0.0000
+          Residual |  198.697556     1,998  .099448226   R-squared       =    0.0348
+      -------------+----------------------------------   Adj R-squared   =    0.0343
+             Total |    205.8555     1,999   .10297924   Root MSE        =    .31535
+      
+      ------------------------------------------------------------------------------
+              slow |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+             troll |   .1388127   .0163619     8.48   0.000     .1067245    .1709008
+             _cons |   .0822827   .0081235    10.13   0.000     .0663513    .0982141
+      ------------------------------------------------------------------------------
+      
+   129 . reg fast troll /*beta=-.003, p=.686 - reported in manuscript */
+      
+            Source |       SS           df       MS      Number of obs   =     2,000
+      -------------+----------------------------------   F(1, 1998)      =      0.16
+             Model |   .00329589         1   .00329589   Prob > F        =    0.6856
+          Residual |  40.1562041     1,998    .0200982   R-squared       =    0.0001
+      -------------+----------------------------------   Adj R-squared   =   -0.0004
+             Total |     40.1595     1,999  .020089795   Root MSE        =    .14177
+      
+      ------------------------------------------------------------------------------
+              fast |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+             troll |  -.0029787   .0073555    -0.40   0.686     -.017404    .0114466
+             _cons |   .0212342   .0036519     5.81   0.000     .0140723    .0283962
+      ------------------------------------------------------------------------------
+      
+   130 . 
+   131 . * Overall measure of bad actors:
+   132 . gen badactor = 0
+      
+   133 . replace badactor = 1 if funny == 1 | likely_troll == 1
+      (493 real changes made)
+      
+   134 . tab badactor
+      
+         badactor |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,507       75.35       75.35
+                1 |        493       24.65      100.00
+      ------------+-----------------------------------
+            Total |      2,000      100.00
+      
+   135 . 
+      end of do-file
+      
+   136 . log close
+            name:  <unnamed>
+             log:  /Users/carrieroush/Dropbox/turk/replication_public/data/c:dissert.log
+        log type:  text
+       closed on:   5 Mar 2021, 11:00:46
+      -------------------------------------------------------------------------------------------------------------------------------------------------------
+      
+   137 . translate @Results 01_study_1.txt
+      (file 01_study_1.txt written in .txt format)
+      
+   138 . do "/var/folders/4n/3bt7kbhs6vgdxb_199pp1pk80000gn/T//SD41461.000000"
+      
+   139 . 
+   140 . ** Set WD
+   141 . cd "~/Dropbox/turk/replication_public/data"
+      /Users/carrieroush/Dropbox/turk/replication_public/data
+      
+   142 . 
+   143 . ** Load data
+   144 . insheet using "turk_06_29_2020/merged_survey_ip_06_29_2020_final_public.csv", clear names
+      (120 vars, 1,505 obs)
+      
+   145 . 
+   146 . ** Generating dummies for various indicators of low quality responding from IPs
+   147 . **These tabs also make up the numbers in row 2 of Table 3
+   148 . 
+   149 . gen miss=1 if missing_ip=="TRUE"
+      (1,505 missing values generated)
+      
+   150 . replace miss=0 if missing_ip=="FALSE"
+      (1,505 real changes made)
+      
+   151 . tab miss
+      
+             miss |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,505      100.00      100.00
+      ------------+-----------------------------------
+            Total |      1,505      100.00
+      
+   152 . *0%
+   153 . 
+   154 . gen dup=1 if duplicated=="TRUE"
+      (1,424 missing values generated)
+      
+   155 . replace dup=0 if duplicated=="FALSE"
+      (1,424 real changes made)
+      
+   156 . tab dup 
+      
+              dup |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,424       94.62       94.62
+                1 |         81        5.38      100.00
+      ------------+-----------------------------------
+            Total |      1,505      100.00
+      
+   157 . *5.3%
+   158 . 
+   159 . gen foreign=1 if foreign_ip=="TRUE"
+      (1,488 missing values generated)
+      
+   160 . replace foreign=0 if foreign_ip=="FALSE"
+      (1,488 real changes made)
+      
+   161 . tab foreign
+      
+          foreign |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,488       98.87       98.87
+                1 |         17        1.13      100.00
+      ------------+-----------------------------------
+            Total |      1,505      100.00
+      
+   162 . *1.13%
+   163 . 
+   164 . gen funny=1 if funny_ip=="TRUE"
+      (1,323 missing values generated)
+      
+   165 . replace funny=0 if funny_ip=="FALSE"
+      (1,323 real changes made)
+      
+   166 . tab funny
+      
+            funny |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,323       87.91       87.91
+                1 |        182       12.09      100.00
+      ------------+-----------------------------------
+            Total |      1,505      100.00
+      
+   167 . *12.09% - % of bad actors based on bad IPs - noted in manuscript
+   168 . 
+   169 . **Generating dummies for low-incidence screener questions
+   170 . **The numbers from these tabs also show up in Figure 1
+   171 . gen troll_prosthetic=1 if prosthetic=="TRUE"
+      (1,099 missing values generated)
+      
+   172 . replace troll_prosthetic=0 if prosthetic=="FALSE"|prosthetic=="NA"
+      (1,099 real changes made)
+      
+   173 . tab troll_prosthetic
+      
+      troll_prost |
+            hetic |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,099       73.02       73.02
+                1 |        406       26.98      100.00
+      ------------+-----------------------------------
+            Total |      1,505      100.00
+      
+   174 . *26.98%
+   175 . 
+   176 . gen troll_blind=1 if blind=="TRUE"
+      (1,197 missing values generated)
+      
+   177 . replace troll_blind=0 if blind=="FALSE"|blind=="NA"
+      (1,197 real changes made)
+      
+   178 . tab troll_blind
+      
+      troll_blind |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,197       79.53       79.53
+                1 |        308       20.47      100.00
+      ------------+-----------------------------------
+            Total |      1,505      100.00
+      
+   179 . *20.47%
+   180 . 
+   181 . gen troll_deaf=1 if deaf=="TRUE"
+      (1,199 missing values generated)
+      
+   182 . replace troll_deaf=0 if deaf=="FALSE"|deaf=="NA"
+      (1,199 real changes made)
+      
+   183 . tab troll_deaf
+      
+       troll_deaf |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,199       79.67       79.67
+                1 |        306       20.33      100.00
+      ------------+-----------------------------------
+            Total |      1,505      100.00
+      
+   184 . *20.33%
+   185 . 
+   186 . gen troll_gang=1 if gang_resp=="TRUE"
+      (1,116 missing values generated)
+      
+   187 . replace troll_gang=0 if gang_resp=="FALSE"|gang_resp=="NA"
+      (1,116 real changes made)
+      
+   188 . tab troll_gang
+      
+       troll_gang |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,116       74.15       74.15
+                1 |        389       25.85      100.00
+      ------------+-----------------------------------
+            Total |      1,505      100.00
+      
+   189 . *25.85%
+   190 . 
+   191 . gen troll_famgang=1 if gang_fam=="TRUE"
+      (1,091 missing values generated)
+      
+   192 . replace troll_famgang=0 if gang_fam=="FALSE"|gang_fam=="NA"
+      (1,091 real changes made)
+      
+   193 . tab troll_famgang
+      
+      troll_famga |
+               ng |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,091       72.49       72.49
+                1 |        414       27.51      100.00
+      ------------+-----------------------------------
+            Total |      1,505      100.00
+      
+   194 . *27.5%
+   195 . 
+   196 . gen troll_sleep=1 if sleep=="1"
+      (1,473 missing values generated)
+      
+   197 . replace troll_sleep=0 if sleep=="0"|sleep=="NA"
+      (1,473 real changes made)
+      
+   198 . tab troll_sleep
+      
+      troll_sleep |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,473       97.87       97.87
+                1 |         32        2.13      100.00
+      ------------+-----------------------------------
+            Total |      1,505      100.00
+      
+   199 . *2.13%
+   200 . 
+   201 . **Two or more rare behaviors/traits
+   202 . 
+   203 . egen troll_index=rowtotal(troll_prosthetic troll_blind troll_deaf troll_gang troll_famgang troll_sleep)
+      
+   204 . tab troll_index
+      
+      troll_index |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        883       58.67       58.67
+                1 |        170       11.30       69.97
+                2 |        125        8.31       78.27
+                3 |         77        5.12       83.39
+                4 |         54        3.59       86.98
+                5 |        188       12.49       99.47
+                6 |          8        0.53      100.00
+      ------------+-----------------------------------
+            Total |      1,505      100.00
+      
+   205 . gen likely_troll=1 if troll_index>1
+      (1,053 missing values generated)
+      
+   206 . replace likely_troll=0 if troll_index<2
+      (1,053 real changes made)
+      
+   207 . tab likely_troll
+      
+      likely_trol |
+                l |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,053       69.97       69.97
+                1 |        452       30.03      100.00
+      ------------+-----------------------------------
+            Total |      1,505      100.00
+      
+   208 . *30.03%
+   209 . 
+   210 . 
+   211 . ** Generate self-reported sincerity measure
+   212 . replace sincerity = "" if sincerity == "NA"
+      (2 real changes made)
+      
+   213 . destring sincerity, replace
+      sincerity: all characters numeric; replaced as byte
+      (2 missing values generated)
+      
+   214 . tab sincerity
+      
+        sincerity |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                1 |        774       51.50       51.50
+                2 |        228       15.17       66.67
+                3 |        285       18.96       85.63
+                4 |        125        8.32       93.95
+                5 |         91        6.05      100.00
+      ------------+-----------------------------------
+            Total |      1,503      100.00
+      
+   215 . recode sincerity (1/3 = 0) (4/5 = 1), gen(insincere)
+      (1503 differences between sincerity and insincere)
+      
+   216 . tab insincere
+      
+        RECODE of |
+        sincerity |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,287       85.63       85.63
+                1 |        216       14.37      100.00
+      ------------+-----------------------------------
+            Total |      1,503      100.00
+      
+   217 . *14% admit to responding non-seriously - noted in manuscript
+   218 . 
+   219 . tab insincere likely_troll, col chi
+      
+      +-------------------+
+      | Key               |
+      |-------------------|
+      |     frequency     |
+      | column percentage |
+      +-------------------+
+      
+       RECODE of |     likely_troll
+       sincerity |         0          1 |     Total
+      -----------+----------------------+----------
+               0 |       944        343 |     1,287 
+                 |     89.82      75.88 |     85.63 
+      -----------+----------------------+----------
+               1 |       107        109 |       216 
+                 |     10.18      24.12 |     14.37 
+      -----------+----------------------+----------
+           Total |     1,051        452 |     1,503 
+                 |    100.00     100.00 |    100.00 
+      
+                Pearson chi2(1) =  49.8696   Pr = 0.000
+      
+   220 . *among those flagged for trolling, 109/452 admit to almost or almost always answering sincerely /
+   221 . *= 24.1% (chi2=49.9%, p<0.001)- as reported in manuscript
+   222 . 
+   223 . *among those not flagged for trolling, 107/1051 admit to this - 10.2%, (chi2=49.9%, p<0.001)- as reported in manuscript
+   224 . 
+   225 . **********
+   226 . ***DATE***
+   227 . **********
+   228 .                 
+   229 . gen date_ok=0
+      
+   230 . replace date_ok=1 if date=="06 29 2020"|date=="06.29.2020"|date=="06\29\2020"|date=="06\30\2020" ///
+      >         |date=="6/29/20"|date=="6/29/2020."|date=="6/29/20209"|date=="6/29/2020`"|date=="60/29/2020" ///
+      >         |date=="ju/26/2020"|date=="june/29/20"|date=="o6/29/2020" | date=="16/29/2020"
+      (1,130 real changes made)
+      
+   231 . tab date_ok
+      
+          date_ok |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        375       24.92       24.92
+                1 |      1,130       75.08      100.00
+      ------------+-----------------------------------
+            Total |      1,505      100.00
+      
+   232 . *so 24.92% of respondents entered the date incorrectly
+   233 . 
+   234 . *okay, what about those who wrote DD/MM/YYYY
+   235 . gen date_poss_foreign = 0
+      
+   236 . replace date_poss_foreign = 1 if date == "20/06/2020" | date == "28.06.2020" | date == "28/06/2020" | date == "28/6/2020" ///
+      >         |date == " 29 06 2020" | date ==  "29-06-2020" | date == "29-Jun-20" | date == "29.06 2020" | date == "29.06.2020" ///
+      >         |date == "29/06/2020"| date == "29/6/2020" | date == " 29/6/2020." | date == "29\06\2020" | date == "29|06|2020" ///
+      >         |date == "30/06/2020"
+      (303 real changes made)
+      
+   237 . tab date_poss_foreign 
+      
+      date_poss_f |
+           oreign |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,202       79.87       79.87
+                1 |        303       20.13      100.00
+      ------------+-----------------------------------
+            Total |      1,505      100.00
+      
+   238 . *20% of the sample is possibly comprised of foreigners - noted in manuscript
+   239 . 
+   240 . *okay, how many people wrote a nonsensical response to the date question?
+   241 . gen inattentive = 1
+      
+   242 . replace inattentive = 0 if date_ok==1|date_poss_foreign==1
+      (1,433 real changes made)
+      
+   243 . tab inattentive
+      
+      inattentive |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,433       95.22       95.22
+                1 |         72        4.78      100.00
+      ------------+-----------------------------------
+            Total |      1,505      100.00
+      
+   244 . *4.92%
+   245 . 
+   246 . 
+   247 . ************************************************************
+   248 . ***CREATING UPPER AND LOWER BOUND ESTIMATES OF BAD ACTORS***
+   249 . ************************************************************
+   250 . 
+   251 . 
+   252 . *creating a variable that combines trolling and weird IPs ("lower bound")
+   253 . gen combined_troll_1=.
+      (1,505 missing values generated)
+      
+   254 . replace combined_troll_1 = 1 if funny_ip == "TRUE" | likely_troll == 1
+      (571 real changes made)
+      
+   255 . replace combined_troll_1 = 0 if funny_ip == "FALSE" & likely_troll == 0
+      (934 real changes made)
+      
+   256 . tab combined_troll_1
+      
+      combined_tr |
+            oll_1 |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        934       62.06       62.06
+                1 |        571       37.94      100.00
+      ------------+-----------------------------------
+            Total |      1,505      100.00
+      
+   257 . *37.94% low quality - column 2, row 1 of Table 4
+   258 . 
+   259 . *creating a variable that combines trolling, weird IP, and weirdly written date 
+   260 . gen combined_troll_2=.
+      (1,505 missing values generated)
+      
+   261 . replace combined_troll_2=1 if funny_ip=="TRUE" |likely_troll==1|date_poss_foreign==1
+      (672 real changes made)
+      
+   262 . replace combined_troll_2=0 if funny_ip=="FALSE" & likely_troll==0 & date_poss_foreign==0
+      (833 real changes made)
+      
+   263 . tab combined_troll_2
+      
+      combined_tr |
+            oll_2 |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        833       55.35       55.35
+                1 |        672       44.65      100.00
+      ------------+-----------------------------------
+            Total |      1,505      100.00
+      
+   264 . *44.58% of respondents are suspicious using this measure - column 2, row 2 of Table 4
+   265 . 
+   266 . *creating a variable that combines trolling, weird IP, weirdly written date, or inattentive (nonsensical date write-in)
+   267 . gen combined_troll_3=.
+      (1,505 missing values generated)
+      
+   268 . replace combined_troll_3=1 if funny_ip=="TRUE" |likely_troll==1|date_poss_foreign==1|inattentive==1
+      (696 real changes made)
+      
+   269 . replace combined_troll_3=0 if funny_ip=="FALSE"  & likely_troll==0 & date_poss_foreign==0 & inattentive==0
+      (809 real changes made)
+      
+   270 . tab combined_troll_3
+      
+      combined_tr |
+            oll_3 |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        809       53.75       53.75
+                1 |        696       46.25      100.00
+      ------------+-----------------------------------
+            Total |      1,505      100.00
+      
+   271 . *46.25% marked as suspicious here - column 2, row 3 of Table 4
+   272 . 
+   273 . ************
+   274 . ***Timing***
+   275 . ************
+   276 . 
+   277 . rename durationinseconds time
+      
+   278 . sum time, d
+      
+                                  time
+      -------------------------------------------------------------
+            Percentiles      Smallest
+       1%          168             18
+       5%          222            115
+      10%          259            120       Obs               1,505
+      25%          349            124       Sum of Wgt.       1,505
+      
+      50%          488                      Mean           579.1037
+                              Largest       Std. Dev.      345.3646
+      75%          721           2415
+      90%         1014           2679       Variance       119276.7
+      95%         1236           3061       Skewness       2.142565
+      99%         1758           3470       Kurtosis       11.19606
+      
+   279 . 
+   280 . ************************************************************
+   281 . ***Table 5: Low_Quality Responses by HIT Completion Rates***
+   282 . ************************************************************
+   283 . gen hits_recode=.
+      (1,505 missing values generated)
+      
+   284 . replace hits_recode=1 if hits=="1"
+      (327 real changes made)
+      
+   285 . replace hits_recode=2 if hits=="2"
+      (435 real changes made)
+      
+   286 . replace hits_recode=3 if hits=="3"
+      (192 real changes made)
+      
+   287 . replace hits_recode=4 if hits=="4"
+      (548 real changes made)
+      
+   288 . tab hits_recode 
+      
+      hits_recode |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                1 |        327       21.77       21.77
+                2 |        435       28.96       50.73
+                3 |        192       12.78       63.52
+                4 |        548       36.48      100.00
+      ------------+-----------------------------------
+            Total |      1,502      100.00
+      
+   289 . 
+   290 . label define hits_lb 1 "Fewer than 100 HITs" 2 "Between 100 and 500 HITs" 3 "Between 500 and 1000 HITs" 4 "More than 1k HITs", replace
+      
+   291 . label values hits_recode hits_lb
+      
+   292 . tab hits_recode
+      
+                    hits_recode |      Freq.     Percent        Cum.
+      --------------------------+-----------------------------------
+            Fewer than 100 HITs |        327       21.77       21.77
+       Between 100 and 500 HITs |        435       28.96       50.73
+      Between 500 and 1000 HITs |        192       12.78       63.52
+              More than 1k HITs |        548       36.48      100.00
+      --------------------------+-----------------------------------
+                          Total |      1,502      100.00
+      
+   293 . *this tab provides the data for row 1 in Table 5 (June 2020 study)
+   294 . 
+   295 . tab combined_troll_1 hits_recode, col
+      
+      +-------------------+
+      | Key               |
+      |-------------------|
+      |     frequency     |
+      | column percentage |
+      +-------------------+
+      
+      combined_t |                 hits_recode
+          roll_1 | Fewer tha  Between 1  Between 5  More than |     Total
+      -----------+--------------------------------------------+----------
+               0 |       144        211        105        471 |       931 
+                 |     44.04      48.51      54.69      85.95 |     61.98 
+      -----------+--------------------------------------------+----------
+               1 |       183        224         87         77 |       571 
+                 |     55.96      51.49      45.31      14.05 |     38.02 
+      -----------+--------------------------------------------+----------
+           Total |       327        435        192        548 |     1,502 
+                 |    100.00     100.00     100.00     100.00 |    100.00 
+      
+   296 . *this tab provides the data for row 2 in Table 5 (June 2020 study)
+   297 . tab combined_troll_2 hits_recode, col
+      
+      +-------------------+
+      | Key               |
+      |-------------------|
+      |     frequency     |
+      | column percentage |
+      +-------------------+
+      
+      combined_t |                 hits_recode
+          roll_2 | Fewer tha  Between 1  Between 5  More than |     Total
+      -----------+--------------------------------------------+----------
+               0 |       102        172         93        464 |       831 
+                 |     31.19      39.54      48.44      84.67 |     55.33 
+      -----------+--------------------------------------------+----------
+               1 |       225        263         99         84 |       671 
+                 |     68.81      60.46      51.56      15.33 |     44.67 
+      -----------+--------------------------------------------+----------
+           Total |       327        435        192        548 |     1,502 
+                 |    100.00     100.00     100.00     100.00 |    100.00 
+      
+   298 . *this tab provides the data for row 3 in Table 5 (June 2020 study)
+   299 . tab combined_troll_3 hits_recode, col
+      
+      +-------------------+
+      | Key               |
+      |-------------------|
+      |     frequency     |
+      | column percentage |
+      +-------------------+
+      
+      combined_t |                 hits_recode
+          roll_3 | Fewer tha  Between 1  Between 5  More than |     Total
+      -----------+--------------------------------------------+----------
+               0 |        98        170         89        452 |       809 
+                 |     29.97      39.08      46.35      82.48 |     53.86 
+      -----------+--------------------------------------------+----------
+               1 |       229        265        103         96 |       693 
+                 |     70.03      60.92      53.65      17.52 |     46.14 
+      -----------+--------------------------------------------+----------
+           Total |       327        435        192        548 |     1,502 
+                 |    100.00     100.00     100.00     100.00 |    100.00 
+      
+   300 . *this tab provides data for row 4 in Table 5 (June 2020 study)
+   301 . 
+   302 . tab insincere hits_recode, col
+      
+      +-------------------+
+      | Key               |
+      |-------------------|
+      |     frequency     |
+      | column percentage |
+      +-------------------+
+      
+       RECODE of |                 hits_recode
+       sincerity | Fewer tha  Between 1  Between 5  More than |     Total
+      -----------+--------------------------------------------+----------
+               0 |       279        335        160        512 |     1,286 
+                 |     85.32      77.01      83.33      93.43 |     85.62 
+      -----------+--------------------------------------------+----------
+               1 |        48        100         32         36 |       216 
+                 |     14.68      22.99      16.67       6.57 |     14.38 
+      -----------+--------------------------------------------+----------
+           Total |       327        435        192        548 |     1,502 
+                 |    100.00     100.00     100.00     100.00 |    100.00 
+      
+   303 . *this tab provides the data for row 5 in Table 5 (June 2020 study)
+   304 . 
+   305 . *this provides the data for row 6 in Table 5 (June 2020 study)
+   306 . sum time if hits_recode==1
+      
+          Variable |        Obs        Mean    Std. Dev.       Min        Max
+      -------------+---------------------------------------------------------
+              time |        327    678.2722     408.437        151       3470
+      
+   307 . sum time if hits_recode==2
+      
+          Variable |        Obs        Mean    Std. Dev.       Min        Max
+      -------------+---------------------------------------------------------
+              time |        435    608.5149    310.5873        132       2014
+      
+   308 . sum time if hits_recode==3
+      
+          Variable |        Obs        Mean    Std. Dev.       Min        Max
+      -------------+---------------------------------------------------------
+              time |        192    586.1563    323.6046        141       2267
+      
+   309 . sum time if hits_recode==4
+      
+          Variable |        Obs        Mean    Std. Dev.       Min        Max
+      -------------+---------------------------------------------------------
+              time |        548    495.9325    317.8397        115       3061
+      
+   310 . *average time for high HIT workers = 495.93; average time for second highest category = 586.16
+   311 . display (586.16 - 495.93)/586.16
+      .15393408
+      
+   312 . 
+   313 . *********************************
+   314 . **EXPERIMENTAL RESULTS -- FIG 2**
+   315 . *********************************
+   316 . 
+   317 . ** Coding PID
+   318 . 
+   319 . *7-point party ID
+   320 . gen pid7 = .
+      (1,505 missing values generated)
+      
+   321 . replace pid7 = 1 if pid_dem == "1"
+      (490 real changes made)
+      
+   322 . replace pid7 = 2 if pid_dem == "2"
+      (134 real changes made)
+      
+   323 . replace pid7 = 3 if pid_ind == "2"
+      (92 real changes made)
+      
+   324 . replace pid7 = 4 if pid_ind == "3"
+      (78 real changes made)
+      
+   325 . replace pid7 = 5 if pid_ind == "1"
+      (75 real changes made)
+      
+   326 . replace pid7 = 6 if pid_rep == "2"
+      (111 real changes made)
+      
+   327 . replace pid7 = 7 if pid_rep == "1"      
+      (523 real changes made)
+      
+   328 . label define pid7_lbl 1 "Strong Democrat" 2 "Weak Democrat" 3 "Leaning Democrat" 4 "Independent" 5 "Leaning Republican" 6 "Weak Republican" 7 "Strong
+      >  Republican", replace
+      
+   329 . label values pid7 pid7_lbl
+      
+   330 . 
+   331 . *3-point party ID
+   332 . recode pid7 (1/3=1)(4=2)(5/7=3), gen(pid3)
+      (1013 differences between pid7 and pid3)
+      
+   333 . label define pid3_lbl 1 "Democratic" 2 "Independent" 3 "Republican", replace
+      
+   334 . label values pid3 pid3_lbl
+      
+   335 . 
+   336 . *Democratic dummy for comparing Dems and Reps
+   337 . gen dem_rep = .
+      (1,505 missing values generated)
+      
+   338 . replace dem_rep = 1 if pid3 == 1
+      (716 real changes made)
+      
+   339 . replace dem_rep = 0 if pid3 == 3
+      (709 real changes made)
+      
+   340 . label define dem_rep_lbl 0 "Republican" 1 "Democrat", replace
+      
+   341 . label values dem_rep dem_rep_lbl
+      
+   342 . 
+   343 . *recoding DVs
+   344 . 
+   345 . gen gop_unemploy=1 if gop_unemployment=="1"
+      (1,112 missing values generated)
+      
+   346 . replace gop_unemploy=.5 if gop_unemployment=="2"
+      (338 real changes made)
+      
+   347 . replace gop_unemploy=0 if gop_unemployment=="3"
+      (50 real changes made)
+      
+   348 . tab gop_unemploy
+      
+      gop_unemplo |
+                y |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |         50        6.40        6.40
+               .5 |        338       43.28       49.68
+                1 |        393       50.32      100.00
+      ------------+-----------------------------------
+            Total |        781      100.00
+      
+   349 . 
+   350 . gen gop_inflate=1 if gop_inflation=="1"
+      (1,176 missing values generated)
+      
+   351 . replace gop_inflate=.5 if gop_inflation=="2"
+      (385 real changes made)
+      
+   352 . replace gop_inflate=0 if gop_inflation=="3"
+      (67 real changes made)
+      
+   353 . tab gop_inflate
+      
+      gop_inflate |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |         67        8.58        8.58
+               .5 |        385       49.30       57.87
+                1 |        329       42.13      100.00
+      ------------+-----------------------------------
+            Total |        781      100.00
+      
+   354 . 
+   355 . gen obama_unemploy=1 if obama_unemployment=="1"
+      (1,106 missing values generated)
+      
+   356 . replace obama_unemploy=.5 if obama_unemployment=="2"
+      (297 real changes made)
+      
+   357 . replace obama_unemploy=0 if obama_unemployment=="3"
+      (26 real changes made)
+      
+   358 . tab obama_unemploy
+      
+      obama_unemp |
+              loy |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |         26        3.60        3.60
+               .5 |        297       41.14       44.74
+                1 |        399       55.26      100.00
+      ------------+-----------------------------------
+            Total |        722      100.00
+      
+   359 . 
+   360 . gen obama_inflate=1 if obama_inflation=="1"
+      (1,188 missing values generated)
+      
+   361 . replace obama_inflate=.5 if obama_inflation=="2"
+      (358 real changes made)
+      
+   362 . replace obama_inflate=0 if obama_inflation=="3"
+      (47 real changes made)
+      
+   363 . tab obama_inflate
+      
+      obama_infla |
+               te |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |         47        6.51        6.51
+               .5 |        358       49.58       56.09
+                1 |        317       43.91      100.00
+      ------------+-----------------------------------
+            Total |        722      100.00
+      
+   364 . 
+   365 . 
+   366 . *creating a collapsed unemployment DV
+   367 . gen unemploy = gop_unemploy
+      (724 missing values generated)
+      
+   368 . replace unemploy = obama_unemploy if unemploy==.
+      (722 real changes made)
+      
+   369 . tab unemploy
+      
+         unemploy |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |         76        5.06        5.06
+               .5 |        635       42.25       47.31
+                1 |        792       52.69      100.00
+      ------------+-----------------------------------
+            Total |      1,503      100.00
+      
+   370 . 
+   371 . *creating a collapsed inflation DV
+   372 . gen inflation = gop_inflate
+      (724 missing values generated)
+      
+   373 . replace inflation = obama_inflate if inflation==.
+      (722 real changes made)
+      
+   374 . tab inflation
+      
+        inflation |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        114        7.58        7.58
+               .5 |        743       49.43       57.02
+                1 |        646       42.98      100.00
+      ------------+-----------------------------------
+            Total |      1,503      100.00
+      
+   375 . 
+   376 . *generating treatment variable
+   377 . gen dem_treat=1 if randomization_1 == "obama"
+      (783 missing values generated)
+      
+   378 . replace dem_treat=0 if randomization_1 == "congress"
+      (781 real changes made)
+      
+   379 . tab dem_treat
+      
+        dem_treat |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        781       51.96       51.96
+                1 |        722       48.04      100.00
+      ------------+-----------------------------------
+            Total |      1,503      100.00
+      
+   380 . 
+   381 . *creating a party x treatment variable 
+   382 . *1 = if you got the out-party treatment, 0 = in-party treatment
+   383 . gen out_party_treat=.
+      (1,505 missing values generated)
+      
+   384 . replace out_party_treat = 1 if dem_rep == 1 & dem_treat == 0
+      (385 real changes made)
+      
+   385 . replace out_party_treat = 1 if dem_rep == 0 & dem_treat == 1
+      (351 real changes made)
+      
+   386 . replace out_party_treat = 0 if dem_rep == 0 & dem_treat == 0
+      (358 real changes made)
+      
+   387 . replace out_party_treat = 0 if dem_rep == 1 & dem_treat == 1
+      (331 real changes made)
+      
+   388 . tab out_party_treat
+      
+      out_party_t |
+             reat |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        689       48.35       48.35
+                1 |        736       51.65      100.00
+      ------------+-----------------------------------
+            Total |      1,425      100.00
+      
+   389 . 
+   390 . **the following regressions were also ran in R to produce Figure 2 
+   391 . 
+   392 . *okay, what are the effects among the full sample? (n=1425)
+   393 . reg unemploy out_party_treat
+      
+            Source |       SS           df       MS      Number of obs   =     1,425
+      -------------+----------------------------------   F(1, 1423)      =     38.80
+             Model |  3.29109319         1  3.29109319   Prob > F        =    0.0000
+          Residual |  120.711363     1,423  .084828786   R-squared       =    0.0265
+      -------------+----------------------------------   Adj R-squared   =    0.0259
+             Total |  124.002456     1,424  .087080377   Root MSE        =    .29125
+      
+      ---------------------------------------------------------------------------------
+             unemploy |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ----------------+----------------------------------------------------------------
+      out_party_treat |  -.0961677   .0154394    -6.23   0.000    -.1264541   -.0658812
+                _cons |   .7931785   .0110959    71.48   0.000     .7714125    .8149446
+      ---------------------------------------------------------------------------------
+      
+   394 . reg inflation out_party_treat
+      
+            Source |       SS           df       MS      Number of obs   =     1,425
+      -------------+----------------------------------   F(1, 1423)      =     13.74
+             Model |  1.29654138         1  1.29654138   Prob > F        =    0.0002
+          Residual |  134.283459     1,423   .09436645   R-squared       =    0.0096
+      -------------+----------------------------------   Adj R-squared   =    0.0089
+             Total |      135.58     1,424  .095210674   Root MSE        =    .30719
+      
+      ---------------------------------------------------------------------------------
+            inflation |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ----------------+----------------------------------------------------------------
+      out_party_treat |  -.0603604   .0162842    -3.71   0.000    -.0923041   -.0284167
+                _cons |   .7111756   .0117031    60.77   0.000     .6882185    .7341327
+      ---------------------------------------------------------------------------------
+      
+   395 . *betas and se's calculated here used in spreadsheet below (attenuation effects)
+   396 . 
+   397 . *effects among non-flagged respondents (n=861)
+   398 . reg unemploy out_party_treat if combined_troll_1 == 0
+      
+            Source |       SS           df       MS      Number of obs   =       861
+      -------------+----------------------------------   F(1, 859)       =     38.63
+             Model |  3.35311491         1  3.35311491   Prob > F        =    0.0000
+          Residual |  74.5568735       859  .086794963   R-squared       =    0.0430
+      -------------+----------------------------------   Adj R-squared   =    0.0419
+             Total |  77.9099884       860   .09059301   Root MSE        =    .29461
+      
+      ---------------------------------------------------------------------------------
+             unemploy |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ----------------+----------------------------------------------------------------
+      out_party_treat |  -.1249392   .0201012    -6.22   0.000    -.1643924    -.085486
+                _cons |   .7749392    .014532    53.33   0.000     .7464167    .8034616
+      ---------------------------------------------------------------------------------
+      
+   399 . reg inflation out_party_treat if combined_troll_1 == 0
+      
+            Source |       SS           df       MS      Number of obs   =       861
+      -------------+----------------------------------   F(1, 859)       =     19.15
+             Model |  1.79080179         1  1.79080179   Prob > F        =    0.0000
+          Residual |  80.3468289       859  .093535307   R-squared       =    0.0218
+      -------------+----------------------------------   Adj R-squared   =    0.0207
+             Total |  82.1376307       860  .095508873   Root MSE        =    .30584
+      
+      ---------------------------------------------------------------------------------
+            inflation |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ----------------+----------------------------------------------------------------
+      out_party_treat |  -.0913058   .0208671    -4.38   0.000    -.1322622   -.0503493
+                _cons |   .7201946   .0150857    47.74   0.000     .6905854    .7498039
+      ---------------------------------------------------------------------------------
+      
+   400 . 
+   401 . *effects among all flagged respondents (n=564)
+   402 . reg unemploy out_party_treat if combined_troll_1 == 1
+      
+            Source |       SS           df       MS      Number of obs   =       564
+      -------------+----------------------------------   F(1, 562)       =      4.43
+             Model |  .340754349         1  .340754349   Prob > F        =    0.0358
+          Residual |  43.2563201       562  .076968541   R-squared       =    0.0078
+      -------------+----------------------------------   Adj R-squared   =    0.0061
+             Total |  43.5970745       563  .077437077   Root MSE        =    .27743
+      
+      ---------------------------------------------------------------------------------
+             unemploy |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ----------------+----------------------------------------------------------------
+      out_party_treat |  -.0491649   .0233663    -2.10   0.036    -.0950609   -.0032688
+                _cons |   .8201439   .0166393    49.29   0.000     .7874611    .8528266
+      ---------------------------------------------------------------------------------
+      
+   403 . reg inflation out_party_treat if combined_troll_1 == 1
+      
+            Source |       SS           df       MS      Number of obs   =       564
+      -------------+----------------------------------   F(1, 562)       =      0.23
+             Model |  .022122222         1  .022122222   Prob > F        =    0.6293
+          Residual |  53.2970267       562  .094834567   R-squared       =    0.0004
+      -------------+----------------------------------   Adj R-squared   =   -0.0014
+             Total |  53.3191489       563  .094705416   Root MSE        =    .30795
+      
+      ---------------------------------------------------------------------------------
+            inflation |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ----------------+----------------------------------------------------------------
+      out_party_treat |   -.012527   .0259369    -0.48   0.629    -.0634721     .038418
+                _cons |   .6978417   .0184697    37.78   0.000     .6615636    .7341199
+      ---------------------------------------------------------------------------------
+      
+   404 . *betas and se's calculated here used in spreadsheet below (attenuation effects)
+   405 . 
+   406 . *effects among flagged IPs only
+   407 . reg unemploy out_party_treat if funny_ip =="TRUE"
+      
+            Source |       SS           df       MS      Number of obs   =       182
+      -------------+----------------------------------   F(1, 180)       =      0.44
+             Model |  .039545561         1  .039545561   Prob > F        =    0.5079
+          Residual |  16.1692456       180  .089829142   R-squared       =    0.0024
+      -------------+----------------------------------   Adj R-squared   =   -0.0031
+             Total |  16.2087912       181  .089551333   Root MSE        =    .29972
+      
+      ---------------------------------------------------------------------------------
+             unemploy |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ----------------+----------------------------------------------------------------
+      out_party_treat |  -.0294971   .0444569    -0.66   0.508    -.1172208    .0582266
+                _cons |   .7954545   .0319497    24.90   0.000     .7324103    .8584988
+      ---------------------------------------------------------------------------------
+      
+   408 . reg inflation out_party_treat if funny_ip =="TRUE"
+      
+            Source |       SS           df       MS      Number of obs   =       182
+      -------------+----------------------------------   F(1, 180)       =      0.22
+             Model |  .023726938         1  .023726938   Prob > F        =    0.6375
+          Residual |  19.1685808       180  .106492115   R-squared       =    0.0012
+      -------------+----------------------------------   Adj R-squared   =   -0.0043
+             Total |  19.1923077       181  .106034849   Root MSE        =    .32633
+      
+      ---------------------------------------------------------------------------------
+            inflation |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ----------------+----------------------------------------------------------------
+      out_party_treat |   .0228482   .0484049     0.47   0.637    -.0726658    .1183622
+                _cons |   .6420455    .034787    18.46   0.000     .5734026    .7106883
+      ---------------------------------------------------------------------------------
+      
+   409 . 
+   410 . *effects among trolls only
+   411 . reg unemploy out_party_treat if likely_troll==1
+      
+            Source |       SS           df       MS      Number of obs   =       445
+      -------------+----------------------------------   F(1, 443)       =      2.90
+             Model |  .210203692         1  .210203692   Prob > F        =    0.0894
+          Residual |  32.1347401       443  .072538917   R-squared       =    0.0065
+      -------------+----------------------------------   Adj R-squared   =    0.0043
+             Total |  32.3449438       444  .072848973   Root MSE        =    .26933
+      
+      ---------------------------------------------------------------------------------
+             unemploy |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ----------------+----------------------------------------------------------------
+      out_party_treat |  -.0434769   .0255402    -1.70   0.089     -.093672    .0067181
+                _cons |   .8188073   .0182414    44.89   0.000      .782957    .8546577
+      ---------------------------------------------------------------------------------
+      
+   412 . reg inflation out_party_treat if likely_troll==1
+      
+            Source |       SS           df       MS      Number of obs   =       445
+      -------------+----------------------------------   F(1, 443)       =      0.36
+             Model |  .032462717         1  .032462717   Prob > F        =    0.5474
+          Residual |  39.6675373       443  .089542974   R-squared       =    0.0008
+      -------------+----------------------------------   Adj R-squared   =   -0.0014
+             Total |        39.7       444  .089414414   Root MSE        =    .29924
+      
+      ---------------------------------------------------------------------------------
+            inflation |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ----------------+----------------------------------------------------------------
+      out_party_treat |  -.0170856   .0283762    -0.60   0.547    -.0728544    .0386831
+                _cons |   .7087156   .0202669    34.97   0.000     .6688844    .7485468
+      ---------------------------------------------------------------------------------
+      
+   413 . 
+   414 . *effects among those with 1k+ HITs
+   415 . reg unemploy out_party_treat if hits=="4"
+      
+            Source |       SS           df       MS      Number of obs   =       505
+      -------------+----------------------------------   F(1, 503)       =     36.66
+             Model |  2.81895271         1  2.81895271   Prob > F        =    0.0000
+          Residual |  38.6731265       503  .076884943   R-squared       =    0.0679
+      -------------+----------------------------------   Adj R-squared   =    0.0661
+             Total |  41.4920792       504  .082325554   Root MSE        =    .27728
+      
+      ---------------------------------------------------------------------------------
+             unemploy |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ----------------+----------------------------------------------------------------
+      out_party_treat |  -.1495819   .0247034    -6.06   0.000    -.1981164   -.1010475
+                _cons |   .7821577   .0178613    43.79   0.000     .7470658    .8172495
+      ---------------------------------------------------------------------------------
+      
+   416 . reg inflation out_party_treat if hits=="4"
+      
+            Source |       SS           df       MS      Number of obs   =       505
+      -------------+----------------------------------   F(1, 503)       =     14.78
+             Model |  1.27740706         1  1.27740706   Prob > F        =    0.0001
+          Residual |   43.473088       503   .08642761   R-squared       =    0.0285
+      -------------+----------------------------------   Adj R-squared   =    0.0266
+             Total |   44.750495       504  .088790665   Root MSE        =    .29399
+      
+      ---------------------------------------------------------------------------------
+            inflation |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ----------------+----------------------------------------------------------------
+      out_party_treat |  -.1006931   .0261916    -3.84   0.000    -.1521515   -.0492348
+                _cons |   .7427386   .0189373    39.22   0.000     .7055327    .7799445
+      ---------------------------------------------------------------------------------
+      
+   417 . 
+   418 . *interactive effects with trolling indicator
+   419 . reg unemploy i.out_party_treat##i.combined_troll_1
+      
+            Source |       SS           df       MS      Number of obs   =     1,425
+      -------------+----------------------------------   F(3, 1421)      =     24.88
+             Model |  6.18926254         3  2.06308751   Prob > F        =    0.0000
+          Residual |  117.813194     1,421  .082908651   R-squared       =    0.0499
+      -------------+----------------------------------   Adj R-squared   =    0.0479
+             Total |  124.002456     1,424  .087080377   Root MSE        =    .28794
+      
+      --------------------------------------------------------------------------------------------------
+                              unemploy |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ---------------------------------+----------------------------------------------------------------
+                     1.out_party_treat |  -.1249392    .019646    -6.36   0.000    -.1634775   -.0864009
+                    1.combined_troll_1 |   .0452047   .0223597     2.02   0.043     .0013431    .0890663
+                                       |
+      out_party_treat#combined_troll_1 |
+                                  1 1  |   .0757743   .0312104     2.43   0.015     .0145509    .1369977
+                                       |
+                                 _cons |   .7749392    .014203    54.56   0.000     .7470781    .8028002
+      --------------------------------------------------------------------------------------------------
+      
+   420 . reg inflation i.out_party_treat##i.combined_troll_1
+      
+            Source |       SS           df       MS      Number of obs   =     1,425
+      -------------+----------------------------------   F(3, 1421)      =      6.86
+             Model |  1.93614441         3  .645381471   Prob > F        =    0.0001
+          Residual |  133.643856     1,421  .094049159   R-squared       =    0.0143
+      -------------+----------------------------------   Adj R-squared   =    0.0122
+             Total |      135.58     1,424  .095210674   Root MSE        =    .30667
+      
+      --------------------------------------------------------------------------------------------------
+                             inflation |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ---------------------------------+----------------------------------------------------------------
+                     1.out_party_treat |  -.0913058   .0209243    -4.36   0.000    -.1323517   -.0502598
+                    1.combined_troll_1 |  -.0223529   .0238146    -0.94   0.348    -.0690685    .0243627
+                                       |
+      out_party_treat#combined_troll_1 |
+                                  1 1  |   .0787787   .0332412     2.37   0.018     .0135716    .1439858
+                                       |
+                                 _cons |   .7201946   .0151271    47.61   0.000     .6905207    .7498686
+      --------------------------------------------------------------------------------------------------
+      
+   421 . 
+   422 . *************************
+   423 . ***ATTENUATION EFFECTS***
+   424 . *************************
+   425 . 
+   426 . *betas and SEs catalogued in this spreadsheet were entered manually entered based on the regression results above
+   427 . *numbers needed = betas and se's for the full sample and beta's and se's for all flagged respondents 
+   428 . 
+   429 . insheet using "turk_06_29_2020/june_2020_attenuation_fx.csv", clear names
+      (7 vars, 2 obs)
+      
+   430 . 
+   431 . gen diff = nonsusp_beta - susp_beta
+      
+   432 . gen se_diff = sqrt(((nonsusp_se ^ 2) / 861) + (susp_se ^ 2) / 564)
+      
+   433 . gen weight = 1 / se_diff
+      
+   434 . reg diff [aw = weight]
+      (sum of wgt is 1,601.40502929688)
+      
+            Source |       SS           df       MS      Number of obs   =         2
+      -------------+----------------------------------   F(0, 1)         =      0.00
+             Model |           0         0           .   Prob > F        =         .
+          Residual |  4.5057e-06         1  4.5057e-06   R-squared       =    0.0000
+      -------------+----------------------------------   Adj R-squared   =    0.0000
+             Total |  4.5057e-06         1  4.5057e-06   Root MSE        =    .00212
+      
+      ------------------------------------------------------------------------------
+              diff |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+             _cons |  -.0772139   .0015009   -51.44   0.012    -.0962852   -.0581426
+      ------------------------------------------------------------------------------
+      
+   435 .         
+   436 . *average treatment effect in the non-troll group
+   437 . gen weight_nonsusp = 1 / nonsusp_se
+      
+   438 . reg nonsusp_beta [aw = weight_nonsusp]
+      (sum of wgt is 97.67060089111328)
+      
+            Source |       SS           df       MS      Number of obs   =         2
+      -------------+----------------------------------   F(0, 1)         =      0.00
+             Model |           0         0           .   Prob > F        =         .
+          Residual |  .000565405         1  .000565405   R-squared       =    0.0000
+      -------------+----------------------------------   Adj R-squared   =    0.0000
+             Total |  .000565405         1  .000565405   Root MSE        =    .02378
+      
+      ------------------------------------------------------------------------------
+      nonsusp_beta |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+             _cons |  -.1084369   .0168138    -6.45   0.098     -.322076    .1052022
+      ------------------------------------------------------------------------------
+      
+   439 .         * -.108 
+   440 .                 
+   441 . *getting an attenuation effect, weighted by the inverse of the estimated SE of the differences
+   442 . gen attn = nonsusp_beta - full_beta
+      
+   443 . gen se_attn = sqrt(((nonsusp_se ^ 2) / 861) + (full_se ^ 2) / 1425)
+      
+   444 . gen attn_wt = 1 / se_attn
+      
+   445 . reg attn [aw = attn_wt] 
+      (sum of wgt is 2,455.63635253906)
+      
+            Source |       SS           df       MS      Number of obs   =         2
+      -------------+----------------------------------   F(0, 1)         =      0.00
+             Model |           0         0           .   Prob > F        =         .
+          Residual |  2.3619e-06         1  2.3619e-06   R-squared       =    0.0000
+      -------------+----------------------------------   Adj R-squared   =    0.0000
+             Total |  2.3619e-06         1  2.3619e-06   Root MSE        =    .00154
+      
+      ------------------------------------------------------------------------------
+              attn |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+             _cons |  -.0298358   .0010867   -27.46   0.023    -.0436438   -.0160278
+      ------------------------------------------------------------------------------
+      
+   446 .         *-.0298358
+   447 . 
+   448 . *putting it in percentage point terms. we observe treatment effects that are...
+   449 . gen attn_pct = full_beta / nonsusp_beta
+      
+   450 . reg attn_pct [aw = attn_wt]
+      (sum of wgt is 2,455.63635253906)
+      
+            Source |       SS           df       MS      Number of obs   =         2
+      -------------+----------------------------------   F(0, 1)         =      0.00
+             Model |           0         0           .   Prob > F        =         .
+          Residual |  .005898377         1  .005898377   R-squared       =    0.0000
+      -------------+----------------------------------   Adj R-squared   =    0.0000
+             Total |  .005898377         1  .005898377   Root MSE        =     .0768
+      
+      ------------------------------------------------------------------------------
+          attn_pct |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+             _cons |   .7165279   .0543064    13.19   0.048     .0264992    1.406557
+      ------------------------------------------------------------------------------
+      
+   451 .         * .7165279 what they would be without suspicious responses
+   452 . *in other words, our treatment effects are attenuated by...
+   453 .         display 1 -   .7165279
+      .2834721
+      
+   454 .         * = .2834721 or 28.3% 
+   455 . 
+      end of do-file
+      
+   456 . translate @Results 02_study2.txt
+      (file 02_study2.txt written in .txt format)
+      
+   457 . do "/var/folders/4n/3bt7kbhs6vgdxb_199pp1pk80000gn/T//SD41461.000000"
+      
+   458 . cd "~/Dropbox/turk/replication_public/data"
+      /Users/carrieroush/Dropbox/turk/replication_public/data
+      
+   459 . 
+      end of do-file
+      
+   460 . do "/var/folders/4n/3bt7kbhs6vgdxb_199pp1pk80000gn/T//SD41461.000000"
+      
+   461 . 
+   462 . ** Load data
+   463 . insheet using "turk_07_12_2020/merged_survey_ip_07_12_2020_final_public.csv", clear names
+      (95 vars, 409 obs)
+      
+   464 . 
+   465 . ** Generating dummies for various indicators of low quality responding from IPs
+   466 . *these tabs produce the numbers found in row 3 of Table 3
+   467 . 
+   468 . gen miss=1 if missing_ip=="TRUE"
+      (409 missing values generated)
+      
+   469 . replace miss=0 if missing_ip=="FALSE"
+      (409 real changes made)
+      
+   470 . tab miss
+      
+             miss |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        409      100.00      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   471 . *0%
+   472 . 
+   473 . gen dup=1 if duplicated=="TRUE"
+      (396 missing values generated)
+      
+   474 . replace dup=0 if duplicated=="FALSE"
+      (396 real changes made)
+      
+   475 . tab dup
+      
+              dup |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        396       96.82       96.82
+                1 |         13        3.18      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   476 . *3.18%
+   477 . 
+   478 . gen foreign=1 if foreign_ip=="TRUE"
+      (406 missing values generated)
+      
+   479 . replace foreign=0 if foreign_ip=="FALSE"
+      (406 real changes made)
+      
+   480 . tab foreign
+      
+          foreign |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        406       99.27       99.27
+                1 |          3        0.73      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   481 . *0.73%
+   482 . 
+   483 . *all suspicious IPs
+   484 . gen funny=1 if funny_ip=="TRUE"
+      (369 missing values generated)
+      
+   485 . replace funny=0 if funny_ip=="FALSE"
+      (369 real changes made)
+      
+   486 . tab funny
+      
+            funny |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        369       90.22       90.22
+                1 |         40        9.78      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   487 . *9.78%
+   488 . 
+   489 . **Generating dummies for low-incidence screener questions
+   490 . *these tabs produce the numbers found in Figure 1 
+   491 . 
+   492 . gen troll_prosthetic=1 if prosthetic=="TRUE"
+      (327 missing values generated)
+      
+   493 . replace troll_prosthetic=0 if prosthetic=="FALSE"|prosthetic=="NA"
+      (327 real changes made)
+      
+   494 . tab troll_prosthetic
+      
+      troll_prost |
+            hetic |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        327       79.95       79.95
+                1 |         82       20.05      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   495 . *20.05%
+   496 . 
+   497 . gen troll_blind=1 if blind=="TRUE"
+      (338 missing values generated)
+      
+   498 . replace troll_blind=0 if blind=="FALSE"|blind=="NA"
+      (338 real changes made)
+      
+   499 . tab troll_blind
+      
+      troll_blind |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        338       82.64       82.64
+                1 |         71       17.36      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   500 . *17.36%
+   501 . 
+   502 . gen troll_deaf=1 if deaf=="TRUE"
+      (343 missing values generated)
+      
+   503 . replace troll_deaf=0 if deaf=="FALSE"|deaf=="NA"
+      (343 real changes made)
+      
+   504 . tab troll_deaf
+      
+       troll_deaf |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        343       83.86       83.86
+                1 |         66       16.14      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   505 . *16.14%
+   506 . 
+   507 . gen troll_gang=1 if gang_resp=="TRUE"
+      (326 missing values generated)
+      
+   508 . replace troll_gang=0 if gang_resp=="FALSE"|gang_resp=="NA"
+      (326 real changes made)
+      
+   509 . tab troll_gang
+      
+       troll_gang |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        326       79.71       79.71
+                1 |         83       20.29      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   510 . *20.29%
+   511 .         
+   512 . gen troll_famgang=1 if gang_fam=="TRUE"
+      (326 missing values generated)
+      
+   513 . replace troll_famgang=0 if gang_fam=="FALSE"|gang_fam=="NA"
+      (326 real changes made)
+      
+   514 . tab troll_famgang
+      
+      troll_famga |
+               ng |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        326       79.71       79.71
+                1 |         83       20.29      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   515 . *20.29%
+   516 . 
+   517 . gen troll_sleep=1 if sleep=="1"
+      (403 missing values generated)
+      
+   518 . replace troll_sleep=0 if sleep=="0"|sleep=="NA"
+      (403 real changes made)
+      
+   519 . tab troll_sleep
+      
+      troll_sleep |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        403       98.53       98.53
+                1 |          6        1.47      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   520 . *1.47%
+   521 . 
+   522 . **Two or more rare behaviors/traits
+   523 . 
+   524 . egen troll_index=rowtotal(troll_prosthetic troll_blind troll_deaf troll_gang troll_famgang troll_sleep)
+      
+   525 . tab troll_index
+      
+      troll_index |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        280       68.46       68.46
+                1 |         43       10.51       78.97
+                2 |         20        4.89       83.86
+                3 |          9        2.20       86.06
+                4 |          6        1.47       87.53
+                5 |         49       11.98       99.51
+                6 |          2        0.49      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   526 . gen likely_troll=1 if troll_index>1
+      (323 missing values generated)
+      
+   527 . replace likely_troll=0 if troll_index<2
+      (323 real changes made)
+      
+   528 . tab likely_troll
+      
+      likely_trol |
+                l |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        323       78.97       78.97
+                1 |         86       21.03      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   529 . *21.03%
+   530 . 
+   531 . ** Generate self-reported sincerity measure
+   532 . 
+   533 . tab sincerity
+      
+        sincerity |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                1 |        245       59.90       59.90
+                2 |         46       11.25       71.15
+                3 |         58       14.18       85.33
+                4 |         33        8.07       93.40
+                5 |         25        6.11       99.51
+               NA |          2        0.49      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   534 . replace sincerity ="0" if sincerity == "NA"
+      (2 real changes made)
+      
+   535 . destring sincerity, replace
+      sincerity: all characters numeric; replaced as byte
+      
+   536 . recode sincerity (1/3 = 0)(4/5 = 1)
+      (sincerity: 407 changes made)
+      
+   537 . tab sincerity
+      
+        sincerity |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        351       85.82       85.82
+                1 |         58       14.18      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   538 . tab sincerity likely_troll, col chi
+      
+      +-------------------+
+      | Key               |
+      |-------------------|
+      |     frequency     |
+      | column percentage |
+      +-------------------+
+      
+                 |     likely_troll
+       sincerity |         0          1 |     Total
+      -----------+----------------------+----------
+               0 |       284         67 |       351 
+                 |     87.93      77.91 |     85.82 
+      -----------+----------------------+----------
+               1 |        39         19 |        58 
+                 |     12.07      22.09 |     14.18 
+      -----------+----------------------+----------
+           Total |       323         86 |       409 
+                 |    100.00     100.00 |    100.00 
+      
+                Pearson chi2(1) =   5.6016   Pr = 0.018
+      
+   539 .         
+   540 . ******************
+   541 . ***TIMING STUFF***
+   542 . ******************
+   543 . 
+   544 . rename durationinseconds time
+      
+   545 . destring time, replace
+      time already numeric; no replace
+      
+   546 . 
+   547 . sum time, d
+      
+                                  time
+      -------------------------------------------------------------
+            Percentiles      Smallest
+       1%          103             72
+       5%          134             76
+      10%          148             87       Obs                 409
+      25%          215             90       Sum of Wgt.         409
+      
+      50%          322                      Mean           405.7384
+                              Largest       Std. Dev.       280.794
+      75%          500           1502
+      90%          743           1631       Variance       78845.28
+      95%         1011           1695       Skewness        1.86699
+      99%         1499           1701       Kurtosis       7.137976
+      
+   548 . *median response time = 322 seconds, or about 5 minutes and 37 seconds
+   549 . 
+   550 . *generating outlier variables based on "time outside whiskers" in the box plot
+   551 . *anything outside 167% of the IQR gets classified as "fast" or "slow"
+   552 . *25th percentile = 216 ; 75th percentile =   501    
+   553 .         
+   554 . display (322 - 216) * (5/3) /* 176.66667 */
+      176.66667
+      
+   555 . gen fast = 0
+      
+   556 . replace fast = 1 if time <= 176.66667
+      (60 real changes made)
+      
+   557 . tab fast
+      
+             fast |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        349       85.33       85.33
+                1 |         60       14.67      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   558 . *14.25% are fast
+   559 .         
+   560 . display (501 - 322) * (5/3) + 501 /* 799.33333*/
+      799.33333
+      
+   561 . gen slow = 0
+      
+   562 . replace slow = 1 if time > 799.33333
+      (35 real changes made)
+      
+   563 . tab slow
+      
+             slow |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        374       91.44       91.44
+                1 |         35        8.56      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   564 . *8.60% are slow 
+   565 . 
+   566 . **********
+   567 . ***DATE***
+   568 . **********
+   569 . 
+   570 . *how many people reasonably got the date correct?
+   571 . gen date_ok = 0
+      
+   572 . replace date_ok = 1 if date == "07 11 2020" | date == "07/11.2020" | date == "6/11/20" | date== "7/10/20" ///
+      >         | date == "7/11/20" | date == "7/11/19" | date == "7/11/20" | date == "7/12/00" | date == "7/12/20" ///
+      >         | date == "7/13/20"
+      (325 real changes made)
+      
+   573 . tab date_ok
+      
+          date_ok |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |         84       20.54       20.54
+                1 |        325       79.46      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   574 . *20.54% wrote the date incorrectly
+   575 . 
+   576 . *what about people possibly taking it from another country? (that is, date/month/|year format)
+   577 . gen date_poss_foreign = 0
+      
+   578 . replace date_poss_foreign = 1 if date == "11/7/20" | date == "12/7/20" | date == "12/7/2020" | date == "12/7/2020/" ///
+      >         | date == "12\07\2020" | date == "13/07/2020"
+      (68 real changes made)
+      
+   579 . tab date_poss_foreign
+      
+      date_poss_f |
+           oreign |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        341       83.37       83.37
+                1 |         68       16.63      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   580 . *16.38% of sample could possibly be foreigners
+   581 . 
+   582 . *okay, what's the estimate of inattentive or trolling respondents? (that is, anyone who didn't do one of the above)
+   583 . gen correct_date = 0
+      
+   584 . replace correct_date = 1 if date == "07 11 2020" | date == "07/11.2020" | date == "6/11/20" | date== "7/10/20" ///
+      >         | date == "7/11/20" | date == "7/11/19" | date == "7/11/20" | date == "7/12/00" | date == "7/12/20" ///
+      >         | date == "7/13/20" | date == "11/7/20" | date == "12/7/20" | date == "12/7/2020" | date == "12/7/2020/" ///
+      >         | date == "12\07\2020" | date == "13/07/2020"
+      (393 real changes made)
+      
+   585 . tab correct_date
+      
+      correct_dat |
+                e |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |         16        3.91        3.91
+                1 |        393       96.09      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   586 . *okay, so 95.84% of people wrote SOME reasonably correct date
+   587 . 
+   588 . *okay, how many people wrote a nonsensical response to the date question?
+   589 . gen inattentive = 1
+      
+   590 . replace inattentive = 0 if date_ok==1|date_poss_foreign==1
+      (393 real changes made)
+      
+   591 . tab inattentive
+      
+      inattentive |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        393       96.09       96.09
+                1 |         16        3.91      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   592 . *4.16% of respondents potentially inattentive
+   593 . 
+   594 . ************************************************************
+   595 . ***CREATING UPPER AND LOWER BOUND ESTIMATES OF BAD ACTORS***
+   596 . ************************************************************
+   597 . 
+   598 . *creating a variable that combines trolling and weird IPs ("lower bound")
+   599 . gen combined_troll_1=.
+      (409 missing values generated)
+      
+   600 . replace combined_troll_1 = 1 if funny_ip == "TRUE" | likely_troll == 1
+      (113 real changes made)
+      
+   601 . replace combined_troll_1 = 0 if funny_ip == "FALSE" & likely_troll == 0
+      (296 real changes made)
+      
+   602 . tab combined_troll_1
+      
+      combined_tr |
+            oll_1 |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        296       72.37       72.37
+                1 |        113       27.63      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   603 . *okay, so 27.63% of data is suspicious using this measure - row 1, column 3 of Table 4
+   604 . 
+   605 . *creating a variable that combines trolling, weird IP, and weirdly written date 
+   606 . gen combined_troll_2=.
+      (409 missing values generated)
+      
+   607 . replace combined_troll_2=1 if funny_ip=="TRUE" |likely_troll==1|date_poss_foreign==1
+      (144 real changes made)
+      
+   608 . replace combined_troll_2=0 if funny_ip=="FALSE" & likely_troll==0 & date_poss_foreign==0
+      (265 real changes made)
+      
+   609 . tab combined_troll_2
+      
+      combined_tr |
+            oll_2 |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        265       64.79       64.79
+                1 |        144       35.21      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   610 . *35.21% of respondents are suspicious using this measure - row 2, column 3 of Table 4
+   611 . 
+   612 . *creating a variable that combines trolling, weird IP, weirdly written date, or inattentive (nonsensical date write-in)
+   613 . gen combined_troll_3=.
+      (409 missing values generated)
+      
+   614 . replace combined_troll_3=1 if funny_ip=="TRUE" |likely_troll==1|date_poss_foreign==1|inattentive==1
+      (144 real changes made)
+      
+   615 . replace combined_troll_3=0 if funny_ip=="FALSE"  & likely_troll==0 & date_poss_foreign==0 & inattentive==0
+      (265 real changes made)
+      
+   616 . tab combined_troll_3
+      
+      combined_tr |
+            oll_3 |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        265       64.79       64.79
+                1 |        144       35.21      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   617 . *35.21% - row 3, column 3 of Table 4
+   618 . 
+   619 . *******************
+   620 . ***HIT THRESHOLD***
+   621 . *******************
+   622 . 
+   623 . gen hits_recode=.
+      (409 missing values generated)
+      
+   624 . replace hits_recode=1 if hits=="1"
+      (84 real changes made)
+      
+   625 . replace hits_recode=2 if hits=="2"
+      (109 real changes made)
+      
+   626 . replace hits_recode=3 if hits=="3"
+      (38 real changes made)
+      
+   627 . replace hits_recode=4 if hits=="4"
+      (175 real changes made)
+      
+   628 . tab hits_recode 
+      
+      hits_recode |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                1 |         84       20.69       20.69
+                2 |        109       26.85       47.54
+                3 |         38        9.36       56.90
+                4 |        175       43.10      100.00
+      ------------+-----------------------------------
+            Total |        406      100.00
+      
+   629 . *this tab provides the numbers for row 1 in Table 5 (July 2020 study)
+   630 . 
+   631 . label define hits_l 1 "Fewer than 100 HITs" 2 "Between 100 and 500 HITs" 3 "Between 500 and 1000 HITs" 4 "More than 1k HITs", replace
+      
+   632 . label values hits_recode hits_l
+      
+   633 . tab hits_recode
+      
+                    hits_recode |      Freq.     Percent        Cum.
+      --------------------------+-----------------------------------
+            Fewer than 100 HITs |         84       20.69       20.69
+       Between 100 and 500 HITs |        109       26.85       47.54
+      Between 500 and 1000 HITs |         38        9.36       56.90
+              More than 1k HITs |        175       43.10      100.00
+      --------------------------+-----------------------------------
+                          Total |        406      100.00
+      
+   634 . 
+   635 . tab combined_troll_1 hits_recode, col
+      
+      +-------------------+
+      | Key               |
+      |-------------------|
+      |     frequency     |
+      | column percentage |
+      +-------------------+
+      
+      combined_t |                 hits_recode
+          roll_1 | Fewer tha  Between 1  Between 5  More than |     Total
+      -----------+--------------------------------------------+----------
+               0 |        42         65         26        163 |       296 
+                 |     50.00      59.63      68.42      93.14 |     72.91 
+      -----------+--------------------------------------------+----------
+               1 |        42         44         12         12 |       110 
+                 |     50.00      40.37      31.58       6.86 |     27.09 
+      -----------+--------------------------------------------+----------
+           Total |        84        109         38        175 |       406 
+                 |    100.00     100.00     100.00     100.00 |    100.00 
+      
+   636 . *this tab provides the numbers for row 2 in Table 5 (July 2020 study)
+   637 . tab combined_troll_2 hits_recode, col
+      
+      +-------------------+
+      | Key               |
+      |-------------------|
+      |     frequency     |
+      | column percentage |
+      +-------------------+
+      
+      combined_t |                 hits_recode
+          roll_2 | Fewer tha  Between 1  Between 5  More than |     Total
+      -----------+--------------------------------------------+----------
+               0 |        31         53         25        156 |       265 
+                 |     36.90      48.62      65.79      89.14 |     65.27 
+      -----------+--------------------------------------------+----------
+               1 |        53         56         13         19 |       141 
+                 |     63.10      51.38      34.21      10.86 |     34.73 
+      -----------+--------------------------------------------+----------
+           Total |        84        109         38        175 |       406 
+                 |    100.00     100.00     100.00     100.00 |    100.00 
+      
+   638 . *this tab provides the numbers for row 3 in Table 5 (July 2020 study) 
+   639 . tab combined_troll_3 hits_recode, col
+      
+      +-------------------+
+      | Key               |
+      |-------------------|
+      |     frequency     |
+      | column percentage |
+      +-------------------+
+      
+      combined_t |                 hits_recode
+          roll_3 | Fewer tha  Between 1  Between 5  More than |     Total
+      -----------+--------------------------------------------+----------
+               0 |        31         53         25        156 |       265 
+                 |     36.90      48.62      65.79      89.14 |     65.27 
+      -----------+--------------------------------------------+----------
+               1 |        53         56         13         19 |       141 
+                 |     63.10      51.38      34.21      10.86 |     34.73 
+      -----------+--------------------------------------------+----------
+           Total |        84        109         38        175 |       406 
+                 |    100.00     100.00     100.00     100.00 |    100.00 
+      
+   640 . *this tab provides the numbers for row 4 in Table 5 (July 2020 study)
+   641 . tab sincerity hits_recode, col
+      
+      +-------------------+
+      | Key               |
+      |-------------------|
+      |     frequency     |
+      | column percentage |
+      +-------------------+
+      
+                 |                 hits_recode
+       sincerity | Fewer tha  Between 1  Between 5  More than |     Total
+      -----------+--------------------------------------------+----------
+               0 |        72         82         25        169 |       348 
+                 |     85.71      75.23      65.79      96.57 |     85.71 
+      -----------+--------------------------------------------+----------
+               1 |        12         27         13          6 |        58 
+                 |     14.29      24.77      34.21       3.43 |     14.29 
+      -----------+--------------------------------------------+----------
+           Total |        84        109         38        175 |       406 
+                 |    100.00     100.00     100.00     100.00 |    100.00 
+      
+   642 . *this tab provides the numbers for row 5 in Table 5 (July 2020 study)
+   643 . sum time if hits_recode==1
+      
+          Variable |        Obs        Mean    Std. Dev.       Min        Max
+      -------------+---------------------------------------------------------
+              time |         84     544.881    311.4346        112       1701
+      
+   644 . sum time if hits_recode==2
+      
+          Variable |        Obs        Mean    Std. Dev.       Min        Max
+      -------------+---------------------------------------------------------
+              time |        109     490.789    286.9957        137       1695
+      
+   645 . sum time if hits_recode==3
+      
+          Variable |        Obs        Mean    Std. Dev.       Min        Max
+      -------------+---------------------------------------------------------
+              time |         38    452.2105    287.2576        133       1631
+      
+   646 . sum time if hits_recode==4
+      
+          Variable |        Obs        Mean    Std. Dev.       Min        Max
+      -------------+---------------------------------------------------------
+              time |        175      280.52    196.2759         72       1502
+      
+   647 . *these sums provide the numbers for row 6 in Table 5 (July 2020 study)
+   648 . 
+      end of do-file
+      
+   649 . translate @Results 02_study3.txt

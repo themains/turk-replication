@@ -1,0 +1,2281 @@
+                                                       ___  ____  ____  ____  ____(R)
+                                                      /__    /   ____/   /   ____/   
+                                                     ___/   /   /___/   /   /___/    
+                                                       Statistics/Data Analysis      
+      
+            
+            ------------------------------------------------------------------------------
+                         |            Delta-method
+                         |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+            -------------+----------------------------------------------------------------
+             1.james_gay |   .1906796   .0232362     8.21   0.000     .1451375    .2362218
+            ------------------------------------------------------------------------------
+            Note: dy/dx for factor levels is the discrete change from the base level.
+            
+         121 .                         margins, dydx(james_evang) predict(outcome(1))          
+            
+            Average marginal effects                        Number of obs     =      1,507
+            Model VCE    : OIM
+            
+            Expression   : Pr(cf_ordered==1), predict(outcome(1))
+            dy/dx w.r.t. : 1.james_evang
+            
+            -------------------------------------------------------------------------------
+                          |            Delta-method
+                          |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+            --------------+----------------------------------------------------------------
+            1.james_evang |   .0416639   .0201859     2.06   0.039     .0021003    .0812275
+            -------------------------------------------------------------------------------
+            Note: dy/dx for factor levels is the discrete change from the base level.
+            
+         122 .                         margins, dydx(james_evang) predict(outcome(-1))
+            
+            Average marginal effects                        Number of obs     =      1,507
+            Model VCE    : OIM
+            
+            Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+            dy/dx w.r.t. : 1.james_evang
+            
+            -------------------------------------------------------------------------------
+                          |            Delta-method
+                          |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+            --------------+----------------------------------------------------------------
+            1.james_evang |  -.0585631   .0279307    -2.10   0.036    -.1133062     -.00382
+            -------------------------------------------------------------------------------
+            Note: dy/dx for factor levels is the discrete change from the base level.
+            
+         123 .                         margins, dydx(james_aa) predict(outcome(1))
+            
+            Average marginal effects                        Number of obs     =      1,507
+            Model VCE    : OIM
+            
+            Expression   : Pr(cf_ordered==1), predict(outcome(1))
+            dy/dx w.r.t. : 1.james_aa
+            
+            ------------------------------------------------------------------------------
+                         |            Delta-method
+                         |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+            -------------+----------------------------------------------------------------
+              1.james_aa |  -.0447497   .0192511    -2.32   0.020    -.0824812   -.0070183
+            ------------------------------------------------------------------------------
+            Note: dy/dx for factor levels is the discrete change from the base level.
+            
+         124 .                         margins, dydx(james_aa) predict(outcome(-1))
+            
+            Average marginal effects                        Number of obs     =      1,507
+            Model VCE    : OIM
+            
+            Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+            dy/dx w.r.t. : 1.james_aa
+            
+            ------------------------------------------------------------------------------
+                         |            Delta-method
+                         |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+            -------------+----------------------------------------------------------------
+              1.james_aa |   .0655599   .0288698     2.27   0.023     .0089762    .1221436
+            ------------------------------------------------------------------------------
+            Note: dy/dx for factor levels is the discrete change from the base level.
+            
+         125 .                         margins, dydx(james_lib) predict(outcome(1))
+            
+            Average marginal effects                        Number of obs     =      1,507
+            Model VCE    : OIM
+            
+            Expression   : Pr(cf_ordered==1), predict(outcome(1))
+            dy/dx w.r.t. : 1.james_lib
+            
+            ------------------------------------------------------------------------------
+                         |            Delta-method
+                         |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+            -------------+----------------------------------------------------------------
+             1.james_lib |  -.0637362   .0187315    -3.40   0.001    -.1004493   -.0270231
+            ------------------------------------------------------------------------------
+            Note: dy/dx for factor levels is the discrete change from the base level.
+            
+         126 .                         margins, dydx(james_lib) predict(outcome(-1))
+            
+            Average marginal effects                        Number of obs     =      1,507
+            Model VCE    : OIM
+            
+            Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+            dy/dx w.r.t. : 1.james_lib
+            
+            ------------------------------------------------------------------------------
+                         |            Delta-method
+                         |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+            -------------+----------------------------------------------------------------
+             1.james_lib |   .0942646   .0285239     3.30   0.001     .0383588    .1501704
+            ------------------------------------------------------------------------------
+            Note: dy/dx for factor levels is the discrete change from the base level.
+            
+         127 .                         margins, dydx(james_con) predict(outcome(1))
+            
+            Average marginal effects                        Number of obs     =      1,507
+            Model VCE    : OIM
+            
+            Expression   : Pr(cf_ordered==1), predict(outcome(1))
+            dy/dx w.r.t. : 1.james_con
+            
+            ------------------------------------------------------------------------------
+                         |            Delta-method
+                         |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+            -------------+----------------------------------------------------------------
+             1.james_con |   .0592878   .0208712     2.84   0.005     .0183811    .1001946
+            ------------------------------------------------------------------------------
+            Note: dy/dx for factor levels is the discrete change from the base level.
+            
+         128 .                         margins, dydx(james_con) predict(outcome(-1))
+            
+            Average marginal effects                        Number of obs     =      1,507
+            Model VCE    : OIM
+            
+            Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+            dy/dx w.r.t. : 1.james_con
+            
+            ------------------------------------------------------------------------------
+                         |            Delta-method
+                         |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+            -------------+----------------------------------------------------------------
+             1.james_con |  -.0828029   .0283653    -2.92   0.004    -.1383979   -.0272079
+            ------------------------------------------------------------------------------
+            Note: dy/dx for factor levels is the discrete change from the base level.
+            
+         129 .                 * Recorded and stored, along with estimates from Table SI 4.6, in attenuation_fx.csv
+         130 .                 * Note that we are interested in whether effects "go in the expected direction," so they are stored as absolute magnitudes in 
+      > that fi
+            > le (and theoretically "x -1" when they "go against the expect direction," though none do)
+         131 . 
+         132 .         * Load that summary data
+         133 .         insheet using "turk_08_17_2018/attenuation_fx.csv", clear names
+            (7 vars, 12 obs)
+            
+         134 .         
+         135 .         gen diff = nonsusp_beta - susp_beta
+            
+         136 .         gen se_diff = sqrt(((nonsusp_se ^ 2) / 1507) + (susp_se ^ 2) / 484)
+            
+         137 .         gen weight = 1 / se_diff
+            
+         138 .         reg diff [aw = weight]
+            (sum of wgt is 6,319.1767578125)
+            
+                  Source |       SS           df       MS      Number of obs   =        12
+            -------------+----------------------------------   F(0, 11)        =      0.00
+                   Model |           0         0           .   Prob > F        =         .
+                Residual |  .020992615        11   .00190842   R-squared       =    0.0000
+            -------------+----------------------------------   Adj R-squared   =    0.0000
+                   Total |  .020992615        11   .00190842   Root MSE        =    .04369
+            
+            ------------------------------------------------------------------------------
+                    diff |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+            -------------+----------------------------------------------------------------
+                   _cons |   .0368692   .0126109     2.92   0.014     .0091128    .0646256
+            ------------------------------------------------------------------------------
+            
+         139 .         
+         140 .         *average treatment effect in the non-troll group
+         141 .         gen weight_nonsusp = 1 / nonsusp_se
+            
+         142 .         reg nonsusp_beta [aw = weight_nonsusp]
+            (sum of wgt is 551.8906288146973)
+            
+                  Source |       SS           df       MS      Number of obs   =        12
+            -------------+----------------------------------   F(0, 11)        =      0.00
+                   Model |           0         0           .   Prob > F        =         .
+                Residual |  .022040385        11  .002003671   R-squared       =    0.0000
+            -------------+----------------------------------   Adj R-squared   =    0.0000
+                   Total |  .022040385        11  .002003671   Root MSE        =    .04476
+            
+            ------------------------------------------------------------------------------
+            nonsusp_beta |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+            -------------+----------------------------------------------------------------
+                   _cons |    .089548   .0129218     6.93   0.000     .0611074    .1179887
+            ------------------------------------------------------------------------------
+            
+         143 .                 
+         144 .                 *getting an attenuation effect, weighted by the inverse of the estimated SE of the differences
+         145 .         gen attn = nonsusp_beta - full_beta
+            
+         146 .         gen se_attn = sqrt(((nonsusp_se ^ 2) / 484) + (full_se ^ 2) / 1991)
+            
+         147 .         gen attn_wt = 1 / se_attn
+            
+         148 .         reg attn [aw = attn_wt] 
+            (sum of wgt is 11,137.9165039063)
+            
+                  Source |       SS           df       MS      Number of obs   =        12
+            -------------+----------------------------------   F(0, 11)        =      0.00
+                   Model |           0         0           .   Prob > F        =         .
+                Residual |  .001104854        11  .000100441   R-squared       =    0.0000
+            -------------+----------------------------------   Adj R-squared   =    0.0000
+                   Total |  .001104854        11  .000100441   Root MSE        =    .01002
+            
+            ------------------------------------------------------------------------------
+                    attn |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+            -------------+----------------------------------------------------------------
+                   _cons |    .009914   .0028931     3.43   0.006     .0035463    .0162816
+            ------------------------------------------------------------------------------
+            
+         149 . 
+         150 .         *putting it in percentage point terms. we observe treatment effects that are...
+         151 .         gen attn_pct = full_beta / nonsusp_beta
+            
+         152 .         reg attn_pct [aw = attn_wt]
+            (sum of wgt is 11,137.9165039063)
+            
+                  Source |       SS           df       MS      Number of obs   =        12
+            -------------+----------------------------------   F(0, 11)        =      0.00
+                   Model |           0         0           .   Prob > F        =         .
+                Residual |  .134208188        11  .012200744   R-squared       =    0.0000
+            -------------+----------------------------------   Adj R-squared   =    0.0000
+                   Total |  .134208188        11  .012200744   Root MSE        =    .11046
+            
+            ------------------------------------------------------------------------------
+                attn_pct |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+            -------------+----------------------------------------------------------------
+                   _cons |   .8991007   .0318862    28.20   0.000     .8289197    .9692818
+            ------------------------------------------------------------------------------
+            
+         153 .                 * .8991007  what they would be without suspicious responses
+         154 . *in other words, our treatment effects are attenuated by...
+         155 .                 display 1 - .8991007 
+            .1008993
+            
+         156 . 
+         157 .                 
+         158 . 
+            end of do-file
+            
+         159 . translate @Results 04_si_log_full.txt
+      
+     1 . clear
+      
+     2 . do "/var/folders/4n/3bt7kbhs6vgdxb_199pp1pk80000gn/T//SD41461.000000"
+      
+     3 . *** Set working directory
+     4 . cd "~/Dropbox/turk/replication_public/data"
+      /Users/carrieroush/Dropbox/turk/replication_public/data
+      
+     5 . 
+     6 . ************
+     7 . *** SI 1 ***
+     8 . ************
+     9 . 
+    10 . *** Tables SI 1.1 -- SI 1.3
+    11 . 
+    12 .         ** See "06_table_1_2_table_si_figure_1_si.R"
+    13 . 
+    14 . *** Analysis from SI 1.2
+    15 . 
+    16 .         * Load data and clean (with code from 02_study2.do)
+    17 .         insheet using "turk_06_29_2020/merged_survey_ip_06_29_2020_final_public.csv", clear names
+      (120 vars, 1,505 obs)
+      
+    18 .         gen susp=1 if untrustworthy=="TRUE"
+      (934 missing values generated)
+      
+    19 .         replace susp=0 if untrustworthy=="FALSE"
+      (934 real changes made)
+      
+    20 .         gen miss=1 if missing_ip=="TRUE"
+      (1,505 missing values generated)
+      
+    21 .         replace miss=0 if missing_ip=="FALSE"
+      (1,505 real changes made)
+      
+    22 .         gen dup=1 if duplicated=="TRUE"
+      (1,424 missing values generated)
+      
+    23 .         replace dup=0 if duplicated=="FALSE"
+      (1,424 real changes made)
+      
+    24 .         gen foreign=1 if foreign_ip=="TRUE"
+      (1,488 missing values generated)
+      
+    25 .         replace foreign=0 if foreign_ip=="FALSE"
+      (1,488 real changes made)
+      
+    26 .         gen funny=1 if funny_ip=="TRUE"
+      (1,323 missing values generated)
+      
+    27 .         replace funny=0 if funny_ip=="FALSE"
+      (1,323 real changes made)
+      
+    28 .         gen troll_prosthetic=1 if prosthetic=="TRUE"
+      (1,099 missing values generated)
+      
+    29 .         replace troll_prosthetic=0 if prosthetic=="FALSE"|prosthetic=="NA"
+      (1,099 real changes made)
+      
+    30 .         gen troll_blind=1 if blind=="TRUE"
+      (1,197 missing values generated)
+      
+    31 .         replace troll_blind=0 if blind=="FALSE"|blind=="NA"
+      (1,197 real changes made)
+      
+    32 .         gen troll_deaf=1 if deaf=="TRUE"
+      (1,199 missing values generated)
+      
+    33 .         replace troll_deaf=0 if deaf=="FALSE"|deaf=="NA"
+      (1,199 real changes made)
+      
+    34 .         gen troll_gang=1 if gang_resp=="TRUE"
+      (1,116 missing values generated)
+      
+    35 .         replace troll_gang=0 if gang_resp=="FALSE"|gang_resp=="NA"
+      (1,116 real changes made)
+      
+    36 .         gen troll_famgang=1 if gang_fam=="TRUE"
+      (1,091 missing values generated)
+      
+    37 .         replace troll_famgang=0 if gang_fam=="FALSE"|gang_fam=="NA"
+      (1,091 real changes made)
+      
+    38 .         gen troll_sleep=1 if sleep=="1"
+      (1,473 missing values generated)
+      
+    39 .         replace troll_sleep=0 if sleep=="0"|sleep=="NA"
+      (1,473 real changes made)
+      
+    40 .         egen troll_index=rowtotal(troll_prosthetic troll_blind troll_deaf troll_gang troll_famgang troll_sleep)
+      
+    41 .         gen likely_troll=1 if troll_index>1
+      (1,053 missing values generated)
+      
+    42 .         replace likely_troll=0 if troll_index<2
+      (1,053 real changes made)
+      
+    43 .         replace sincerity = "" if sincerity == "NA"
+      (2 real changes made)
+      
+    44 .         destring sincerity, replace
+      sincerity: all characters numeric; replaced as byte
+      (2 missing values generated)
+      
+    45 .         recode sincerity (1/2 = 0)(3/5 = 1)
+      (sincerity: 1503 changes made)
+      
+    46 .         gen date_ok = 0
+      
+    47 .         replace date_ok=1 if date=="06 29 2020"|date=="06.29.2020"|date=="06\29\2020"|date=="06\30\2020" ///
+      >         |date=="6/29/20"|date=="6/29/2020."|date=="6/29/20209"|date=="6/29/2020`"|date=="60/29/2020" ///
+      >         |date=="ju/26/2020"|date=="june/29/20"|date=="o6/29/2020" | date=="16/29/2020"
+      (1,130 real changes made)
+      
+    48 .         gen date_poss_foreign = 0
+      
+    49 .         replace date_poss_foreign = 1 if date == "20/06/2020" | date == "28.06.2020" | date == "28/06/2020" | date == "28/6/2020" ///
+      >         |date == " 29 06 2020" | date ==  "29-06-2020" | date == "29-Jun-20" | date == "29.06 2020" | date == "29.06.2020" ///
+      >         |date == "29/06/2020"| date == "29/6/2020" | date == " 29/6/2020." | date == "29\06\2020" | date == "29|06|2020" ///
+      >         |date == "30/06/2020"
+      (303 real changes made)
+      
+    50 .         gen inattentive = 1
+      
+    51 .         replace inattentive = 0 if date_ok==1|date_poss_foreign==1
+      (1,433 real changes made)
+      
+    52 .         
+    53 .         * Coding and analysis specific to SI 1.2
+    54 .         order duplicate ip_index startdate enddate
+      
+    55 .                 
+    56 .                 *looking at start/stop times of duplicate IPs to see 
+    57 .                 gen starthour = substr(startdate, -5, 2)
+      
+    58 .                 gen startminute = substr(startdate, -2, .)
+      
+    59 .                 destring starthour startminute, replace
+      starthour: all characters numeric; replaced as byte
+      startminute: all characters numeric; replaced as byte
+      
+    60 .                 gen start_md = startminute / 60
+      
+    61 .                 gen starttime = starthour + start_md
+      
+    62 .                 gen stophour = substr(enddate, -5, 2)
+      
+    63 .                 gen stopminute = substr(enddate, -2, .)
+      
+    64 .                 destring stophour stopminute, replace
+      stophour: all characters numeric; replaced as byte
+      stopminute: all characters numeric; replaced as byte
+      
+    65 .                 gen stop_md = stopminute / 60
+      
+    66 .                 gen stoptime = stophour + stop_md
+      
+    67 . 
+    68 .                 order ip_index ip starttime stoptime
+      
+    69 .                 sort ip_index starttime
+      
+    70 .                 edit if duplicate == "TRUE"
+      
+    71 .                         * Looking at the data and coding the 37 duplicate IP addresses accordingly
+    72 .                         gen dup_nature = .
+      (1,505 missing values generated)
+      
+    73 .                         replace dup_nature = 1 if inlist(ip_index,17,110,117,210,414,671,759,762,805,820,932,936,937,1088,1104,1140,1157,1196,1227,12
+      > 79,1349,1394)
+      (50 real changes made)
+      
+    74 .                         replace dup_nature = 2 if inlist(ip_index,251,511,801,933,938,983,1089,1114,1127,1179,1199,1221)
+      (25 real changes made)
+      
+    75 .                         replace dup_nature = 3 if dup_nature == . & duplicate == "TRUE"
+      (6 real changes made)
+      
+    76 .                         label define dup_label 1 "likely cluster" 2 "likely same respondent" 3 "uncertain", replace
+      
+    77 .                         label values dup_nature dup_label
+      
+    78 .                         * 22 of 37 classified as a "likely cluster" = 59%, if overlap between start/stop times
+    79 .                         * 12 of 37 classfiied as "likely same respondent" = 32%, if no overlapping start/stop times but start/stop times are within 1
+      > 5 minutes of each other
+    80 . 
+    81 . 
+    82 . *** Figure SI 1.1 and analyses from SI 1.3      
+    83 . 
+    84 .         ** Fig. 1.1, Panel A
+    85 .         twoway kdensity duration if date_ok == 1 || kdensity duration if date_ok == 0, ///
+      >         ytitle("Density") xt("Survey duration, in seconds") /// 
+      >         xline(300, lc(black) lp(dot)) ///
+      >         text(0.0025 630 "Target time = 5 minutes") ///
+      >         legend(label(1 "Date formatted MM/DD/YYYY") label(2 "Date formatted otherwise"))
+      
+    86 .         
+    87 .         ** Load and clean Study 3 for the next part
+    88 .         insheet using "turk_07_12_2020/merged_survey_ip_07_12_2020_final_public.csv", clear names
+      (95 vars, 409 obs)
+      
+    89 .         gen susp=1 if untrustworthy=="TRUE"
+      (296 missing values generated)
+      
+    90 .         replace susp=0 if untrustworthy=="FALSE"
+      (296 real changes made)
+      
+    91 .         gen miss=1 if missing_ip=="TRUE"
+      (409 missing values generated)
+      
+    92 .         replace miss=0 if missing_ip=="FALSE"
+      (409 real changes made)
+      
+    93 .         gen dup=1 if duplicated=="TRUE"
+      (396 missing values generated)
+      
+    94 .         replace dup=0 if duplicated=="FALSE"
+      (396 real changes made)
+      
+    95 .         gen foreign=1 if foreign_ip=="TRUE"
+      (406 missing values generated)
+      
+    96 .         replace foreign=0 if foreign_ip=="FALSE"
+      (406 real changes made)
+      
+    97 .         gen funny=1 if funny_ip=="TRUE"
+      (369 missing values generated)
+      
+    98 .         replace funny=0 if funny_ip=="FALSE"
+      (369 real changes made)
+      
+    99 .         gen troll_prosthetic=1 if prosthetic=="TRUE"
+      (327 missing values generated)
+      
+   100 .         replace troll_prosthetic=0 if prosthetic=="FALSE"|prosthetic=="NA"
+      (327 real changes made)
+      
+   101 .         gen troll_blind=1 if blind=="TRUE"
+      (338 missing values generated)
+      
+   102 .         replace troll_blind=0 if blind=="FALSE"|blind=="NA"
+      (338 real changes made)
+      
+   103 .         gen troll_deaf=1 if deaf=="TRUE"
+      (343 missing values generated)
+      
+   104 .         replace troll_deaf=0 if deaf=="FALSE"|deaf=="NA"
+      (343 real changes made)
+      
+   105 .         gen troll_gang=1 if gang_resp=="TRUE"
+      (326 missing values generated)
+      
+   106 .         replace troll_gang=0 if gang_resp=="FALSE"|gang_resp=="NA"
+      (326 real changes made)
+      
+   107 .         gen troll_famgang=1 if gang_fam=="TRUE"
+      (326 missing values generated)
+      
+   108 .         replace troll_famgang=0 if gang_fam=="FALSE"|gang_fam=="NA"
+      (326 real changes made)
+      
+   109 .         gen troll_sleep=1 if sleep=="1"
+      (403 missing values generated)
+      
+   110 .         replace troll_sleep=0 if sleep=="0"|sleep=="NA"
+      (403 real changes made)
+      
+   111 .         egen troll_index=rowtotal(troll_prosthetic troll_blind troll_deaf troll_gang troll_famgang troll_sleep)
+      
+   112 .         gen likely_troll=1 if troll_index>1
+      (323 missing values generated)
+      
+   113 .         replace likely_troll=0 if troll_index<2
+      (323 real changes made)
+      
+   114 .         replace sincerity = "" if sincerity == "NA"
+      (2 real changes made)
+      
+   115 .         destring sincerity, replace
+      sincerity: all characters numeric; replaced as byte
+      (2 missing values generated)
+      
+   116 .         recode sincerity (1/2 = 0)(3/5 = 1)
+      (sincerity: 407 changes made)
+      
+   117 .         gen date_ok = 0
+      
+   118 .         replace date_ok = 1 if date == "07 11 2020" | date == "07/11.2020" | date == "6/11/20" | date== "7/10/20" ///
+      >         | date == "7/11/20" | date == "7/11/19" | date == "7/11/20" | date == "7/12/00" | date == "7/12/20" ///
+      >         | date == "7/13/20"
+      (325 real changes made)
+      
+   119 .         gen date_poss_foreign = 0
+      
+   120 .         replace date_poss_foreign = 1 if date == "11/7/20" | date == "12/7/20" | date == "12/7/2020" | date == "12/7/2020/" ///
+      >         | date == "12\07\2020" | date == "13/07/2020"
+      (68 real changes made)
+      
+   121 .         gen correct_date = 0
+      
+   122 .         replace correct_date = 1 if date == "07 11 2020" | date == "07/11.2020" | date == "6/11/20" | date== "7/10/20" ///
+      >         | date == "7/11/20" | date == "7/11/19" | date == "7/11/20" | date == "7/12/00" | date == "7/12/20" ///
+      >         | date == "7/13/20" | date == "11/7/20" | date == "12/7/20" | date == "12/7/2020" | date == "12/7/2020/" ///
+      >         | date == "12\07\2020" | date == "13/07/2020"
+      (393 real changes made)
+      
+   123 .                 gen inattentive = 1
+      
+   124 .         replace inattentive = 0 if date_ok==1|date_poss_foreign==1
+      (393 real changes made)
+      
+   125 .         
+   126 .         ** Fig. 1.1, Panel B
+   127 .         twoway kdensity duration if date_ok == 1 || kdensity duration if date_ok == 0, ///
+      >         ytitle("Density") xt("Survey duration, in seconds") /// 
+      >         xline(300, lc(black) lp(dot)) ///
+      >         text(0.0025 630 "Target time = 5 minutes") ///
+      >         legend(label(1 "Date formatted MM/DD/YYYY") label(2 "Date formatted otherwise"))        
+      
+   128 .         
+   129 . *** Figure SI 1.2
+   130 . 
+   131 .         ** See "06_table_1_2_table_si_figure_1_si.R"
+   132 . 
+   133 . *** Study 2 analysis in SI 1.5
+   134 .         
+   135 .         * Load data and clean (with code from 02_study2.do)
+   136 .         insheet using "turk_06_29_2020/merged_survey_ip_06_29_2020_final_public.csv", clear names
+      (120 vars, 1,505 obs)
+      
+   137 .         gen susp=1 if untrustworthy=="TRUE"
+      (934 missing values generated)
+      
+   138 .         replace susp=0 if untrustworthy=="FALSE"
+      (934 real changes made)
+      
+   139 .         gen miss=1 if missing_ip=="TRUE"
+      (1,505 missing values generated)
+      
+   140 .         replace miss=0 if missing_ip=="FALSE"
+      (1,505 real changes made)
+      
+   141 .         gen dup=1 if duplicated=="TRUE"
+      (1,424 missing values generated)
+      
+   142 .         replace dup=0 if duplicated=="FALSE"
+      (1,424 real changes made)
+      
+   143 .         gen foreign=1 if foreign_ip=="TRUE"
+      (1,488 missing values generated)
+      
+   144 .         replace foreign=0 if foreign_ip=="FALSE"
+      (1,488 real changes made)
+      
+   145 .         gen funny=1 if funny_ip=="TRUE"
+      (1,323 missing values generated)
+      
+   146 .         replace funny=0 if funny_ip=="FALSE"
+      (1,323 real changes made)
+      
+   147 .         gen troll_prosthetic=1 if prosthetic=="TRUE"
+      (1,099 missing values generated)
+      
+   148 .         replace troll_prosthetic=0 if prosthetic=="FALSE"|prosthetic=="NA"
+      (1,099 real changes made)
+      
+   149 .         gen troll_blind=1 if blind=="TRUE"
+      (1,197 missing values generated)
+      
+   150 .         replace troll_blind=0 if blind=="FALSE"|blind=="NA"
+      (1,197 real changes made)
+      
+   151 .         gen troll_deaf=1 if deaf=="TRUE"
+      (1,199 missing values generated)
+      
+   152 .         replace troll_deaf=0 if deaf=="FALSE"|deaf=="NA"
+      (1,199 real changes made)
+      
+   153 .         gen troll_gang=1 if gang_resp=="TRUE"
+      (1,116 missing values generated)
+      
+   154 .         replace troll_gang=0 if gang_resp=="FALSE"|gang_resp=="NA"
+      (1,116 real changes made)
+      
+   155 .         gen troll_famgang=1 if gang_fam=="TRUE"
+      (1,091 missing values generated)
+      
+   156 .         replace troll_famgang=0 if gang_fam=="FALSE"|gang_fam=="NA"
+      (1,091 real changes made)
+      
+   157 .         gen troll_sleep=1 if sleep=="1"
+      (1,473 missing values generated)
+      
+   158 .         replace troll_sleep=0 if sleep=="0"|sleep=="NA"
+      (1,473 real changes made)
+      
+   159 .         egen troll_index=rowtotal(troll_prosthetic troll_blind troll_deaf troll_gang troll_famgang troll_sleep)
+      
+   160 .         gen likely_troll=1 if troll_index>1
+      (1,053 missing values generated)
+      
+   161 .         replace likely_troll=0 if troll_index<2
+      (1,053 real changes made)
+      
+   162 .         replace sincerity = "" if sincerity == "NA"
+      (2 real changes made)
+      
+   163 .         destring sincerity, replace
+      sincerity: all characters numeric; replaced as byte
+      (2 missing values generated)
+      
+   164 .         recode sincerity (1/2 = 0)(3/5 = 1)
+      (sincerity: 1503 changes made)
+      
+   165 .         gen date_ok = 0
+      
+   166 .         replace date_ok=1 if date=="06 29 2020"|date=="06.29.2020"|date=="06\29\2020"|date=="06\30\2020" ///
+      >         |date=="6/29/20"|date=="6/29/2020."|date=="6/29/20209"|date=="6/29/2020`"|date=="60/29/2020" ///
+      >         |date=="ju/26/2020"|date=="june/29/20"|date=="o6/29/2020" | date=="16/29/2020"
+      (1,130 real changes made)
+      
+   167 .         gen date_poss_foreign = 0
+      
+   168 .         replace date_poss_foreign = 1 if date == "20/06/2020" | date == "28.06.2020" | date == "28/06/2020" | date == "28/6/2020" ///
+      >         |date == " 29 06 2020" | date ==  "29-06-2020" | date == "29-Jun-20" | date == "29.06 2020" | date == "29.06.2020" ///
+      >         |date == "29/06/2020"| date == "29/6/2020" | date == " 29/6/2020." | date == "29\06\2020" | date == "29|06|2020" ///
+      >         |date == "30/06/2020"
+      (303 real changes made)
+      
+   169 .         gen inattentive = 1
+      
+   170 .         replace inattentive = 0 if date_ok==1|date_poss_foreign==1
+      (1,433 real changes made)
+      
+   171 .         rename durationinseconds time
+      
+   172 .         destring time, replace
+      time already numeric; no replace
+      
+   173 .         gen combined_troll_1=.
+      (1,505 missing values generated)
+      
+   174 .         replace combined_troll_1 = 1 if funny_ip == "TRUE" | likely_troll == 1
+      (571 real changes made)
+      
+   175 .         replace combined_troll_1 = 0 if funny_ip == "FALSE" & likely_troll == 0
+      (934 real changes made)
+      
+   176 .         gen combined_troll_2=.
+      (1,505 missing values generated)
+      
+   177 .         replace combined_troll_2=1 if funny_ip=="TRUE" | likely_troll==1|date_poss_foreign==1
+      (672 real changes made)
+      
+   178 .         replace combined_troll_2=0 if funny_ip=="FALSE" & likely_troll==0 & date_poss_foreign==0
+      (833 real changes made)
+      
+   179 .         gen combined_troll_3=.
+      (1,505 missing values generated)
+      
+   180 .         replace combined_troll_3=1 if funny_ip=="TRUE" |likely_troll==1|date_poss_foreign==1|inattentive==1
+      (696 real changes made)
+      
+   181 .         replace combined_troll_3=0 if funny_ip=="FALSE"  & likely_troll==0 & date_poss_foreign==0 & inattentive==0
+      (809 real changes made)
+      
+   182 .         *recoding DVs
+   183 .         gen gop_unemploy=1 if gop_unemployment=="1"
+      (1,112 missing values generated)
+      
+   184 .         replace gop_unemploy=.5 if gop_unemployment=="2"
+      (338 real changes made)
+      
+   185 .         replace gop_unemploy=0 if gop_unemployment=="3"
+      (50 real changes made)
+      
+   186 .         gen gop_inflate=1 if gop_inflation=="1"
+      (1,176 missing values generated)
+      
+   187 .         replace gop_inflate=.5 if gop_inflation=="2"
+      (385 real changes made)
+      
+   188 .         replace gop_inflate=0 if gop_inflation=="3"
+      (67 real changes made)
+      
+   189 .         gen obama_unemploy=1 if obama_unemployment=="1"
+      (1,106 missing values generated)
+      
+   190 .         replace obama_unemploy=.5 if obama_unemployment=="2"
+      (297 real changes made)
+      
+   191 .         replace obama_unemploy=0 if obama_unemployment=="3"
+      (26 real changes made)
+      
+   192 .         gen obama_inflate=1 if obama_inflation=="1"
+      (1,188 missing values generated)
+      
+   193 .         replace obama_inflate=.5 if obama_inflation=="2"
+      (358 real changes made)
+      
+   194 .         replace obama_inflate=0 if obama_inflation=="3"
+      (47 real changes made)
+      
+   195 .         *generating treatment variable
+   196 .         gen dem_treat=1 if randomization_1 == "obama"
+      (783 missing values generated)
+      
+   197 .         replace dem_treat=0 if randomization_1 == "congress"
+      (781 real changes made)
+      
+   198 .         tab dem_treat
+      
+        dem_treat |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        781       51.96       51.96
+                1 |        722       48.04      100.00
+      ------------+-----------------------------------
+            Total |      1,503      100.00
+      
+   199 .         gen pid7 = .
+      (1,505 missing values generated)
+      
+   200 .         replace pid7 = 1 if pid_dem == "1"
+      (490 real changes made)
+      
+   201 .         replace pid7 = 2 if pid_dem == "2"
+      (134 real changes made)
+      
+   202 .         replace pid7 = 3 if pid_ind == "2"
+      (92 real changes made)
+      
+   203 .         replace pid7 = 4 if pid_ind == "3"
+      (78 real changes made)
+      
+   204 .         replace pid7 = 5 if pid_ind == "1"
+      (75 real changes made)
+      
+   205 .         replace pid7 = 6 if pid_rep == "2"
+      (111 real changes made)
+      
+   206 .         replace pid7 = 7 if pid_rep == "1"      
+      (523 real changes made)
+      
+   207 .         label define pid7_lbl 1 "Strong Democrat" 2 "Weak Democrat" 3 "Leaning Democrat" 4 "Independent" 5 "Leaning Republican" 6 "Weak Republican" 7
+      >  "Strong Republican", replace
+      
+   208 .         label values pid7 pid7_lbl
+      
+   209 .         *3-point party ID
+   210 .         recode pid7 (1/3=1)(4=2)(5/7=3), gen(pid3)
+      (1013 differences between pid7 and pid3)
+      
+   211 .         label define pid3_lbl 1 "Democratic" 2 "Independent" 3 "Republican", replace
+      
+   212 .         label values pid3 pid3_lbl
+      
+   213 .         *Democratic dummy for comparing Dems and Reps
+   214 .         gen dem_rep = .
+      (1,505 missing values generated)
+      
+   215 .         replace dem_rep = 1 if pid3 == 1
+      (716 real changes made)
+      
+   216 .         replace dem_rep = 0 if pid3 == 3
+      (709 real changes made)
+      
+   217 .         label define dem_rep_lbl 0 "Republican" 1 "Democrat", replace
+      
+   218 .         label values dem_rep dem_rep_lbl
+      
+   219 .         *1 = if you got the out-party treatment, 0 = in-party treatment
+   220 .         gen out_party_treat=.
+      (1,505 missing values generated)
+      
+   221 .         replace out_party_treat = 1 if dem_rep == 1 & dem_treat == 0
+      (385 real changes made)
+      
+   222 .         replace out_party_treat = 1 if dem_rep == 0 & dem_treat == 1
+      (351 real changes made)
+      
+   223 .         replace out_party_treat = 0 if dem_rep == 0 & dem_treat == 0
+      (358 real changes made)
+      
+   224 .         replace out_party_treat = 0 if dem_rep == 1 & dem_treat == 1
+      (331 real changes made)
+      
+   225 .         *creating a collapsed unemployment DV
+   226 .         gen unemploy = gop_unemploy
+      (724 missing values generated)
+      
+   227 .         replace unemploy = obama_unemploy if unemploy==.
+      (722 real changes made)
+      
+   228 .         tab unemploy
+      
+         unemploy |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |         76        5.06        5.06
+               .5 |        635       42.25       47.31
+                1 |        792       52.69      100.00
+      ------------+-----------------------------------
+            Total |      1,503      100.00
+      
+   229 .         *creating a collapsed inflation DV
+   230 .         gen inflation = gop_inflate
+      (724 missing values generated)
+      
+   231 .         replace inflation = obama_inflate if inflation==.
+      (722 real changes made)
+      
+   232 .         
+   233 .         sum time, d
+      
+                                  time
+      -------------------------------------------------------------
+            Percentiles      Smallest
+       1%          168             18
+       5%          222            115
+      10%          259            120       Obs               1,505
+      25%          349            124       Sum of Wgt.       1,505
+      
+      50%          488                      Mean           579.1037
+                              Largest       Std. Dev.      345.3646
+      75%          721           2415
+      90%         1014           2679       Variance       119276.7
+      95%         1236           3061       Skewness       2.142565
+      99%         1758           3470       Kurtosis       11.19606
+      
+   234 .         *median response time = 488 seconds, or about 8 minutes and 13 seconds
+   235 . 
+   236 .         *generating outlier variables based on "time outside whiskers" in the box plot
+   237 .         *anything outside 167% of the IQR gets classified as "fast" or "slow"
+   238 .         *25th percentile = 349; 75th percentile =  722   
+   239 .         
+   240 .         display (488 - 349) * (5/3) /* 231.66667 */
+      231.66667
+      
+   241 .         gen fast = 0
+      
+   242 .         replace fast = 1 if time <= 231.66667
+      (96 real changes made)
+      
+   243 .         tab fast
+      
+             fast |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |      1,409       93.62       93.62
+                1 |         96        6.38      100.00
+      ------------+-----------------------------------
+            Total |      1,505      100.00
+      
+   244 .         *6.25% are fast
+   245 .         
+   246 .         display (722 - 488) * (5/3) + 722 /* 1112 */
+      1112
+      
+   247 .         gen slow = 0
+      
+   248 .         replace slow = 1 if time > 1112
+      (119 real changes made)
+      
+   249 .         *7.92% are slow 
+   250 . 
+   251 .         *average completion time for trolls/ppl with bad IPs
+   252 .         sum time if combined_troll_1==1 /*619.5792 seconds */
+      
+          Variable |        Obs        Mean    Std. Dev.       Min        Max
+      -------------+---------------------------------------------------------
+              time |        571    615.8511     339.398        141       3470
+      
+   253 .         reg fast combined_troll_1 /*4.7% are fast; 2.4 pp less so than non-flagged people, p = 0.057 */
+      
+            Source |       SS           df       MS      Number of obs   =     1,505
+      -------------+----------------------------------   F(1, 1503)      =      3.36
+             Model |  .200191197         1  .200191197   Prob > F        =    0.0672
+          Residual |  89.6762208     1,503  .059664818   R-squared       =    0.0022
+      -------------+----------------------------------   Adj R-squared   =    0.0016
+             Total |   89.876412     1,504  .059758253   Root MSE        =    .24426
+      
+      ----------------------------------------------------------------------------------
+                  fast |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -----------------+----------------------------------------------------------------
+      combined_troll_1 |  -.0237684   .0129759    -1.83   0.067    -.0492211    .0016843
+                 _cons |   .0728051   .0079926     9.11   0.000     .0571274    .0884829
+      ----------------------------------------------------------------------------------
+      
+   254 .         reg slow combined_troll_1 /*7.6% are slow; .04 pp less so than non-flagged people, p = 0.773 */
+      
+            Source |       SS           df       MS      Number of obs   =     1,505
+      -------------+----------------------------------   F(1, 1503)      =      0.67
+             Model |  .048574272         1  .048574272   Prob > F        =    0.4144
+          Residual |  109.542123     1,503  .072882318   R-squared       =    0.0004
+      -------------+----------------------------------   Adj R-squared   =   -0.0002
+             Total |  109.590698     1,504  .072866155   Root MSE        =    .26997
+      
+      ----------------------------------------------------------------------------------
+                  slow |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -----------------+----------------------------------------------------------------
+      combined_troll_1 |  -.0117079   .0143413    -0.82   0.414     -.039839    .0164231
+                 _cons |   .0835118   .0088336     9.45   0.000     .0661843    .1008393
+      ----------------------------------------------------------------------------------
+      
+   255 . 
+   256 .         *average completion time for trolls/ppl with bad IPs/date written incorrectly
+   257 .         sum time if combined_troll_2==1  /*639.5974 seconds */
+      
+          Variable |        Obs        Mean    Std. Dev.       Min        Max
+      -------------+---------------------------------------------------------
+              time |        672    636.8051    352.2399        141       3470
+      
+   258 .         reg fast combined_troll_2 /*4.4% are fast, 3.4 pp less so than non-flagged people, p = 2.73 */
+      
+            Source |       SS           df       MS      Number of obs   =     1,505
+      -------------+----------------------------------   F(1, 1503)      =      7.48
+             Model |  .444989391         1  .444989391   Prob > F        =    0.0063
+          Residual |  89.4314226     1,503  .059501944   R-squared       =    0.0050
+      -------------+----------------------------------   Adj R-squared   =    0.0043
+             Total |   89.876412     1,504  .059758253   Root MSE        =    .24393
+      
+      ----------------------------------------------------------------------------------
+                  fast |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -----------------+----------------------------------------------------------------
+      combined_troll_2 |  -.0345888   .0126481    -2.73   0.006    -.0593987    -.009779
+                 _cons |   .0792317   .0084517     9.37   0.000     .0626534      .09581
+      ----------------------------------------------------------------------------------
+      
+   259 .         reg slow combined_troll_2 /*9.2% are slow, 2.4 pp moreso than non-flagged people, p = 0.087 */
+      
+            Source |       SS           df       MS      Number of obs   =     1,505
+      -------------+----------------------------------   F(1, 1503)      =      1.27
+             Model |   .09248589         1   .09248589   Prob > F        =    0.2600
+          Residual |  109.498212     1,503  .072853102   R-squared       =    0.0008
+      -------------+----------------------------------   Adj R-squared   =    0.0002
+             Total |  109.590698     1,504  .072866155   Root MSE        =    .26991
+      
+      ----------------------------------------------------------------------------------
+                  slow |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -----------------+----------------------------------------------------------------
+      combined_troll_2 |   .0157688   .0139954     1.13   0.260    -.0116838    .0432214
+                 _cons |   .0720288   .0093519     7.70   0.000     .0536846     .090373
+      ----------------------------------------------------------------------------------
+      
+   260 . 
+   261 .         *average completion time for trolls/ppl with bad IPs/date written incorrectly or nonsensically
+   262 .         sum time if combined_troll_3==1 /*634.4213 seconds */
+      
+          Variable |        Obs        Mean    Std. Dev.       Min        Max
+      -------------+---------------------------------------------------------
+              time |        696     631.033    351.0112         18       3470
+      
+   263 .         reg fast combined_troll_3 /*4.8% are fast, 2.7 pp less so than non-flagged people, p =  0.031 */ 
+      
+            Source |       SS           df       MS      Number of obs   =     1,505
+      -------------+----------------------------------   F(1, 1503)      =      3.16
+             Model |  .188419121         1  .188419121   Prob > F        =    0.0758
+          Residual |  89.6879928     1,503   .05967265   R-squared       =    0.0021
+      -------------+----------------------------------   Adj R-squared   =    0.0014
+             Total |   89.876412     1,504  .059758253   Root MSE        =    .24428
+      
+      ----------------------------------------------------------------------------------
+                  fast |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -----------------+----------------------------------------------------------------
+      combined_troll_3 |  -.0224415   .0126292    -1.78   0.076    -.0472143    .0023313
+                 _cons |   .0741656   .0085884     8.64   0.000     .0573191    .0910122
+      ----------------------------------------------------------------------------------
+      
+   264 .         reg slow combined_troll_3 /*8.9% are slow, 1.9 pp more so than non-flagged people, p =  0.169 */
+      
+            Source |       SS           df       MS      Number of obs   =     1,505
+      -------------+----------------------------------   F(1, 1503)      =      0.91
+             Model |  .065954484         1  .065954484   Prob > F        =    0.3416
+          Residual |  109.524743     1,503  .072870754   R-squared       =    0.0006
+      -------------+----------------------------------   Adj R-squared   =   -0.0001
+             Total |  109.590698     1,504  .072866155   Root MSE        =    .26995
+      
+      ----------------------------------------------------------------------------------
+                  slow |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -----------------+----------------------------------------------------------------
+      combined_troll_3 |   .0132774   .0139562     0.95   0.342    -.0140983     .040653
+                 _cons |   .0729295   .0094908     7.68   0.000     .0543129    .0915461
+      ----------------------------------------------------------------------------------
+      
+   265 . 
+   266 .         /* okay, so bad actors are mostly less likely to be fast outliers than non-flagged people, and more likely to be slow outliers
+      > than non-flagged people, but not by any real measurable difference */
+   267 . 
+   268 .         *are people who format the date DD/MM/YYYY take longer than ppl who didn't? 
+   269 .         sum time if date_poss_foreign==1 /*nah, average = 651.8538, so within the IQR */
+      
+          Variable |        Obs        Mean    Std. Dev.       Min        Max
+      -------------+---------------------------------------------------------
+              time |        303    651.9241    324.8367        185       2120
+      
+   270 .         reg slow date_poss_foreign /* 9.6% are slow, 2.1 pp moreso than ppl who didn't, p =  0.218 */
+      
+            Source |       SS           df       MS      Number of obs   =     1,505
+      -------------+----------------------------------   F(1, 1503)      =      1.44
+             Model |  .105043951         1  .105043951   Prob > F        =    0.2300
+          Residual |  109.485654     1,503  .072844746   R-squared       =    0.0010
+      -------------+----------------------------------   Adj R-squared   =    0.0003
+             Total |  109.590698     1,504  .072866155   Root MSE        =     .2699
+      
+      -----------------------------------------------------------------------------------
+                   slow |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ------------------+----------------------------------------------------------------
+      date_poss_foreign |   .0208344   .0173498     1.20   0.230     -.013198    .0548667
+                  _cons |   .0748752   .0077848     9.62   0.000      .059605    .0901454
+      -----------------------------------------------------------------------------------
+      
+   271 .         reg fast date_poss_foreign /* 10.2% are fast, 3.3 pp less so than people who didn't, p =  0.037 */
+      
+            Source |       SS           df       MS      Number of obs   =     1,505
+      -------------+----------------------------------   F(1, 1503)      =      4.81
+             Model |  .286567202         1  .286567202   Prob > F        =    0.0285
+          Residual |  89.5898448     1,503  .059607348   R-squared       =    0.0032
+      -------------+----------------------------------   Adj R-squared   =    0.0025
+             Total |   89.876412     1,504  .059758253   Root MSE        =    .24415
+      
+      -----------------------------------------------------------------------------------
+                   fast |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ------------------+----------------------------------------------------------------
+      date_poss_foreign |  -.0344118   .0156944    -2.19   0.028    -.0651971   -.0036266
+                  _cons |   .0707155    .007042    10.04   0.000     .0569022    .0845287
+      -----------------------------------------------------------------------------------
+      
+   272 .         *not really slower than people who didn't write the date DD/MM/YYYY
+   273 . 
+   274 .         ** Table SI 1.4
+   275 .         reg unemploy i.out_party_treat##i.fast 
+      
+            Source |       SS           df       MS      Number of obs   =     1,425
+      -------------+----------------------------------   F(3, 1421)      =     13.04
+             Model |  3.32132724         3  1.10710908   Prob > F        =    0.0000
+          Residual |  120.681129     1,421  .084926903   R-squared       =    0.0268
+      -------------+----------------------------------   Adj R-squared   =    0.0247
+             Total |  124.002456     1,424  .087080377   Root MSE        =    .29142
+      
+      --------------------------------------------------------------------------------------
+                  unemploy |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ---------------------+----------------------------------------------------------------
+         1.out_party_treat |  -.0969441   .0159531    -6.08   0.000    -.1282382     -.06565
+                    1.fast |   .0124398   .0469302     0.27   0.791    -.0796202    .1044998
+                           |
+      out_party_treat#fast |
+                      1 1  |    .010816   .0639937     0.17   0.866    -.1147163    .1363484
+                           |
+                     _cons |   .7924383   .0114481    69.22   0.000     .7699812    .8148954
+      --------------------------------------------------------------------------------------
+      
+   276 .         reg inflation i.out_party_treat##i.fast
+      
+            Source |       SS           df       MS      Number of obs   =     1,425
+      -------------+----------------------------------   F(3, 1421)      =      4.82
+             Model |  1.36629432         3  .455431439   Prob > F        =    0.0024
+          Residual |  134.213706     1,421   .09445018   R-squared       =    0.0101
+      -------------+----------------------------------   Adj R-squared   =    0.0080
+             Total |      135.58     1,424  .095210674   Root MSE        =    .30733
+      
+      --------------------------------------------------------------------------------------
+                 inflation |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ---------------------+----------------------------------------------------------------
+         1.out_party_treat |  -.0631639   .0168238    -3.75   0.000     -.096166   -.0301619
+                    1.fast |  -.0041027   .0494916    -0.08   0.934    -.1011871    .0929818
+                           |
+      out_party_treat#fast |
+                      1 1  |   .0433469   .0674864     0.64   0.521    -.0890368    .1757305
+                           |
+                     _cons |   .7114198    .012073    58.93   0.000      .687737    .7351025
+      --------------------------------------------------------------------------------------
+      
+   277 . 
+   278 . 
+   279 . *** Study 3 analysis in SI 1.5
+   280 . 
+   281 .         ** Load and clean Study 3
+   282 .         insheet using "turk_07_12_2020/merged_survey_ip_07_12_2020_final_public.csv", clear names
+      (95 vars, 409 obs)
+      
+   283 .         gen susp=1 if untrustworthy=="TRUE"
+      (296 missing values generated)
+      
+   284 .         replace susp=0 if untrustworthy=="FALSE"
+      (296 real changes made)
+      
+   285 .         gen miss=1 if missing_ip=="TRUE"
+      (409 missing values generated)
+      
+   286 .         replace miss=0 if missing_ip=="FALSE"
+      (409 real changes made)
+      
+   287 .         gen dup=1 if duplicated=="TRUE"
+      (396 missing values generated)
+      
+   288 .         replace dup=0 if duplicated=="FALSE"
+      (396 real changes made)
+      
+   289 .         gen foreign=1 if foreign_ip=="TRUE"
+      (406 missing values generated)
+      
+   290 .         replace foreign=0 if foreign_ip=="FALSE"
+      (406 real changes made)
+      
+   291 .         gen funny=1 if funny_ip=="TRUE"
+      (369 missing values generated)
+      
+   292 .         replace funny=0 if funny_ip=="FALSE"
+      (369 real changes made)
+      
+   293 .         gen troll_prosthetic=1 if prosthetic=="TRUE"
+      (327 missing values generated)
+      
+   294 .         replace troll_prosthetic=0 if prosthetic=="FALSE"|prosthetic=="NA"
+      (327 real changes made)
+      
+   295 .         gen troll_blind=1 if blind=="TRUE"
+      (338 missing values generated)
+      
+   296 .         replace troll_blind=0 if blind=="FALSE"|blind=="NA"
+      (338 real changes made)
+      
+   297 .         gen troll_deaf=1 if deaf=="TRUE"
+      (343 missing values generated)
+      
+   298 .         replace troll_deaf=0 if deaf=="FALSE"|deaf=="NA"
+      (343 real changes made)
+      
+   299 .         gen troll_gang=1 if gang_resp=="TRUE"
+      (326 missing values generated)
+      
+   300 .         replace troll_gang=0 if gang_resp=="FALSE"|gang_resp=="NA"
+      (326 real changes made)
+      
+   301 .         gen troll_famgang=1 if gang_fam=="TRUE"
+      (326 missing values generated)
+      
+   302 .         replace troll_famgang=0 if gang_fam=="FALSE"|gang_fam=="NA"
+      (326 real changes made)
+      
+   303 .         gen troll_sleep=1 if sleep=="1"
+      (403 missing values generated)
+      
+   304 .         replace troll_sleep=0 if sleep=="0"|sleep=="NA"
+      (403 real changes made)
+      
+   305 .         egen troll_index=rowtotal(troll_prosthetic troll_blind troll_deaf troll_gang troll_famgang troll_sleep)
+      
+   306 .         gen likely_troll=1 if troll_index>1
+      (323 missing values generated)
+      
+   307 .         replace likely_troll=0 if troll_index<2
+      (323 real changes made)
+      
+   308 .         replace sincerity = "" if sincerity == "NA"
+      (2 real changes made)
+      
+   309 .         destring sincerity, replace
+      sincerity: all characters numeric; replaced as byte
+      (2 missing values generated)
+      
+   310 .         recode sincerity (1/2 = 0)(3/5 = 1)
+      (sincerity: 407 changes made)
+      
+   311 .         gen date_ok = 0
+      
+   312 .         replace date_ok = 1 if date == "07 11 2020" | date == "07/11.2020" | date == "6/11/20" | date== "7/10/20" ///
+      >         | date == "7/11/20" | date == "7/11/19" | date == "7/11/20" | date == "7/12/00" | date == "7/12/20" ///
+      >         | date == "7/13/20"
+      (325 real changes made)
+      
+   313 .         gen date_poss_foreign = 0
+      
+   314 .         replace date_poss_foreign = 1 if date == "11/7/20" | date == "12/7/20" | date == "12/7/2020" | date == "12/7/2020/" ///
+      >         | date == "12\07\2020" | date == "13/07/2020"
+      (68 real changes made)
+      
+   315 .         gen correct_date = 0
+      
+   316 .         replace correct_date = 1 if date == "07 11 2020" | date == "07/11.2020" | date == "6/11/20" | date== "7/10/20" ///
+      >         | date == "7/11/20" | date == "7/11/19" | date == "7/11/20" | date == "7/12/00" | date == "7/12/20" ///
+      >         | date == "7/13/20" | date == "11/7/20" | date == "12/7/20" | date == "12/7/2020" | date == "12/7/2020/" ///
+      >         | date == "12\07\2020" | date == "13/07/2020"
+      (393 real changes made)
+      
+   317 .                 gen inattentive = 1
+      
+   318 .         replace inattentive = 0 if date_ok==1|date_poss_foreign==1
+      (393 real changes made)
+      
+   319 .         gen combined_troll_1=.
+      (409 missing values generated)
+      
+   320 .         replace combined_troll_1 = 1 if funny_ip == "TRUE" | likely_troll == 1
+      (113 real changes made)
+      
+   321 .         replace combined_troll_1 = 0 if funny_ip == "FALSE" & likely_troll == 0
+      (296 real changes made)
+      
+   322 .         gen combined_troll_2=.
+      (409 missing values generated)
+      
+   323 .         replace combined_troll_2=1 if funny_ip=="TRUE" | likely_troll==1|date_poss_foreign==1
+      (144 real changes made)
+      
+   324 .         replace combined_troll_2=0 if funny_ip=="FALSE" & likely_troll==0 & date_poss_foreign==0
+      (265 real changes made)
+      
+   325 .         gen combined_troll_3=.
+      (409 missing values generated)
+      
+   326 .         replace combined_troll_3=1 if funny_ip=="TRUE" |likely_troll==1|date_poss_foreign==1|inattentive==1
+      (144 real changes made)
+      
+   327 .         replace combined_troll_3=0 if funny_ip=="FALSE"  & likely_troll==0 & date_poss_foreign==0 & inattentive==0
+      (265 real changes made)
+      
+   328 .         
+   329 .         * Creating the timing variables
+   330 .         rename durationinseconds time
+      
+   331 .         destring time, replace
+      time already numeric; no replace
+      
+   332 .         sum time, d
+      
+                                  time
+      -------------------------------------------------------------
+            Percentiles      Smallest
+       1%          103             72
+       5%          134             76
+      10%          148             87       Obs                 409
+      25%          215             90       Sum of Wgt.         409
+      
+      50%          322                      Mean           405.7384
+                              Largest       Std. Dev.       280.794
+      75%          500           1502
+      90%          743           1631       Variance       78845.28
+      95%         1011           1695       Skewness        1.86699
+      99%         1499           1701       Kurtosis       7.137976
+      
+   333 .         *median response time = 322 seconds, or about 5 minutes and 37 seconds
+   334 . 
+   335 .         *generating outlier variables based on "time outside whiskers" in the box plot
+   336 .         *anything outside 167% of the IQR gets classified as "fast" or "slow"
+   337 .         *25th percentile = 216 ; 75th percentile =   501    
+   338 .         
+   339 .         display (322 - 216) * (5/3) /* 176.66667 */
+      176.66667
+      
+   340 .         gen fast = 0
+      
+   341 .         replace fast = 1 if time <= 176.66667
+      (60 real changes made)
+      
+   342 .         tab fast
+      
+             fast |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        349       85.33       85.33
+                1 |         60       14.67      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   343 .         *14.25% are fast
+   344 .         
+   345 .         display (501 - 322) * (5/3) + 501 /* 799.33333*/
+      799.33333
+      
+   346 .         gen slow = 0
+      
+   347 .         replace slow = 1 if time > 799.33333
+      (35 real changes made)
+      
+   348 .         tab slow
+      
+             slow |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        374       91.44       91.44
+                1 |         35        8.56      100.00
+      ------------+-----------------------------------
+            Total |        409      100.00
+      
+   349 .         *8.60% are slow 
+   350 . 
+   351 .         *average completion time for trolls/ppl with bad IPs
+   352 .         sum time if combined_troll_1==1 /*514.86 seconds */
+      
+          Variable |        Obs        Mean    Std. Dev.       Min        Max
+      -------------+---------------------------------------------------------
+              time |        113    513.1239    315.2866         76       1701
+      
+   353 .         reg fast combined_troll_1 /*3.5% are fast; 15 pp less so than non-flagged people, p = 0.000  */
+      
+            Source |       SS           df       MS      Number of obs   =       409
+      -------------+----------------------------------   F(1, 407)       =     11.17
+             Model |  1.36797943         1  1.36797943   Prob > F        =    0.0009
+          Residual |  49.8300646       407  .122432591   R-squared       =    0.0267
+      -------------+----------------------------------   Adj R-squared   =    0.0243
+             Total |   51.198044       408  .125485402   Root MSE        =     .3499
+      
+      ----------------------------------------------------------------------------------
+                  fast |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -----------------+----------------------------------------------------------------
+      combined_troll_1 |  -.1293351   .0386923    -3.34   0.001    -.2053969   -.0532733
+                 _cons |   .1824324   .0203377     8.97   0.000     .1424523    .2224126
+      ----------------------------------------------------------------------------------
+      
+   354 .         reg slow combined_troll_1 /*7.6% are slow; .04 pp less so than non-flagged people, p = 0.773 */
+      
+            Source |       SS           df       MS      Number of obs   =       409
+      -------------+----------------------------------   F(1, 407)       =      1.73
+             Model |  .135600332         1  .135600332   Prob > F        =    0.1889
+          Residual |  31.8692896       407  .078302923   R-squared       =    0.0042
+      -------------+----------------------------------   Adj R-squared   =    0.0018
+             Total |    32.00489       408  .078443358   Root MSE        =    .27983
+      
+      ----------------------------------------------------------------------------------
+                  slow |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -----------------+----------------------------------------------------------------
+      combined_troll_1 |   .0407199   .0309432     1.32   0.189    -.0201086    .1015484
+                 _cons |   .0743243   .0162646     4.57   0.000     .0423512    .1062974
+      ----------------------------------------------------------------------------------
+      
+   355 . 
+   356 .         *average completion time for trolls/ppl with bad IPs/date written incorrectly
+   357 .         sum time if combined_troll_2==1  /*639.5974 seconds */
+      
+          Variable |        Obs        Mean    Std. Dev.       Min        Max
+      -------------+---------------------------------------------------------
+              time |        144     526.625    316.2349         76       1701
+      
+   358 .         reg fast combined_troll_2 /*4.4% are fast, 3.4 pp less so than non-flagged people, p = 2.73 */
+      
+            Source |       SS           df       MS      Number of obs   =       409
+      -------------+----------------------------------   F(1, 407)       =     20.47
+             Model |  2.45181759         1  2.45181759   Prob > F        =    0.0000
+          Residual |  48.7462264       407  .119769598   R-squared       =    0.0479
+      -------------+----------------------------------   Adj R-squared   =    0.0455
+             Total |   51.198044       408  .125485402   Root MSE        =    .34608
+      
+      ----------------------------------------------------------------------------------
+                  fast |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -----------------+----------------------------------------------------------------
+      combined_troll_2 |  -.1621069   .0358287    -4.52   0.000    -.2325393   -.0916746
+                 _cons |   .2037736   .0212594     9.59   0.000     .1619817    .2455655
+      ----------------------------------------------------------------------------------
+      
+   359 .         reg slow combined_troll_2 /*9.2% are slow, 2.4 pp moreso than non-flagged people, p = 0.087 */
+      
+            Source |       SS           df       MS      Number of obs   =       409
+      -------------+----------------------------------   F(1, 407)       =      8.20
+             Model |  .631724357         1  .631724357   Prob > F        =    0.0044
+          Residual |  31.3731656       407  .077083945   R-squared       =    0.0197
+      -------------+----------------------------------   Adj R-squared   =    0.0173
+             Total |    32.00489       408  .078443358   Root MSE        =    .27764
+      
+      ----------------------------------------------------------------------------------
+                  slow |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -----------------+----------------------------------------------------------------
+      combined_troll_2 |   .0822851   .0287435     2.86   0.004     .0257809    .1387893
+                 _cons |   .0566038   .0170553     3.32   0.001     .0230763    .0901312
+      ----------------------------------------------------------------------------------
+      
+   360 . 
+   361 .         *average completion time for trolls/ppl with bad IPs/date written incorrectly or nonsensically
+   362 .         sum time if combined_troll_3==1 /*634.4213 seconds */
+      
+          Variable |        Obs        Mean    Std. Dev.       Min        Max
+      -------------+---------------------------------------------------------
+              time |        144     526.625    316.2349         76       1701
+      
+   363 .         reg fast combined_troll_3 /*4.8% are fast, 2.7 pp less so than non-flagged people, p =  0.031 */ 
+      
+            Source |       SS           df       MS      Number of obs   =       409
+      -------------+----------------------------------   F(1, 407)       =     20.47
+             Model |  2.45181759         1  2.45181759   Prob > F        =    0.0000
+          Residual |  48.7462264       407  .119769598   R-squared       =    0.0479
+      -------------+----------------------------------   Adj R-squared   =    0.0455
+             Total |   51.198044       408  .125485402   Root MSE        =    .34608
+      
+      ----------------------------------------------------------------------------------
+                  fast |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -----------------+----------------------------------------------------------------
+      combined_troll_3 |  -.1621069   .0358287    -4.52   0.000    -.2325393   -.0916746
+                 _cons |   .2037736   .0212594     9.59   0.000     .1619817    .2455655
+      ----------------------------------------------------------------------------------
+      
+   364 .         reg slow combined_troll_3 /*8.9% are slow, 1.9 pp more so than non-flagged people, p =  0.169 */
+      
+            Source |       SS           df       MS      Number of obs   =       409
+      -------------+----------------------------------   F(1, 407)       =      8.20
+             Model |  .631724357         1  .631724357   Prob > F        =    0.0044
+          Residual |  31.3731656       407  .077083945   R-squared       =    0.0197
+      -------------+----------------------------------   Adj R-squared   =    0.0173
+             Total |    32.00489       408  .078443358   Root MSE        =    .27764
+      
+      ----------------------------------------------------------------------------------
+                  slow |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -----------------+----------------------------------------------------------------
+      combined_troll_3 |   .0822851   .0287435     2.86   0.004     .0257809    .1387893
+                 _cons |   .0566038   .0170553     3.32   0.001     .0230763    .0901312
+      ----------------------------------------------------------------------------------
+      
+   365 . 
+   366 .         /* okay, so bad actors are mostly less likely to be fast outliers than non-flagged people, and more likely to be slow outliers
+      > than non-flagged people, but not by any real measurable difference */
+   367 . 
+   368 . 
+   369 .         *are people who format the date DD/MM/YYYY take longer than ppl who didn't? 
+   370 .         sum time if date_poss_foreign==1 /*nah, average = 651.8538, so within the IQR */
+      
+          Variable |        Obs        Mean    Std. Dev.       Min        Max
+      -------------+---------------------------------------------------------
+              time |         68    546.2353    316.9092        149       1701
+      
+   371 .         reg slow date_poss_foreign /* 9.6% are slow, 2.1 pp moreso than ppl who didn't, p =  0.218 */
+      
+            Source |       SS           df       MS      Number of obs   =       409
+      -------------+----------------------------------   F(1, 407)       =      6.11
+             Model |    .4734513         1    .4734513   Prob > F        =    0.0138
+          Residual |  31.5314387       407  .077472822   R-squared       =    0.0148
+      -------------+----------------------------------   Adj R-squared   =    0.0124
+             Total |    32.00489       408  .078443358   Root MSE        =    .27834
+      
+      -----------------------------------------------------------------------------------
+                   slow |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ------------------+----------------------------------------------------------------
+      date_poss_foreign |   .0913835   .0369662     2.47   0.014      .018715     .164052
+                  _cons |   .0703812   .0150729     4.67   0.000     .0407507    .1000117
+      -----------------------------------------------------------------------------------
+      
+   372 .         reg fast date_poss_foreign /* 10.2% are fast, 3.3 pp less so than people who didn't, p =  0.037 */
+      
+            Source |       SS           df       MS      Number of obs   =       409
+      -------------+----------------------------------   F(1, 407)       =     11.62
+             Model |  1.42096104         1  1.42096104   Prob > F        =    0.0007
+          Residual |   49.777083       407  .122302415   R-squared       =    0.0278
+      -------------+----------------------------------   Adj R-squared   =    0.0254
+             Total |   51.198044       408  .125485402   Root MSE        =    .34972
+      
+      -----------------------------------------------------------------------------------
+                   fast |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ------------------+----------------------------------------------------------------
+      date_poss_foreign |  -.1583146   .0464459    -3.41   0.001    -.2496185   -.0670108
+                  _cons |   .1730205   .0189383     9.14   0.000     .1357915    .2102496
+      -----------------------------------------------------------------------------------
+      
+   373 .         *not really slower than people who didn't write the date DD/MM/YYYY
+   374 . 
+   375 .         *what about comparing to people who wrote the date correctly? 
+   376 .         gen foreign_dummy = .
+      (409 missing values generated)
+      
+   377 .         replace foreign_dummy = 1 if date_poss_foreign == 1
+      (68 real changes made)
+      
+   378 .         replace foreign_dummy = 0 if date_ok == 1
+      (325 real changes made)
+      
+   379 .         tab foreign_dummy
+      
+      foreign_dum |
+               my |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        325       82.70       82.70
+                1 |         68       17.30      100.00
+      ------------+-----------------------------------
+            Total |        393      100.00
+      
+   380 . 
+   381 .         reg slow foreign_dummy /* foreign = 9.6%, correct date = 7.4%, p = 0.209, so no stat sig difference between the two */
+      
+            Source |       SS           df       MS      Number of obs   =       393
+      -------------+----------------------------------   F(1, 391)       =      5.40
+             Model |  .434671111         1  .434671111   Prob > F        =    0.0206
+          Residual |  31.4482805       391  .080430385   R-squared       =    0.0136
+      -------------+----------------------------------   Adj R-squared   =    0.0111
+             Total |  31.8829517       392   .08133406   Root MSE        =     .2836
+      
+      -------------------------------------------------------------------------------
+               slow |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      foreign_dummy |   .0879186    .037819     2.32   0.021     .0135645    .1622726
+              _cons |   .0738462   .0157314     4.69   0.000     .0429174    .1047749
+      -------------------------------------------------------------------------------
+      
+   382 .         reg fast foreign_dummy /*foreign = 3.7%, correct date = 6.8%, p =  0.043, so substantially less fast than ppl who wrote the date correctly */
+      
+            Source |       SS           df       MS      Number of obs   =       393
+      -------------+----------------------------------   F(1, 391)       =     11.83
+             Model |  1.45183252         1  1.45183252   Prob > F        =    0.0006
+          Residual |   47.988371       391  .122732407   R-squared       =    0.0294
+      -------------+----------------------------------   Adj R-squared   =    0.0269
+             Total |  49.4402036       392  .126122968   Root MSE        =    .35033
+      
+      -------------------------------------------------------------------------------
+               fast |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      foreign_dummy |  -.1606787   .0467175    -3.44   0.001    -.2525277   -.0688298
+              _cons |   .1753846   .0194329     9.03   0.000     .1371785    .2135907
+      -------------------------------------------------------------------------------
+      
+   383 . 
+   384 . ************
+   385 . *** SI 3 ***
+   386 . ************
+   387 . 
+   388 .         * Load data and clean (with code from 02_study2.do)
+   389 .         insheet using "turk_06_29_2020/merged_survey_ip_06_29_2020_final_public.csv", clear names
+      (120 vars, 1,505 obs)
+      
+   390 .         gen susp=1 if untrustworthy=="TRUE"
+      (934 missing values generated)
+      
+   391 .         replace susp=0 if untrustworthy=="FALSE"
+      (934 real changes made)
+      
+   392 .         gen miss=1 if missing_ip=="TRUE"
+      (1,505 missing values generated)
+      
+   393 .         replace miss=0 if missing_ip=="FALSE"
+      (1,505 real changes made)
+      
+   394 .         gen dup=1 if duplicated=="TRUE"
+      (1,424 missing values generated)
+      
+   395 .         replace dup=0 if duplicated=="FALSE"
+      (1,424 real changes made)
+      
+   396 .         gen foreign=1 if foreign_ip=="TRUE"
+      (1,488 missing values generated)
+      
+   397 .         replace foreign=0 if foreign_ip=="FALSE"
+      (1,488 real changes made)
+      
+   398 .         gen funny=1 if funny_ip=="TRUE"
+      (1,323 missing values generated)
+      
+   399 .         replace funny=0 if funny_ip=="FALSE"
+      (1,323 real changes made)
+      
+   400 .         gen troll_prosthetic=1 if prosthetic=="TRUE"
+      (1,099 missing values generated)
+      
+   401 .         replace troll_prosthetic=0 if prosthetic=="FALSE"|prosthetic=="NA"
+      (1,099 real changes made)
+      
+   402 .         gen troll_blind=1 if blind=="TRUE"
+      (1,197 missing values generated)
+      
+   403 .         replace troll_blind=0 if blind=="FALSE"|blind=="NA"
+      (1,197 real changes made)
+      
+   404 .         gen troll_deaf=1 if deaf=="TRUE"
+      (1,199 missing values generated)
+      
+   405 .         replace troll_deaf=0 if deaf=="FALSE"|deaf=="NA"
+      (1,199 real changes made)
+      
+   406 .         gen troll_gang=1 if gang_resp=="TRUE"
+      (1,116 missing values generated)
+      
+   407 .         replace troll_gang=0 if gang_resp=="FALSE"|gang_resp=="NA"
+      (1,116 real changes made)
+      
+   408 .         gen troll_famgang=1 if gang_fam=="TRUE"
+      (1,091 missing values generated)
+      
+   409 .         replace troll_famgang=0 if gang_fam=="FALSE"|gang_fam=="NA"
+      (1,091 real changes made)
+      
+   410 .         gen troll_sleep=1 if sleep=="1"
+      (1,473 missing values generated)
+      
+   411 .         replace troll_sleep=0 if sleep=="0"|sleep=="NA"
+      (1,473 real changes made)
+      
+   412 .         egen troll_index=rowtotal(troll_prosthetic troll_blind troll_deaf troll_gang troll_famgang troll_sleep)
+      
+   413 .         gen likely_troll=1 if troll_index>1
+      (1,053 missing values generated)
+      
+   414 .         replace likely_troll=0 if troll_index<2
+      (1,053 real changes made)
+      
+   415 .         replace sincerity = "" if sincerity == "NA"
+      (2 real changes made)
+      
+   416 .         destring sincerity, replace
+      sincerity: all characters numeric; replaced as byte
+      (2 missing values generated)
+      
+   417 .         recode sincerity (1/2 = 0)(3/5 = 1)
+      (sincerity: 1503 changes made)
+      
+   418 .         gen date_ok = 0
+      
+   419 .         replace date_ok=1 if date=="06 29 2020"|date=="06.29.2020"|date=="06\29\2020"|date=="06\30\2020" ///
+      >         |date=="6/29/20"|date=="6/29/2020."|date=="6/29/20209"|date=="6/29/2020`"|date=="60/29/2020" ///
+      >         |date=="ju/26/2020"|date=="june/29/20"|date=="o6/29/2020" | date=="16/29/2020"
+      (1,130 real changes made)
+      
+   420 .         gen date_poss_foreign = 0
+      
+   421 .         replace date_poss_foreign = 1 if date == "20/06/2020" | date == "28.06.2020" | date == "28/06/2020" | date == "28/6/2020" ///
+      >         |date == " 29 06 2020" | date ==  "29-06-2020" | date == "29-Jun-20" | date == "29.06 2020" | date == "29.06.2020" ///
+      >         |date == "29/06/2020"| date == "29/6/2020" | date == " 29/6/2020." | date == "29\06\2020" | date == "29|06|2020" ///
+      >         |date == "30/06/2020"
+      (303 real changes made)
+      
+   422 .         gen inattentive = 1
+      
+   423 .         replace inattentive = 0 if date_ok==1|date_poss_foreign==1
+      (1,433 real changes made)
+      
+   424 .         rename durationinseconds time
+      
+   425 .         destring time, replace
+      time already numeric; no replace
+      
+   426 .         gen combined_troll_1=.
+      (1,505 missing values generated)
+      
+   427 .         replace combined_troll_1 = 1 if funny_ip == "TRUE" | likely_troll == 1
+      (571 real changes made)
+      
+   428 .         replace combined_troll_1 = 0 if funny_ip == "FALSE" & likely_troll == 0
+      (934 real changes made)
+      
+   429 .         gen combined_troll_2=.
+      (1,505 missing values generated)
+      
+   430 .         replace combined_troll_2=1 if funny_ip=="TRUE" | likely_troll==1|date_poss_foreign==1
+      (672 real changes made)
+      
+   431 .         replace combined_troll_2=0 if funny_ip=="FALSE" & likely_troll==0 & date_poss_foreign==0
+      (833 real changes made)
+      
+   432 .         gen combined_troll_3=.
+      (1,505 missing values generated)
+      
+   433 .         replace combined_troll_3=1 if funny_ip=="TRUE" |likely_troll==1|date_poss_foreign==1|inattentive==1
+      (696 real changes made)
+      
+   434 .         replace combined_troll_3=0 if funny_ip=="FALSE"  & likely_troll==0 & date_poss_foreign==0 & inattentive==0
+      (809 real changes made)
+      
+   435 .         *recoding DVs
+   436 .         gen gop_unemploy=1 if gop_unemployment=="1"
+      (1,112 missing values generated)
+      
+   437 .         replace gop_unemploy=.5 if gop_unemployment=="2"
+      (338 real changes made)
+      
+   438 .         replace gop_unemploy=0 if gop_unemployment=="3"
+      (50 real changes made)
+      
+   439 .         gen gop_inflate=1 if gop_inflation=="1"
+      (1,176 missing values generated)
+      
+   440 .         replace gop_inflate=.5 if gop_inflation=="2"
+      (385 real changes made)
+      
+   441 .         replace gop_inflate=0 if gop_inflation=="3"
+      (67 real changes made)
+      
+   442 .         gen obama_unemploy=1 if obama_unemployment=="1"
+      (1,106 missing values generated)
+      
+   443 .         replace obama_unemploy=.5 if obama_unemployment=="2"
+      (297 real changes made)
+      
+   444 .         replace obama_unemploy=0 if obama_unemployment=="3"
+      (26 real changes made)
+      
+   445 .         gen obama_inflate=1 if obama_inflation=="1"
+      (1,188 missing values generated)
+      
+   446 .         replace obama_inflate=.5 if obama_inflation=="2"
+      (358 real changes made)
+      
+   447 .         replace obama_inflate=0 if obama_inflation=="3"
+      (47 real changes made)
+      
+   448 .         *generating treatment variable
+   449 .         gen dem_treat=1 if randomization_1 == "obama"
+      (783 missing values generated)
+      
+   450 .         replace dem_treat=0 if randomization_1 == "congress"
+      (781 real changes made)
+      
+   451 .         tab dem_treat
+      
+        dem_treat |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |        781       51.96       51.96
+                1 |        722       48.04      100.00
+      ------------+-----------------------------------
+            Total |      1,503      100.00
+      
+   452 .         gen pid7 = .
+      (1,505 missing values generated)
+      
+   453 .         replace pid7 = 1 if pid_dem == "1"
+      (490 real changes made)
+      
+   454 .         replace pid7 = 2 if pid_dem == "2"
+      (134 real changes made)
+      
+   455 .         replace pid7 = 3 if pid_ind == "2"
+      (92 real changes made)
+      
+   456 .         replace pid7 = 4 if pid_ind == "3"
+      (78 real changes made)
+      
+   457 .         replace pid7 = 5 if pid_ind == "1"
+      (75 real changes made)
+      
+   458 .         replace pid7 = 6 if pid_rep == "2"
+      (111 real changes made)
+      
+   459 .         replace pid7 = 7 if pid_rep == "1"      
+      (523 real changes made)
+      
+   460 .         label define pid7_lbl 1 "Strong Democrat" 2 "Weak Democrat" 3 "Leaning Democrat" 4 "Independent" 5 "Leaning Republican" 6 "Weak Republican" 7
+      >  "Strong Republican", replace
+      
+   461 .         label values pid7 pid7_lbl
+      
+   462 .         *3-point party ID
+   463 .         recode pid7 (1/3=1)(4=2)(5/7=3), gen(pid3)
+      (1013 differences between pid7 and pid3)
+      
+   464 .         label define pid3_lbl 1 "Democratic" 2 "Independent" 3 "Republican", replace
+      
+   465 .         label values pid3 pid3_lbl
+      
+   466 .         *Democratic dummy for comparing Dems and Reps
+   467 .         gen dem_rep = .
+      (1,505 missing values generated)
+      
+   468 .         replace dem_rep = 1 if pid3 == 1
+      (716 real changes made)
+      
+   469 .         replace dem_rep = 0 if pid3 == 3
+      (709 real changes made)
+      
+   470 .         label define dem_rep_lbl 0 "Republican" 1 "Democrat", replace
+      
+   471 .         label values dem_rep dem_rep_lbl
+      
+   472 .         *1 = if you got the out-party treatment, 0 = in-party treatment
+   473 .         gen out_party_treat=.
+      (1,505 missing values generated)
+      
+   474 .         replace out_party_treat = 1 if dem_rep == 1 & dem_treat == 0
+      (385 real changes made)
+      
+   475 .         replace out_party_treat = 1 if dem_rep == 0 & dem_treat == 1
+      (351 real changes made)
+      
+   476 .         replace out_party_treat = 0 if dem_rep == 0 & dem_treat == 0
+      (358 real changes made)
+      
+   477 .         replace out_party_treat = 0 if dem_rep == 1 & dem_treat == 1
+      (331 real changes made)
+      
+   478 .         *creating a collapsed unemployment DV
+   479 .         gen unemploy = gop_unemploy
+      (724 missing values generated)
+      
+   480 .         replace unemploy = obama_unemploy if unemploy==.
+      (722 real changes made)
+      
+   481 .         tab unemploy
+      
+         unemploy |      Freq.     Percent        Cum.
+      ------------+-----------------------------------
+                0 |         76        5.06        5.06
+               .5 |        635       42.25       47.31
+                1 |        792       52.69      100.00
+      ------------+-----------------------------------
+            Total |      1,503      100.00
+      
+   482 .         *creating a collapsed inflation DV
+   483 .         gen inflation = gop_inflate
+      (724 missing values generated)
+      
+   484 .         replace inflation = obama_inflate if inflation==.
+      (722 real changes made)
+      
+   485 .         
+   486 .         *** Table SI 3.5
+   487 .         *effects among non-flagged respondents
+   488 .         reg unemploy out_party_treat if combined_troll_1 == 0
+      
+            Source |       SS           df       MS      Number of obs   =       861
+      -------------+----------------------------------   F(1, 859)       =     38.63
+             Model |  3.35311491         1  3.35311491   Prob > F        =    0.0000
+          Residual |  74.5568735       859  .086794963   R-squared       =    0.0430
+      -------------+----------------------------------   Adj R-squared   =    0.0419
+             Total |  77.9099884       860   .09059301   Root MSE        =    .29461
+      
+      ---------------------------------------------------------------------------------
+             unemploy |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ----------------+----------------------------------------------------------------
+      out_party_treat |  -.1249392   .0201012    -6.22   0.000    -.1643924    -.085486
+                _cons |   .7749392    .014532    53.33   0.000     .7464167    .8034616
+      ---------------------------------------------------------------------------------
+      
+   489 .         reg inflation out_party_treat if combined_troll_1 == 0
+      
+            Source |       SS           df       MS      Number of obs   =       861
+      -------------+----------------------------------   F(1, 859)       =     19.15
+             Model |  1.79080179         1  1.79080179   Prob > F        =    0.0000
+          Residual |  80.3468289       859  .093535307   R-squared       =    0.0218
+      -------------+----------------------------------   Adj R-squared   =    0.0207
+             Total |  82.1376307       860  .095508873   Root MSE        =    .30584
+      
+      ---------------------------------------------------------------------------------
+            inflation |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ----------------+----------------------------------------------------------------
+      out_party_treat |  -.0913058   .0208671    -4.38   0.000    -.1322622   -.0503493
+                _cons |   .7201946   .0150857    47.74   0.000     .6905854    .7498039
+      ---------------------------------------------------------------------------------
+      
+   490 . 
+   491 .         *interactive effects with trolling indicator
+   492 .         reg unemploy i.out_party_treat##i.combined_troll_1
+      
+            Source |       SS           df       MS      Number of obs   =     1,425
+      -------------+----------------------------------   F(3, 1421)      =     24.88
+             Model |  6.18926254         3  2.06308751   Prob > F        =    0.0000
+          Residual |  117.813194     1,421  .082908651   R-squared       =    0.0499
+      -------------+----------------------------------   Adj R-squared   =    0.0479
+             Total |  124.002456     1,424  .087080377   Root MSE        =    .28794
+      
+      --------------------------------------------------------------------------------------------------
+                              unemploy |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ---------------------------------+----------------------------------------------------------------
+                     1.out_party_treat |  -.1249392    .019646    -6.36   0.000    -.1634775   -.0864009
+                    1.combined_troll_1 |   .0452047   .0223597     2.02   0.043     .0013431    .0890663
+                                       |
+      out_party_treat#combined_troll_1 |
+                                  1 1  |   .0757743   .0312104     2.43   0.015     .0145509    .1369977
+                                       |
+                                 _cons |   .7749392    .014203    54.56   0.000     .7470781    .8028002
+      --------------------------------------------------------------------------------------------------
+      
+   493 .         reg inflation i.out_party_treat##i.combined_troll_1
+      
+            Source |       SS           df       MS      Number of obs   =     1,425
+      -------------+----------------------------------   F(3, 1421)      =      6.86
+             Model |  1.93614441         3  .645381471   Prob > F        =    0.0001
+          Residual |  133.643856     1,421  .094049159   R-squared       =    0.0143
+      -------------+----------------------------------   Adj R-squared   =    0.0122
+             Total |      135.58     1,424  .095210674   Root MSE        =    .30667
+      
+      --------------------------------------------------------------------------------------------------
+                             inflation |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ---------------------------------+----------------------------------------------------------------
+                     1.out_party_treat |  -.0913058   .0209243    -4.36   0.000    -.1323517   -.0502598
+                    1.combined_troll_1 |  -.0223529   .0238146    -0.94   0.348    -.0690685    .0243627
+                                       |
+      out_party_treat#combined_troll_1 |
+                                  1 1  |   .0787787   .0332412     2.37   0.018     .0135716    .1439858
+                                       |
+                                 _cons |   .7201946   .0151271    47.61   0.000     .6905207    .7498686
+      --------------------------------------------------------------------------------------------------
+      
+   494 . 
+   495 .         *effects among all flagged respondents
+   496 .         reg unemploy out_party_treat if combined_troll_1 == 1
+      
+            Source |       SS           df       MS      Number of obs   =       564
+      -------------+----------------------------------   F(1, 562)       =      4.43
+             Model |  .340754349         1  .340754349   Prob > F        =    0.0358
+          Residual |  43.2563201       562  .076968541   R-squared       =    0.0078
+      -------------+----------------------------------   Adj R-squared   =    0.0061
+             Total |  43.5970745       563  .077437077   Root MSE        =    .27743
+      
+      ---------------------------------------------------------------------------------
+             unemploy |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ----------------+----------------------------------------------------------------
+      out_party_treat |  -.0491649   .0233663    -2.10   0.036    -.0950609   -.0032688
+                _cons |   .8201439   .0166393    49.29   0.000     .7874611    .8528266
+      ---------------------------------------------------------------------------------
+      
+   497 .         reg inflation out_party_treat if combined_troll_1 == 1
+      
+            Source |       SS           df       MS      Number of obs   =       564
+      -------------+----------------------------------   F(1, 562)       =      0.23
+             Model |  .022122222         1  .022122222   Prob > F        =    0.6293
+          Residual |  53.2970267       562  .094834567   R-squared       =    0.0004
+      -------------+----------------------------------   Adj R-squared   =   -0.0014
+             Total |  53.3191489       563  .094705416   Root MSE        =    .30795
+      
+      ---------------------------------------------------------------------------------
+            inflation |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ----------------+----------------------------------------------------------------
+      out_party_treat |   -.012527   .0259369    -0.48   0.629    -.0634721     .038418
+                _cons |   .6978417   .0184697    37.78   0.000     .6615636    .7341199
+      ---------------------------------------------------------------------------------
+      
+   498 . 
+   499 .         *effects among flagged IPs only
+   500 .         reg unemploy out_party_treat if funny_ip =="TRUE"
+      
+            Source |       SS           df       MS      Number of obs   =       182
+      -------------+----------------------------------   F(1, 180)       =      0.44
+             Model |  .039545561         1  .039545561   Prob > F        =    0.5079
+          Residual |  16.1692456       180  .089829142   R-squared       =    0.0024
+      -------------+----------------------------------   Adj R-squared   =   -0.0031
+             Total |  16.2087912       181  .089551333   Root MSE        =    .29972
+      
+      ---------------------------------------------------------------------------------
+             unemploy |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ----------------+----------------------------------------------------------------
+      out_party_treat |  -.0294971   .0444569    -0.66   0.508    -.1172208    .0582266
+                _cons |   .7954545   .0319497    24.90   0.000     .7324103    .8584988
+      ---------------------------------------------------------------------------------
+      
+   501 .         reg inflation out_party_treat if funny_ip =="TRUE"
+      
+            Source |       SS           df       MS      Number of obs   =       182
+      -------------+----------------------------------   F(1, 180)       =      0.22
+             Model |  .023726938         1  .023726938   Prob > F        =    0.6375
+          Residual |  19.1685808       180  .106492115   R-squared       =    0.0012
+      -------------+----------------------------------   Adj R-squared   =   -0.0043
+             Total |  19.1923077       181  .106034849   Root MSE        =    .32633
+      
+      ---------------------------------------------------------------------------------
+            inflation |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ----------------+----------------------------------------------------------------
+      out_party_treat |   .0228482   .0484049     0.47   0.637    -.0726658    .1183622
+                _cons |   .6420455    .034787    18.46   0.000     .5734026    .7106883
+      ---------------------------------------------------------------------------------
+      
+   502 . 
+   503 .         *effects among trolls only
+   504 .         reg unemploy out_party_treat if likely_troll==1
+      
+            Source |       SS           df       MS      Number of obs   =       445
+      -------------+----------------------------------   F(1, 443)       =      2.90
+             Model |  .210203692         1  .210203692   Prob > F        =    0.0894
+          Residual |  32.1347401       443  .072538917   R-squared       =    0.0065
+      -------------+----------------------------------   Adj R-squared   =    0.0043
+             Total |  32.3449438       444  .072848973   Root MSE        =    .26933
+      
+      ---------------------------------------------------------------------------------
+             unemploy |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ----------------+----------------------------------------------------------------
+      out_party_treat |  -.0434769   .0255402    -1.70   0.089     -.093672    .0067181
+                _cons |   .8188073   .0182414    44.89   0.000      .782957    .8546577
+      ---------------------------------------------------------------------------------
+      
+   505 .         reg inflation out_party_treat if likely_troll==1
+      
+            Source |       SS           df       MS      Number of obs   =       445
+      -------------+----------------------------------   F(1, 443)       =      0.36
+             Model |  .032462717         1  .032462717   Prob > F        =    0.5474
+          Residual |  39.6675373       443  .089542974   R-squared       =    0.0008
+      -------------+----------------------------------   Adj R-squared   =   -0.0014
+             Total |        39.7       444  .089414414   Root MSE        =    .29924
+      
+      ---------------------------------------------------------------------------------
+            inflation |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ----------------+----------------------------------------------------------------
+      out_party_treat |  -.0170856   .0283762    -0.60   0.547    -.0728544    .0386831
+                _cons |   .7087156   .0202669    34.97   0.000     .6688844    .7485468
+      ---------------------------------------------------------------------------------
+      
+   506 . 
+   507 .         *effects among those with 1k+ HITs
+   508 .         reg unemploy out_party_treat if hits=="4"
+      
+            Source |       SS           df       MS      Number of obs   =       505
+      -------------+----------------------------------   F(1, 503)       =     36.66
+             Model |  2.81895271         1  2.81895271   Prob > F        =    0.0000
+          Residual |  38.6731265       503  .076884943   R-squared       =    0.0679
+      -------------+----------------------------------   Adj R-squared   =    0.0661
+             Total |  41.4920792       504  .082325554   Root MSE        =    .27728
+      
+      ---------------------------------------------------------------------------------
+             unemploy |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ----------------+----------------------------------------------------------------
+      out_party_treat |  -.1495819   .0247034    -6.06   0.000    -.1981164   -.1010475
+                _cons |   .7821577   .0178613    43.79   0.000     .7470658    .8172495
+      ---------------------------------------------------------------------------------
+      
+   509 .         reg inflation out_party_treat if hits=="4"
+      
+            Source |       SS           df       MS      Number of obs   =       505
+      -------------+----------------------------------   F(1, 503)       =     14.78
+             Model |  1.27740706         1  1.27740706   Prob > F        =    0.0001
+          Residual |   43.473088       503   .08642761   R-squared       =    0.0285
+      -------------+----------------------------------   Adj R-squared   =    0.0266
+             Total |   44.750495       504  .088790665   Root MSE        =    .29399
+      
+      ---------------------------------------------------------------------------------
+            inflation |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      ----------------+----------------------------------------------------------------
+      out_party_treat |  -.1006931   .0261916    -3.84   0.000    -.1521515   -.0492348
+                _cons |   .7427386   .0189373    39.22   0.000     .7055327    .7799445
+      ---------------------------------------------------------------------------------
+      
+   510 . 
+   511 .         
+   512 . ************
+   513 . *** SI 4 ***
+   514 . ************
+   515 . 
+   516 . *** The main experimental effects and attenuation from apparent bad actors, shown in Table SI 4.6
+   517 . 
+   518 .         * Load and clean data
+   519 .         insheet using "turk_08_17_2018/turk_recoded_public.csv", clear names
+      (212 vars, 2,000 obs)
+      
+   520 .         
+   521 .                 **Generating dummies for various indicators of low quality responding from IPs (consistent with 01_study1.do)
+   522 .                 gen black=1 if blacklisted=="TRUE"
+      (1,679 missing values generated)
+      
+   523 .                 replace black=0 if blacklisted=="FALSE"
+      (1,670 real changes made)
+      
+   524 .                 gen miss=1 if missing_ip=="TRUE"
+      (1,991 missing values generated)
+      
+   525 .                 replace miss=0 if missing_ip=="FALSE"
+      (1,991 real changes made)
+      
+   526 .                 gen dup=1 if duplicated=="TRUE"
+      (1,894 missing values generated)
+      
+   527 .                 replace dup=0 if duplicated=="FALSE"
+      (1,885 real changes made)
+      
+   528 .                 gen foreign=1 if foreign_ip=="TRUE"
+      (1,881 missing values generated)
+      
+   529 .                 replace foreign=0 if foreign_ip=="FALSE"
+      (1,870 real changes made)
+      
+   530 .                 *any of the above
+   531 .                 gen funny=1 if funny_ip=="TRUE"
+      (1,594 missing values generated)
+      
+   532 .                 replace funny=0 if funny_ip=="FALSE"
+      (1,594 real changes made)
+      
+   533 . 
+   534 .                 **Generating dummies for low-incidence screener questions
+   535 .                 gen prosthetic_troll=0 if prosthetic=="0"|prosthetic=="NA"
+      (91 missing values generated)
+      
+   536 .                 replace prosthetic_troll=1 if prosthetic=="1"
+      (91 real changes made)
+      
+   537 .                 gen blind_troll=0 if blind=="0"|blind=="NA"
+      (184 missing values generated)
+      
+   538 .                 replace blind_troll=1 if blind=="1"
+      (184 real changes made)
+      
+   539 .                 gen deaf_troll=0 if deaf=="0"|blind=="NA"
+      (109 missing values generated)
+      
+   540 .                 replace deaf_troll=1 if deaf=="1"
+      (109 real changes made)
+      
+   541 .                 gen gang_resp_troll=0 if gang_resp=="0"|gang_resp=="NA"
+      (88 missing values generated)
+      
+   542 .                 replace gang_resp_troll=1 if gang_resp=="1"
+      (88 real changes made)
+      
+   543 .                 gen gang_fam_troll=0 if gang_fam=="0"|gang_fam=="NA"
+      (123 missing values generated)
+      
+   544 .                 replace gang_fam_troll=1 if gang_fam=="1"
+      (123 real changes made)
+      
+   545 .                 gen troll_sleep=0 if sleep=="0"|sleep=="NA"
+      (28 missing values generated)
+      
+   546 .                 replace troll_sleep=1 if sleep=="1"
+      (28 real changes made)
+      
+   547 .                 *Two or more rare behaviors/traits
+   548 .                 egen troll_index=rowtotal(prosthetic_troll blind_troll deaf_troll gang_resp_troll gang_fam_troll troll_sleep)
+      
+   549 .                 gen likely_troll=1 if troll_index>1
+      (1,875 missing values generated)
+      
+   550 .                 replace likely_troll = 0 if likely_troll == .
+      (1,875 real changes made)
+      
+   551 .                 
+   552 .                 * Bad actor indicator
+   553 .                 gen badactor = 0
+      
+   554 .                 replace badactor = 1 if funny == 1 | likely_troll == 1
+      (493 real changes made)
+      
+   555 .         
+   556 .                 * Generating treatment variables
+   557 .                 gen james_black = 0
+      
+   558 .                 replace james_black = 1 if cf_race == "black"
+      (1,000 real changes made)
+      
+   559 .                 
+   560 .                 gen james_gay = 0
+      
+   561 .                 replace james_gay = 1 if cf_spouse == "Keith"
+      (1,013 real changes made)
+      
+   562 .                 
+   563 .                 gen james_lib = 0
+      
+   564 .                 replace james_lib = 1 if cf_policy == "living-wage demonstrations"
+      (675 real changes made)
+      
+   565 .                 gen james_con = 0
+      
+   566 .                 replace james_con = 1 if cf_policy == "anti-tax demonstrations"
+      (644 real changes made)
+      
+   567 .                 
+   568 .                 gen james_evang = 0
+      
+   569 .                 replace james_evang = 1 if cf_relig == "leads his son's Cub Scouts group, organized through the Baptist Church the family attends"
+      (687 real changes made)
+      
+   570 .                 gen james_aa = 0
+      
+   571 .                 replace james_aa = 1 if cf_relig == "leads his son's Junior Explorers group, organized through the Secular Families Foundation"
+      (643 real changes made)
+      
+   572 . 
+   573 .                 * Generating outcome variables
+   574 .                 replace james_cf = "" if james_cf == "NA"
+      (9 real changes made)
+      
+   575 .                 destring james_cf, replace
+      james_cf: all characters numeric; replaced as byte
+      (9 missing values generated)
+      
+   576 .                 
+   577 .                 gen dem_cf = .
+      (2,000 missing values generated)
+      
+   578 .                 replace dem_cf = 1 if james_cf == 2
+      (1,036 real changes made)
+      
+   579 .                 replace dem_cf = 0 if inlist(james_cf, 1, 3)
+      (955 real changes made)
+      
+   580 .                 gen rep_cf = .
+      (2,000 missing values generated)
+      
+   581 .                 replace rep_cf = 1 if james_cf == 3
+      (440 real changes made)
+      
+   582 .                 replace rep_cf = 0 if inlist(james_cf, 1, 2)
+      (1,551 real changes made)
+      
+   583 .                                 
+   584 .                 * Simple OLS model just to take a look...
+   585 .                 reg dem_cf james_black james_gay james_evang james_aa james_lib james_con
+      
+            Source |       SS           df       MS      Number of obs   =     1,991
+      -------------+----------------------------------   F(6, 1984)      =     20.47
+             Model |  28.9752914         6  4.82921523   Prob > F        =    0.0000
+          Residual |  467.950876     1,984  .235862337   R-squared       =    0.0583
+      -------------+----------------------------------   Adj R-squared   =    0.0555
+             Total |  496.926168     1,990  .249711642   Root MSE        =    .48566
+      
+      ------------------------------------------------------------------------------
+            dem_cf |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       james_black |    .100681   .0217942     4.62   0.000      .057939     .143423
+         james_gay |   .1502861   .0218041     6.89   0.000     .1075248    .1930473
+       james_evang |  -.0423636   .0264958    -1.60   0.110    -.0943261    .0095989
+          james_aa |   .0631001   .0269074     2.35   0.019     .0103303    .1158699
+         james_lib |   .0890033   .0264705     3.36   0.001     .0370904    .1409163
+         james_con |   -.077412   .0267903    -2.89   0.004    -.1299521   -.0248719
+             _cons |   .3824137   .0287852    13.29   0.000     .3259614     .438866
+      ------------------------------------------------------------------------------
+      
+   586 .                 reg rep_cf james_black james_gay james_evang james_aa james_lib james_con
+      
+            Source |       SS           df       MS      Number of obs   =     1,991
+      -------------+----------------------------------   F(6, 1984)      =     23.71
+             Model |  22.9341055         6  3.82235091   Prob > F        =    0.0000
+          Residual |  319.828325     1,984  .161203793   R-squared       =    0.0669
+      -------------+----------------------------------   Adj R-squared   =    0.0641
+             Total |  342.762431     1,990  .172242428   Root MSE        =     .4015
+      
+      ------------------------------------------------------------------------------
+            rep_cf |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       james_black |  -.1086619   .0180177    -6.03   0.000    -.1439976   -.0733262
+         james_gay |  -.1388206   .0180259    -7.70   0.000    -.1741722    -.103469
+       james_evang |   .0366577   .0219046     1.67   0.094    -.0063007    .0796161
+          james_aa |  -.0475089   .0222449    -2.14   0.033    -.0911348    -.003883
+         james_lib |  -.0532645   .0218837    -2.43   0.015     -.096182    -.010347
+         james_con |   .0740828   .0221481     3.34   0.001     .0306468    .1175187
+             _cons |   .3429913   .0237973    14.41   0.000     .2963211    .3896616
+      ------------------------------------------------------------------------------
+      
+   587 .                 
+   588 .                 * The main outcome variable for the ordered logit model
+   589 .                 recode james_cf (1=0)(2=-1)(3=1), gen(cf_ordered)
+      (1991 differences between james_cf and cf_ordered)
+      
+   590 .                 
+   591 .                 * For time analyses especially, a "made CF" DV
+   592 .                 gen made_cf = .
+      (2,000 missing values generated)
+      
+   593 .                 replace made_cf = 1 if dem_cf == 1 | rep_cf == 1
+      (1,476 real changes made)
+      
+   594 .                 replace made_cf = 0 if dem_cf != 1 & rep_cf != 1
+      (524 real changes made)
+      
+   595 . 
+      end of do-file
+      
+   596 . translate @Results 04_si_part1.txt

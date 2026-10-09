@@ -1,0 +1,2114 @@
+                                                       ___  ____  ____  ____  ____(R)
+                                                      /__    /   ____/   /   ____/   
+                                                     ___/   /   /___/   /   /___/    
+                                                       Statistics/Data Analysis      
+      
+      _predict#james_black |
+                      3 0  |   .2665462   .0145265    18.35   0.000     .2380747    .2950177
+                      3 1  |   .1693922   .0115795    14.63   0.000     .1466968    .1920877
+                           |
+        _predict#james_gay |
+                      3 0  |   .2846117   .0151578    18.78   0.000      .254903    .3143204
+                      3 1  |   .1529512   .0109722    13.94   0.000     .1314461    .1744562
+                           |
+      _predict#james_evang |
+                      3 0  |   .2025834   .0121454    16.68   0.000     .1787788    .2263879
+                      3 1  |   .2442473   .0171842    14.21   0.000     .2105669    .2779276
+                           |
+         _predict#james_aa |
+                      3 0  |    .231333   .0123507    18.73   0.000     .2071261    .2555398
+                      3 1  |   .1865832   .0161294    11.57   0.000     .1549703    .2181962
+                           |
+        _predict#james_lib |
+                      3 0  |   .2385508   .0127394    18.73   0.000      .213582    .2635196
+                      3 1  |   .1748146   .0151652    11.53   0.000     .1450914    .2045377
+                           |
+        _predict#james_con |
+                      3 0  |   .1972508   .0118127    16.70   0.000     .1740984    .2204032
+                      3 1  |   .2565387   .0181919    14.10   0.000     .2208832    .2921941
+      --------------------------------------------------------------------------------------
+      
+     1 .                         margins, dydx(james_black) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_black
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_black |  -.0971539   .0162932    -5.96   0.000     -.129088   -.0652198
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+     2 .                         margins, dydx(james_black) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_black
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_black |   .1395928   .0231006     6.04   0.000     .0943163    .1848692
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+     3 .                         margins, dydx(james_gay) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_gay
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_gay |  -.1316605   .0164873    -7.99   0.000    -.1639751   -.0993459
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+     4 .                         margins, dydx(james_gay) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_gay
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_gay |   .1906796   .0232362     8.21   0.000     .1451375    .2362218
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+     5 .                         margins, dydx(james_evang) predict(outcome(1))          
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_evang
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_evang |   .0416639   .0201859     2.06   0.039     .0021003    .0812275
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+     6 .                         margins, dydx(james_evang) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_evang
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_evang |  -.0585631   .0279307    -2.10   0.036    -.1133062     -.00382
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+     7 .                         margins, dydx(james_aa) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_aa
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+        1.james_aa |  -.0447497   .0192511    -2.32   0.020    -.0824812   -.0070183
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+     8 .                         margins, dydx(james_aa) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_aa
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+        1.james_aa |   .0655599   .0288698     2.27   0.023     .0089762    .1221436
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+     9 .                         margins, dydx(james_lib) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_lib
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_lib |  -.0637362   .0187315    -3.40   0.001    -.1004493   -.0270231
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    10 .                         margins, dydx(james_lib) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_lib
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_lib |   .0942646   .0285239     3.30   0.001     .0383588    .1501704
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    11 .                         margins, dydx(james_con) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_con
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_con |   .0592878   .0208712     2.84   0.005     .0183811    .1001946
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    12 .                         margins, dydx(james_con) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_con
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_con |  -.0828029   .0283653    -2.92   0.004    -.1383979   -.0272079
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    13 .                         
+    14 .                 * COL. 5 & 6: FLAGGED IP ADDRESSES ONLY
+    15 .                 ologit cf_ordered i.james_black i.james_gay i.james_evang i.james_aa i.james_lib i.james_con if untrustworthy == "TRUE"
+      
+      Iteration 0:   log likelihood = -514.27584  
+      Iteration 1:   log likelihood =   -505.036  
+      Iteration 2:   log likelihood = -505.02052  
+      Iteration 3:   log likelihood = -505.02052  
+      
+      Ordered logistic regression                     Number of obs     =        484
+                                                      LR chi2(6)        =      18.51
+                                                      Prob > chi2       =     0.0051
+      Log likelihood = -505.02052                     Pseudo R2         =     0.0180
+      
+      -------------------------------------------------------------------------------
+         cf_ordered |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_black |  -.2103308   .1720275    -1.22   0.221    -.5474986     .126837
+        1.james_gay |  -.3829606   .1716151    -2.23   0.026    -.7193201   -.0466011
+      1.james_evang |  -.0534315   .2080205    -0.26   0.797    -.4611441    .3542812
+         1.james_aa |  -.3025838   .2124424    -1.42   0.154    -.7189632    .1137955
+        1.james_lib |   -.107281   .2100511    -0.51   0.610    -.5189734    .3044115
+        1.james_con |   .4841341   .2072947     2.34   0.020      .077844    .8904242
+      --------------+----------------------------------------------------------------
+              /cut1 |  -.4996242   .2258469                      -.942276   -.0569724
+              /cut2 |   .8908255   .2290993                      .4417991    1.339852
+      -------------------------------------------------------------------------------
+      
+    16 . 
+    17 .                         * MARGINAL EFFECTS FOR FLAGGED IP ADDRESSES
+    18 .                         margins james_black james_gay james_evang james_aa james_lib james_con
+      
+      Predictive margins                              Number of obs     =        484
+      Model VCE    : OIM
+      
+      1._predict   : Pr(cf_ordered==-1), predict(pr outcome(-1))
+      2._predict   : Pr(cf_ordered==0), predict(pr outcome(0))
+      3._predict   : Pr(cf_ordered==1), predict(pr outcome(1))
+      
+      --------------------------------------------------------------------------------------
+                           |            Delta-method
+                           |     Margin   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      ---------------------+----------------------------------------------------------------
+      _predict#james_black |
+                      1 0  |   .4287566   .0307747    13.93   0.000     .3684393     .489074
+                      1 1  |   .4793106   .0298945    16.03   0.000     .4207184    .5379027
+                           |
+        _predict#james_gay |
+                      1 0  |   .4067304   .0306416    13.27   0.000     .3466741    .4667868
+                      1 1  |   .4992898   .0300863    16.60   0.000     .4403218    .5582578
+                           |
+      _predict#james_evang |
+                      1 0  |   .4508865   .0279674    16.12   0.000     .3960713    .5057017
+                      1 1  |   .4637174   .0397596    11.66   0.000       .38579    .5416448
+                           |
+         _predict#james_aa |
+                      1 0  |   .4309866   .0278534    15.47   0.000      .376395    .4855783
+                      1 1  |   .5041172   .0410936    12.27   0.000     .4235753    .5846592
+                           |
+        _predict#james_lib |
+                      1 0  |   .4465418   .0277944    16.07   0.000     .3920658    .5010178
+                      1 1  |    .472421   .0408954    11.55   0.000     .3922674    .5525745
+                           |
+        _predict#james_con |
+                      1 0  |   .4909854   .0276804    17.74   0.000     .4367327     .545238
+                      1 1  |   .3746569   .0394697     9.49   0.000     .2972977    .4520161
+                           |
+      _predict#james_black |
+                      2 0  |   .3146909   .0218891    14.38   0.000     .2717891    .3575928
+                      2 1  |   .3013394   .0214482    14.05   0.000     .2593017    .3433772
+                           |
+        _predict#james_gay |
+                      2 0  |   .3210356   .0221818    14.47   0.000     .2775602    .3645111
+                      2 1  |   .2964202   .0213611    13.88   0.000     .2545531    .3382872
+                           |
+      _predict#james_evang |
+                      2 0  |   .3087795   .0213147    14.49   0.000     .2670036    .3505555
+                      2 1  |   .3053323   .0230553    13.24   0.000     .2601448    .3505198
+                           |
+         _predict#james_aa |
+                      2 0  |   .3147519   .0217404    14.48   0.000     .2721415    .3573623
+                      2 1  |    .293632   .0233885    12.55   0.000     .2477914    .3394727
+                           |
+        _predict#james_lib |
+                      2 0  |   .3108325   .0218473    14.23   0.000     .2680126    .3536523
+                      2 1  |   .3037161     .02255    13.47   0.000     .2595189    .3479132
+                           |
+        _predict#james_con |
+                      2 0  |   .3005337   .0211044    14.24   0.000     .2591698    .3418976
+                      2 1  |   .3271693   .0226237    14.46   0.000     .2828276    .3715109
+                           |
+      _predict#james_black |
+                      3 0  |   .2565524   .0258449     9.93   0.000     .2058974    .3072074
+                      3 1  |     .21935   .0229884     9.54   0.000     .1742935    .2644065
+                           |
+        _predict#james_gay |
+                      3 0  |   .2722339   .0265397    10.26   0.000     .2202171    .3242508
+                      3 1  |     .20429   .0223059     9.16   0.000     .1605712    .2480088
+                           |
+      _predict#james_evang |
+                      3 0  |    .240334   .0233679    10.28   0.000     .1945338    .2861341
+                      3 1  |   .2309503   .0297104     7.77   0.000     .1727189    .2891816
+                           |
+         _predict#james_aa |
+                      3 0  |   .2542615   .0235619    10.79   0.000      .208081    .3004419
+                      3 1  |   .2022507   .0286792     7.05   0.000     .1460405    .2584609
+                           |
+        _predict#james_lib |
+                      3 0  |   .2426257   .0222612    10.90   0.000     .1989946    .2862568
+                      3 1  |    .223863   .0314121     7.13   0.000     .1622963    .2854296
+                           |
+        _predict#james_con |
+                      3 0  |   .2084809   .0213318     9.77   0.000     .1666713    .2502906
+                      3 1  |   .2981738   .0355814     8.38   0.000     .2284356     .367912
+      --------------------------------------------------------------------------------------
+      
+    19 .                         margins, dydx(james_black) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =        484
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_black
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_black |  -.0372025   .0304988    -1.22   0.223    -.0969791    .0225742
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    20 .                         margins, dydx(james_black) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =        484
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_black
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_black |   .0505539   .0412444     1.23   0.220    -.0302836    .1313915
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    21 .                         margins, dydx(james_gay) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =        484
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_gay
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_gay |  -.0679439   .0305789    -2.22   0.026    -.1278775   -.0080103
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    22 .                         margins, dydx(james_gay) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =        484
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_gay
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_gay |   .0925594   .0412524     2.24   0.025     .0117061    .1734126
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    23 .                         margins, dydx(james_evang) predict(outcome(1))          
+      
+      Average marginal effects                        Number of obs     =        484
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_evang
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_evang |  -.0093837   .0363738    -0.26   0.796    -.0806749    .0619076
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    24 .                         margins, dydx(james_evang) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =        484
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_evang
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_evang |   .0128309   .0499359     0.26   0.797    -.0850418    .1107035
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    25 .                         margins, dydx(james_aa) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =        484
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_aa
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+        1.james_aa |  -.0520107    .035547    -1.46   0.143    -.1216816    .0176601
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    26 .                         margins, dydx(james_aa) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =        484
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_aa
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+        1.james_aa |   .0731306   .0513152     1.43   0.154    -.0274453    .1737065
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    27 .                         margins, dydx(james_lib) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =        484
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_lib
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_lib |  -.0187627   .0364062    -0.52   0.606    -.0901177    .0525922
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    28 .                         margins, dydx(james_lib) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =        484
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_lib
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_lib |   .0258791   .0508575     0.51   0.611    -.0737998     .125558
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    29 .                         margins, dydx(james_con) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =        484
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_con
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_con |   .0896929   .0399905     2.24   0.025     .0113129    .1680729
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    30 .                         margins, dydx(james_con) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =        484
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_con
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_con |  -.1163285   .0489713    -2.38   0.018    -.2123104   -.0203465
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    31 .                         
+    32 .                 * COL. 5 & 6 FLAGGED IP ADDRESSES
+    33 .                 ologit cf_ordered i.james_black i.james_gay i.james_evang i.james_aa i.james_lib i.james_con if funny == 1
+      
+      Iteration 0:   log likelihood =  -418.6466  
+      Iteration 1:   log likelihood = -407.99477  
+      Iteration 2:   log likelihood = -407.96917  
+      Iteration 3:   log likelihood = -407.96917  
+      
+      Ordered logistic regression                     Number of obs     =        397
+                                                      LR chi2(6)        =      21.35
+                                                      Prob > chi2       =     0.0016
+      Log likelihood = -407.96917                     Pseudo R2         =     0.0255
+      
+      -------------------------------------------------------------------------------
+         cf_ordered |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_black |   -.312359   .1926447    -1.62   0.105    -.6899356    .0652176
+        1.james_gay |  -.4822781   .1910673    -2.52   0.012    -.8567631    -.107793
+      1.james_evang |   .0808326   .2310203     0.35   0.726    -.3719587     .533624
+         1.james_aa |  -.2354605   .2350678    -1.00   0.317    -.6961848    .2252639
+        1.james_lib |  -.2292436    .233176    -0.98   0.326    -.6862602     .227773
+        1.james_con |   .5182151   .2315515     2.24   0.025     .0643825    .9720476
+      --------------+----------------------------------------------------------------
+              /cut1 |  -.5175625   .2464997                     -1.000693   -.0344321
+              /cut2 |   .8800776   .2501044                       .389882    1.370273
+      -------------------------------------------------------------------------------
+      
+    34 . 
+    35 .                         * MARGINAL EFFECTS FOR FLAGGED IP ADDRESSES
+    36 .                         margins james_black james_gay james_evang james_aa james_lib james_con
+      
+      Predictive margins                              Number of obs     =        397
+      Model VCE    : OIM
+      
+      1._predict   : Pr(cf_ordered==-1), predict(pr outcome(-1))
+      2._predict   : Pr(cf_ordered==0), predict(pr outcome(0))
+      3._predict   : Pr(cf_ordered==1), predict(pr outcome(1))
+      
+      --------------------------------------------------------------------------------------
+                           |            Delta-method
+                           |     Margin   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      ---------------------+----------------------------------------------------------------
+      _predict#james_black |
+                      1 0  |   .4307548   .0340132    12.66   0.000     .3640901    .4974195
+                      1 1  |   .5052637   .0329233    15.35   0.000     .4407353    .5697922
+                           |
+        _predict#james_gay |
+                      1 0  |   .4088765    .033895    12.06   0.000     .3424436    .4753094
+                      1 1  |   .5247773   .0329827    15.91   0.000     .4601323    .5894223
+                           |
+      _predict#james_evang |
+                      1 0  |   .4762297   .0306483    15.54   0.000     .4161602    .5362992
+                      1 1  |   .4569967   .0439117    10.41   0.000     .3709314     .543062
+                           |
+         _predict#james_aa |
+                      1 0  |   .4516488   .0304424    14.84   0.000     .3919827    .5113149
+                      1 1  |   .5079044   .0452345    11.23   0.000     .4192463    .5965624
+                           |
+        _predict#james_lib |
+                      1 0  |   .4508234   .0311285    14.48   0.000     .3898127    .5118342
+                      1 1  |   .5058751   .0445995    11.34   0.000     .4184617    .5932885
+                           |
+        _predict#james_con |
+                      1 0  |   .5071245   .0303341    16.72   0.000     .4476708    .5665782
+                      1 1  |   .3831934   .0441885     8.67   0.000     .2965856    .4698013
+                           |
+      _predict#james_black |
+                      2 0  |   .3128809   .0243282    12.86   0.000     .2651985    .3605632
+                      2 1  |   .2917469   .0235481    12.39   0.000     .2455934    .3379003
+                           |
+        _predict#james_gay |
+                      2 0  |   .3198306   .0247055    12.95   0.000     .2714087    .3682524
+                      2 1  |   .2866348    .023448    12.22   0.000     .2406776    .3325919
+                           |
+      _predict#james_evang |
+                      2 0  |   .3002771   .0234466    12.81   0.000     .2543226    .3462316
+                      2 1  |   .3056618   .0252648    12.10   0.000     .2561437    .3551799
+                           |
+         _predict#james_aa |
+                      2 0  |   .3075889   .0238877    12.88   0.000     .2607699    .3544079
+                      2 1  |   .2905483   .0257444    11.29   0.000     .2400902    .3410063
+                           |
+        _predict#james_lib |
+                      2 0  |   .3090709   .0243594    12.69   0.000     .2613274    .3568143
+                      2 1  |   .2923362   .0251931    11.60   0.000     .2429586    .3417138
+                           |
+        _predict#james_con |
+                      2 0  |   .2940506   .0231524    12.70   0.000     .2486726    .3394285
+                      2 1  |   .3248177   .0252897    12.84   0.000     .2752508    .3743846
+                           |
+      _predict#james_black |
+                      3 0  |   .2563643   .0285664     8.97   0.000     .2003752    .3123535
+                      3 1  |   .2029894   .0243011     8.35   0.000     .1553602    .2506186
+                           |
+        _predict#james_gay |
+                      3 0  |   .2712929   .0293056     9.26   0.000      .213855    .3287308
+                      3 1  |   .1885879   .0234631     8.04   0.000     .1426012    .2345747
+                           |
+      _predict#james_evang |
+                      3 0  |   .2234932   .0243683     9.17   0.000     .1757322    .2712543
+                      3 1  |   .2373415   .0338767     7.01   0.000     .1709444    .3037385
+                           |
+         _predict#james_aa |
+                      3 0  |   .2407623     .02497     9.64   0.000      .191822    .2897026
+                      3 1  |   .2015474    .031716     6.35   0.000     .1393853    .2637095
+                           |
+        _predict#james_lib |
+                      3 0  |   .2401057   .0247176     9.71   0.000     .1916602    .2885513
+                      3 1  |   .2017887   .0321978     6.27   0.000     .1386822    .2648952
+                           |
+        _predict#james_con |
+                      3 0  |   .1988249   .0229596     8.66   0.000     .1538248     .243825
+                      3 1  |   .2919889   .0390032     7.49   0.000     .2155441    .3684337
+      --------------------------------------------------------------------------------------
+      
+    37 .                         margins, dydx(james_black) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =        397
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_black
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_black |   -.053375   .0330426    -1.62   0.106    -.1181374    .0113874
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    38 .                         margins, dydx(james_black) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =        397
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_black
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_black |    .074509    .045724     1.63   0.103    -.0151084    .1641264
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    39 .                         margins, dydx(james_gay) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =        397
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_gay
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_gay |   -.082705    .032988    -2.51   0.012    -.1473603   -.0180497
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    40 .                         margins, dydx(james_gay) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =        397
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_gay
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_gay |   .1159008   .0455165     2.55   0.011     .0266901    .2051115
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    41 .                         margins, dydx(james_evang) predict(outcome(1))          
+      
+      Average marginal effects                        Number of obs     =        397
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_evang
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_evang |   .0138482   .0398466     0.35   0.728    -.0642497    .0919461
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    42 .                         margins, dydx(james_evang) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =        397
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_evang
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_evang |   -.019233   .0549337    -0.35   0.726     -.126901    .0884351
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    43 .                         margins, dydx(james_aa) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =        397
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_aa
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+        1.james_aa |  -.0392149   .0383079    -1.02   0.306    -.1142971    .0358673
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    44 .                         margins, dydx(james_aa) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =        397
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_aa
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+        1.james_aa |   .0562556   .0561634     1.00   0.317    -.0538227    .1663338
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    45 .                         margins, dydx(james_lib) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =        397
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_lib
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_lib |   -.038317   .0382595    -1.00   0.317    -.1133042    .0366701
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    46 .                         margins, dydx(james_lib) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =        397
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_lib
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_lib |   .0550517   .0562998     0.98   0.328    -.0552939    .1653973
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    47 .                         margins, dydx(james_con) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =        397
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_con
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_con |    .093164   .0435758     2.14   0.033      .007757     .178571
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    48 .                         margins, dydx(james_con) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =        397
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_con
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_con |  -.1239311   .0545541    -2.27   0.023    -.2308552    -.017007
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    49 . 
+    50 .                 * COL. 7 & 8: LIKELY TROLLS
+    51 .                 ologit cf_ordered i.james_black i.james_gay i.james_evang i.james_aa i.james_lib i.james_con if likely_troll == 1
+      
+      Iteration 0:   log likelihood = -134.60233  
+      Iteration 1:   log likelihood = -131.48772  
+      Iteration 2:   log likelihood = -131.47943  
+      Iteration 3:   log likelihood = -131.47942  
+      
+      Ordered logistic regression                     Number of obs     =        125
+                                                      LR chi2(6)        =       6.25
+                                                      Prob > chi2       =     0.3962
+      Log likelihood = -131.47942                     Pseudo R2         =     0.0232
+      
+      -------------------------------------------------------------------------------
+         cf_ordered |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_black |   .2016268   .3414308     0.59   0.555    -.4675654    .8708189
+        1.james_gay |   .0251223   .3396663     0.07   0.941    -.6406114     .690856
+      1.james_evang |  -.2151318   .4210539    -0.51   0.609    -1.040382    .6101188
+         1.james_aa |  -.5265637    .416678    -1.26   0.206    -1.343238    .2901101
+        1.james_lib |  -.0436226   .4257141    -0.10   0.918    -.8780068    .7907617
+        1.james_con |    .723763   .4091475     1.77   0.077    -.0781514    1.525677
+      --------------+----------------------------------------------------------------
+              /cut1 |  -.3397788   .4473314                     -1.216532    .5369745
+              /cut2 |    1.28294   .4633787                      .3747347    2.191146
+      -------------------------------------------------------------------------------
+      
+    52 . 
+    53 .                         * MARGINAL EFFECTS FOR LIKELY TROLLS
+    54 .                         margins james_black james_gay james_evang james_aa james_lib james_con
+      
+      Predictive margins                              Number of obs     =        125
+      Model VCE    : OIM
+      
+      1._predict   : Pr(cf_ordered==-1), predict(pr outcome(-1))
+      2._predict   : Pr(cf_ordered==0), predict(pr outcome(0))
+      3._predict   : Pr(cf_ordered==1), predict(pr outcome(1))
+      
+      --------------------------------------------------------------------------------------
+                           |            Delta-method
+                           |     Margin   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      ---------------------+----------------------------------------------------------------
+      _predict#james_black |
+                      1 0  |   .4221966   .0610224     6.92   0.000     .3025949    .5417983
+                      1 1  |    .375796   .0550357     6.83   0.000     .2679281     .483664
+                           |
+        _predict#james_gay |
+                      1 0  |   .3998224   .0580234     6.89   0.000     .2860986    .5135461
+                      1 1  |   .3940554   .0575205     6.85   0.000     .2813174    .5067934
+                           |
+      _predict#james_evang |
+                      1 0  |   .3811894   .0519605     7.34   0.000     .2793486    .4830301
+                      1 1  |   .4305404   .0782916     5.50   0.000     .2770918     .583989
+                           |
+         _predict#james_aa |
+                      1 0  |   .3549006   .0528811     6.71   0.000     .2512554    .4585457
+                      1 1  |   .4787309   .0794599     6.02   0.000     .3229924    .6344694
+                           |
+        _predict#james_lib |
+                      1 0  |   .3940279   .0500241     7.88   0.000     .2959824    .4920734
+                      1 1  |   .4040754   .0839612     4.81   0.000     .2395144    .5686364
+                           |
+        _predict#james_con |
+                      1 0  |   .4504585   .0538458     8.37   0.000     .3449227    .5559944
+                      1 1  |   .2864103   .0695805     4.12   0.000     .1500351    .4227855
+                           |
+      _predict#james_black |
+                      2 0  |   .3542072   .0440435     8.04   0.000     .2678836    .4405308
+                      2 1  |   .3649619   .0438166     8.33   0.000      .279083    .4508408
+                           |
+        _predict#james_gay |
+                      2 0  |   .3595791   .0440222     8.17   0.000     .2732972     .445861
+                      2 1  |   .3608866   .0435704     8.28   0.000     .2754902     .446283
+                           |
+      _predict#james_evang |
+                      2 0  |    .361565   .0430342     8.40   0.000     .2772195    .4459106
+                      2 1  |    .349697   .0479991     7.29   0.000     .2556205    .4437736
+                           |
+         _predict#james_aa |
+                      2 0  |   .3723497   .0445618     8.36   0.000     .2850103    .4596892
+                      2 1  |   .3382014   .0480405     7.04   0.000     .2440438     .432359
+                           |
+        _predict#james_lib |
+                      2 0  |   .3613851   .0440709     8.20   0.000     .2750077    .4477625
+                      2 1  |   .3590475   .0449074     8.00   0.000     .2710305    .4470644
+                           |
+        _predict#james_con |
+                      2 0  |   .3522585   .0434014     8.12   0.000     .2671934    .4373236
+                      2 1  |   .3790126   .0454181     8.34   0.000     .2899948    .4680304
+                           |
+      _predict#james_black |
+                      3 0  |   .2235962   .0476754     4.69   0.000     .1301541    .3170382
+                      3 1  |    .259242   .0487225     5.32   0.000     .1637477    .3547364
+                           |
+        _predict#james_gay |
+                      3 0  |   .2405985   .0475397     5.06   0.000     .1474223    .3337747
+                      3 1  |    .245058   .0492192     4.98   0.000     .1485901     .341526
+                           |
+      _predict#james_evang |
+                      3 0  |   .2572456   .0489526     5.25   0.000     .1613003     .353191
+                      3 1  |   .2197626   .0551474     3.99   0.000     .1116756    .3278495
+                           |
+         _predict#james_aa |
+                      3 0  |   .2727497    .048203     5.66   0.000     .1782736    .3672258
+                      3 1  |   .1830677   .0526048     3.48   0.001     .0799641    .2861713
+                           |
+        _predict#james_lib |
+                      3 0  |    .244587   .0414104     5.91   0.000     .1634241    .3257499
+                      3 1  |   .2368771   .0694032     3.41   0.001     .1008494    .3729049
+                           |
+        _predict#james_con |
+                      3 0  |    .197283   .0404863     4.87   0.000     .1179312    .2766347
+                      3 1  |   .3345771   .0744785     4.49   0.000     .1886019    .4805523
+      --------------------------------------------------------------------------------------
+      
+    55 .                         margins, dydx(james_black) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =        125
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_black
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_black |   .0356459   .0600674     0.59   0.553     -.082084    .1533758
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    56 .                         margins, dydx(james_black) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =        125
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_black
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_black |  -.0464006    .078483    -0.59   0.554    -.2002245    .1074234
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    57 .                         margins, dydx(james_gay) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =        125
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_gay
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_gay |   .0044596   .0602918     0.07   0.941    -.1137102    .1226293
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    58 .                         margins, dydx(james_gay) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =        125
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_gay
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_gay |   -.005767   .0779492    -0.07   0.941    -.1585446    .1470107
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    59 .                         margins, dydx(james_evang) predict(outcome(1))          
+      
+      Average marginal effects                        Number of obs     =        125
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_evang
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_evang |  -.0374831   .0720139    -0.52   0.603    -.1786278    .1036616
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    60 .                         margins, dydx(james_evang) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =        125
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_evang
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_evang |   .0493511   .0960906     0.51   0.608    -.1389831    .2376853
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    61 .                         margins, dydx(james_aa) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =        125
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_aa
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+        1.james_aa |   -.089682   .0679385    -1.32   0.187     -.222839     .043475
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    62 .                         margins, dydx(james_aa) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =        125
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_aa
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+        1.james_aa |   .1238303   .0983088     1.26   0.208    -.0688513     .316512
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    63 .                         margins, dydx(james_lib) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =        125
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_lib
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_lib |  -.0077099   .0748768    -0.10   0.918    -.1544657     .139046
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    64 .                         margins, dydx(james_lib) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =        125
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_lib
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_lib |   .0100475   .0983588     0.10   0.919    -.1827321    .2028272
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    65 .                         margins, dydx(james_con) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =        125
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_con
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_con |   .1372942   .0818373     1.68   0.093     -.023104    .2976923
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    66 .                         margins, dydx(james_con) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =        125
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_con
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_con |  -.1640483   .0880512    -1.86   0.062    -.3366254    .0085289
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+    67 .                         
+    68 . *** SI 4.2: The interactive model, for completeness
+    69 .         
+    70 .         * All bad actors (col. 1)
+    71 .         ologit cf_ordered i.james_black##i.badactor i.james_gay##i.badactor i.james_evang##i.badactor i.james_aa##i.badactor i.james_lib##i.badactor 
+      > i.james_con##i.badactor 
+      
+      Iteration 0:   log likelihood = -2037.4154  
+      Iteration 1:   log likelihood = -1948.6665  
+      Iteration 2:   log likelihood = -1948.0148  
+      Iteration 3:   log likelihood = -1948.0145  
+      Iteration 4:   log likelihood = -1948.0145  
+      
+      Ordered logistic regression                     Number of obs     =      1,991
+                                                      LR chi2(13)       =     178.80
+                                                      Prob > chi2       =     0.0000
+      Log likelihood = -1948.0145                     Pseudo R2         =     0.0439
+      
+      --------------------------------------------------------------------------------------
+                cf_ordered |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      ---------------------+----------------------------------------------------------------
+             1.james_black |  -.6159233   .1025398    -6.01   0.000    -.8168977   -.4149489
+                1.badactor |  -.1536382    .256079    -0.60   0.549    -.6555439    .3482674
+                           |
+      james_black#badactor |
+                      1 1  |   .4126588   .1988947     2.07   0.038     .0228324    .8024852
+                           |
+               1.james_gay |  -.8304355   .1028717    -8.07   0.000     -1.03206   -.6288107
+                           |
+        james_gay#badactor |
+                      1 1  |   .4608467   .1983627     2.32   0.020      .072063    .8496304
+                           |
+             1.james_evang |   .2589035   .1217978     2.13   0.034     .0201842    .4976229
+                           |
+      james_evang#badactor |
+                      1 1  |  -.3104141   .2395519    -1.30   0.195    -.7799271    .1590989
+                           |
+                1.james_aa |  -.2911789   .1275124    -2.28   0.022    -.5410985   -.0412592
+                           |
+         james_aa#badactor |
+                      1 1  |  -.0009564   .2461686    -0.00   0.997     -.483438    .4815252
+                           |
+               1.james_lib |  -.4171786   .1258295    -3.32   0.001       -.6638   -.1705572
+                           |
+        james_lib#badactor |
+                      1 1  |   .3129712   .2434956     1.29   0.199    -.1642714    .7902139
+                           |
+               1.james_con |   .3640663   .1231977     2.96   0.003     .1226032    .6055293
+                           |
+        james_con#badactor |
+                      1 1  |   .1020508   .2391065     0.43   0.670    -.3665893    .5706909
+      ---------------------+----------------------------------------------------------------
+                     /cut1 |  -.6000641   .1338236                     -.8623535   -.3377747
+                     /cut2 |   .6671808   .1342094                      .4041351    .9302264
+      --------------------------------------------------------------------------------------
+      
+    72 .         
+    73 .         * Flagged IP addresses (col. 2)
+    74 .         ologit cf_ordered i.james_black##i.funny i.james_gay##i.funny i.james_evang##i.funny i.james_aa##i.funny i.james_lib##i.funny i.james_con##i.
+      > funny if likely_troll==0
+      
+      Iteration 0:   log likelihood = -1898.3228  
+      Iteration 1:   log likelihood = -1813.1668  
+      Iteration 2:   log likelihood = -1812.5435  
+      Iteration 3:   log likelihood = -1812.5433  
+      Iteration 4:   log likelihood = -1812.5433  
+      
+      Ordered logistic regression                     Number of obs     =      1,866
+                                                      LR chi2(13)       =     171.56
+                                                      Prob > chi2       =     0.0000
+      Log likelihood = -1812.5433                     Pseudo R2         =     0.0452
+      
+      -----------------------------------------------------------------------------------
+             cf_ordered |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      ------------------+----------------------------------------------------------------
+          1.james_black |  -.6120937   .1024342    -5.98   0.000     -.812861   -.4113264
+                1.funny |  -.1121122   .2891908    -0.39   0.698    -.6789157    .4546913
+                        |
+      james_black#funny |
+                   1 1  |   .2813461   .2256494     1.25   0.212    -.1609186    .7236108
+                        |
+            1.james_gay |  -.8254641   .1027793    -8.03   0.000    -1.026908   -.6240204
+                        |
+        james_gay#funny |
+                   1 1  |   .3366903   .2236882     1.51   0.132    -.1017306    .7751112
+                        |
+          1.james_evang |   .2572685   .1216485     2.11   0.034     .0188418    .4956951
+                        |
+      james_evang#funny |
+                   1 1  |  -.2408075   .2710954    -0.89   0.374    -.7721447    .2905296
+                        |
+             1.james_aa |  -.2894622   .1273704    -2.27   0.023    -.5391036   -.0398208
+                        |
+         james_aa#funny |
+                   1 1  |   .0642231   .2777237     0.23   0.817    -.4801054    .6085515
+                        |
+            1.james_lib |  -.4148226   .1256987    -3.30   0.001    -.6611876   -.1684577
+                        |
+        james_lib#funny |
+                   1 1  |   .3104232   .2745931     1.13   0.258    -.2277694    .8486158
+                        |
+            1.james_con |   .3619264   .1230434     2.94   0.003     .1207657    .6030871
+                        |
+        james_con#funny |
+                   1 1  |   .0907453   .2727477     0.33   0.739    -.4438304    .6253209
+      ------------------+----------------------------------------------------------------
+                  /cut1 |  -.5887086   .1337851                     -.8509225   -.3264947
+                  /cut2 |   .6548976   .1341834                       .391903    .9178922
+      -----------------------------------------------------------------------------------
+      
+    75 .         
+    76 .         * Likely trolls (col. 3)
+    77 .         ologit cf_ordered i.james_black##i.likely_troll i.james_gay##i.likely_troll i.james_evang##i.likely_troll i.james_aa##i.likely_troll i.james_
+      > lib##i.likely_troll i.james_con##i.likely_troll if funny == 0
+      
+      Iteration 0:   log likelihood = -1615.6281  
+      Iteration 1:   log likelihood = -1535.5213  
+      Iteration 2:   log likelihood = -1534.8925  
+      Iteration 3:   log likelihood = -1534.8923  
+      Iteration 4:   log likelihood = -1534.8923  
+      
+      Ordered logistic regression                     Number of obs     =      1,594
+                                                      LR chi2(13)       =     161.47
+                                                      Prob > chi2       =     0.0000
+      Log likelihood = -1534.8923                     Pseudo R2         =     0.0500
+      
+      ------------------------------------------------------------------------------------------
+                    cf_ordered |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------------------+----------------------------------------------------------------
+                 1.james_black |  -.6111686   .1024678    -5.96   0.000    -.8120018   -.4103354
+                1.likely_troll |   -.280207   .5903596    -0.47   0.635    -1.437291    .8768766
+                               |
+      james_black#likely_troll |
+                          1 1  |   .8536445   .4229695     2.02   0.044     .0246396    1.682649
+                               |
+                   1.james_gay |  -.8242629   .1028563    -8.01   0.000    -1.025857   -.6226683
+                               |
+        james_gay#likely_troll |
+                          1 1  |   .9462619   .4234991     2.23   0.025      .116219    1.776305
+                               |
+                 1.james_evang |   .2568739   .1216217     2.11   0.035     .0184999     .495248
+                               |
+      james_evang#likely_troll |
+                          1 1  |  -.7677758   .5399749    -1.42   0.155    -1.826107    .2905556
+                               |
+                    1.james_aa |   -.289047   .1273459    -2.27   0.023    -.5386403   -.0394537
+                               |
+         james_aa#likely_troll |
+                          1 1  |  -.4237987    .525475    -0.81   0.420    -1.453711    .6061134
+                               |
+                   1.james_lib |   -.414253   .1256855    -3.30   0.001     -.660592   -.1679139
+                               |
+        james_lib#likely_troll |
+                          1 1  |    .949952    .514054     1.85   0.065    -.0575754    1.957479
+                               |
+                   1.james_con |   .3614094   .1230217     2.94   0.003     .1202913    .6025276
+                               |
+        james_con#likely_troll |
+                          1 1  |   .2110133   .5057822     0.42   0.677    -.7803017    1.202328
+      -------------------------+----------------------------------------------------------------
+                         /cut1 |  -.5859534   .1341776                     -.8489368   -.3229701
+                         /cut2 |   .6519212   .1346441                      .3880237    .9158188
+      ------------------------------------------------------------------------------------------
+      
+    78 .                 
+    79 . *** Table SI 4.8 --- going slightly out of order for efficiency of code
+    80 . 
+    81 .         * Creating timing variables
+    82 .         replace durationinseconds = "" if durationinseconds == "NA"
+      (9 real changes made)
+      
+    83 .         destring durationinseconds, gen(time)
+      durationinseconds: all characters numeric; time generated as int
+      (9 missing values generated)
+      
+    84 .         *median response time = 573 seconds, or about 9 minutes and 33 seconds
+    85 .         *generating outlier variables based on "time outside whiskers" in the box plot
+    86 .         *anything outside 167% of the IQR gets classified as "fast" or "slow"
+    87 .         *25th percentile = 426; 75th percentile = 785   
+    88 .         gen fast = 0
+      
+    89 .         replace fast = 1 if time <= 245
+      (41 real changes made)
+      
+    90 .         gen slow = 0
+      
+    91 .         replace slow = 1 if time > 1138
+      (233 real changes made)
+      
+    92 .         
+    93 .         * Running the model
+    94 .         ologit cf_ordered i.james_black##i.fast i.james_gay##i.fast i.james_evang##i.fast i.james_aa##i.fast i.james_lib##i.fast i.james_con##i.fast 
+      > if badactor == 0
+      
+      Iteration 0:   log likelihood = -1517.1303  
+      Iteration 1:   log likelihood = -1440.0913  
+      Iteration 2:   log likelihood = -1439.4604  
+      Iteration 3:   log likelihood =   -1439.46  
+      Iteration 4:   log likelihood =   -1439.46  
+      
+      Ordered logistic regression                     Number of obs     =      1,507
+                                                      LR chi2(13)       =     155.34
+                                                      Prob > chi2       =     0.0000
+      Log likelihood =   -1439.46                     Pseudo R2         =     0.0512
+      
+      ----------------------------------------------------------------------------------
+            cf_ordered |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -----------------+----------------------------------------------------------------
+         1.james_black |  -.6171165   .1034942    -5.96   0.000    -.8199613   -.4142716
+                1.fast |    .550658   1.038402     0.53   0.596    -1.484572    2.585888
+                       |
+      james_black#fast |
+                  1 1  |    .974872   .9701426     1.00   0.315    -.9265724    2.876317
+                       |
+           1.james_gay |  -.8261753   .1038858    -7.95   0.000    -1.029788   -.6225628
+                       |
+        james_gay#fast |
+                  1 1  |  -.1278444   .8592375    -0.15   0.882    -1.811919     1.55623
+                       |
+         1.james_evang |   .2593507   .1229553     2.11   0.035     .0183628    .5003386
+                       |
+      james_evang#fast |
+                  1 1  |  -.5193571   1.002238    -0.52   0.604    -2.483706    1.444992
+                       |
+            1.james_aa |  -.2593295   .1285345    -2.02   0.044    -.5112525   -.0074064
+                       |
+         james_aa#fast |
+                  1 1  |  -1.836022   1.078466    -1.70   0.089    -3.949776    .2777316
+                       |
+           1.james_lib |  -.4107668   .1268911    -3.24   0.001    -.6594688   -.1620647
+                       |
+        james_lib#fast |
+                  1 1  |  -.5466287   1.055696    -0.52   0.605    -2.615756    1.522498
+                       |
+           1.james_con |   .3722562   .1243117     2.99   0.003     .1286097    .6159027
+                       |
+        james_con#fast |
+                  1 1  |  -.9885607   .9573195    -1.03   0.302    -2.864872     .887751
+      -----------------+----------------------------------------------------------------
+                 /cut1 |  -.5732106   .1356971                      -.839172   -.3072491
+                 /cut2 |   .6518808   .1361952                      .3849431    .9188185
+      ----------------------------------------------------------------------------------
+      
+    95 . 
+    96 . *** Finally, we can estimate the attenuation effects, consistent with SI 4.3
+    97 . 
+    98 .         * Running the full model and the "all suspicious respondents" model for comparisons
+    99 .                 * Full sample
+   100 .                 ologit cf_ordered i.james_black i.james_gay i.james_evang i.james_aa i.james_lib i.james_con
+      
+      Iteration 0:   log likelihood = -2037.4154  
+      Iteration 1:   log likelihood = -1959.5189  
+      Iteration 2:   log likelihood = -1959.1207  
+      Iteration 3:   log likelihood = -1959.1206  
+      
+      Ordered logistic regression                     Number of obs     =      1,991
+                                                      LR chi2(6)        =     156.59
+                                                      Prob > chi2       =     0.0000
+      Log likelihood = -1959.1206                     Pseudo R2         =     0.0384
+      
+      -------------------------------------------------------------------------------
+         cf_ordered |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_black |  -.4997663   .0874771    -5.71   0.000    -.6712182   -.3283144
+        1.james_gay |  -.6980446   .0876663    -7.96   0.000    -.8698675   -.5262218
+      1.james_evang |   .1878017   .1045026     1.80   0.072    -.0170196     .392623
+         1.james_aa |  -.2880275   .1086553    -2.65   0.008     -.500988   -.0750669
+        1.james_lib |  -.3425509   .1073298    -3.19   0.001    -.5529133   -.1321884
+        1.james_con |   .3726121   .1052384     3.54   0.000     .1663487    .5788755
+      --------------+----------------------------------------------------------------
+              /cut1 |  -.5533048   .1150497                     -.7787981   -.3278115
+              /cut2 |   .7035539   .1157872                      .4766151    .9304927
+      -------------------------------------------------------------------------------
+      
+   101 .                         margins james_black james_gay james_evang james_aa james_lib james_con
+      
+      Predictive margins                              Number of obs     =      1,991
+      Model VCE    : OIM
+      
+      1._predict   : Pr(cf_ordered==-1), predict(pr outcome(-1))
+      2._predict   : Pr(cf_ordered==0), predict(pr outcome(0))
+      3._predict   : Pr(cf_ordered==1), predict(pr outcome(1))
+      
+      --------------------------------------------------------------------------------------
+                           |            Delta-method
+                           |     Margin   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      ---------------------+----------------------------------------------------------------
+      _predict#james_black |
+                      1 0  |   .4590769   .0148692    30.87   0.000     .4299339      .48822
+                      1 1  |   .5762203   .0146805    39.25   0.000      .547447    .6049937
+                           |
+        _predict#james_gay |
+                      1 0  |    .433756   .0149817    28.95   0.000     .4043924    .4631195
+                      1 1  |   .5991722   .0146698    40.84   0.000     .5704199    .6279245
+                           |
+      _predict#james_evang |
+                      1 0  |    .533145   .0137136    38.88   0.000     .5062669    .5600231
+                      1 1  |   .4892382   .0193281    25.31   0.000     .4513557    .5271206
+                           |
+         _predict#james_aa |
+                      1 0  |   .4963501   .0135554    36.62   0.000     .4697819    .5229183
+                      1 1  |   .5636091   .0202353    27.85   0.000     .5239487    .6032696
+                           |
+        _predict#james_lib |
+                      1 0  |   .4907944   .0137556    35.68   0.000     .4638341    .5177548
+                      1 1  |   .5710677   .0198544    28.76   0.000     .5321537    .6099817
+                           |
+        _predict#james_con |
+                      1 0  |   .5464941   .0134887    40.51   0.000     .5200567    .5729315
+                      1 1  |   .4588004   .0199447    23.00   0.000     .4197094    .4978913
+                           |
+      _predict#james_black |
+                      2 0  |   .2769105    .010648    26.01   0.000     .2560409    .2977801
+                      2 1  |   .2420299   .0099351    24.36   0.000     .2225574    .2615025
+                           |
+        _predict#james_gay |
+                      2 0  |   .2852072   .0109036    26.16   0.000     .2638366    .3065778
+                      2 1  |   .2351277   .0098804    23.80   0.000     .2157624    .2544929
+                           |
+      _predict#james_evang |
+                      2 0  |    .255863    .009938    25.75   0.000     .2363848    .2753411
+                      2 1  |   .2684318   .0110305    24.34   0.000     .2468124    .2900512
+                           |
+         _predict#james_aa |
+                      2 0  |   .2670592   .0103449    25.82   0.000     .2467836    .2873349
+                      2 1  |   .2459159   .0110504    22.25   0.000     .2242575    .2675744
+                           |
+        _predict#james_lib |
+                      2 0  |    .269434   .0104748    25.72   0.000     .2489039    .2899642
+                      2 1  |   .2439174   .0109564    22.26   0.000     .2224433    .2653916
+                           |
+        _predict#james_con |
+                      2 0  |   .2528404   .0098615    25.64   0.000     .2335122    .2721686
+                      2 1  |   .2771567   .0111384    24.88   0.000     .2553258    .2989875
+                           |
+      _predict#james_black |
+                      3 0  |   .2640126   .0126799    20.82   0.000     .2391605    .2888647
+                      3 1  |   .1817497   .0104112    17.46   0.000     .1613441    .2021553
+                           |
+        _predict#james_gay |
+                      3 0  |   .2810368   .0131607    21.35   0.000     .2552423    .3068314
+                      3 1  |   .1657001   .0099397    16.67   0.000     .1462186    .1851816
+                           |
+      _predict#james_evang |
+                      3 0  |   .2109921   .0107917    19.55   0.000     .1898407    .2321434
+                      3 1  |   .2423301   .0149588    16.20   0.000     .2130114    .2716487
+                           |
+         _predict#james_aa |
+                      3 0  |   .2365907   .0109718    21.56   0.000     .2150863    .2580951
+                      3 1  |   .1904749    .014061    13.55   0.000      .162916    .2180339
+                           |
+        _predict#james_lib |
+                      3 0  |   .2397715   .0110915    21.62   0.000     .2180327    .2615104
+                      3 1  |   .1850149      .0137    13.50   0.000     .1581634    .2118664
+                           |
+        _predict#james_con |
+                      3 0  |   .2006655   .0103853    19.32   0.000     .1803107    .2210204
+                      3 1  |    .264043   .0161623    16.34   0.000     .2323654    .2957205
+      --------------------------------------------------------------------------------------
+      
+   102 .                         margins, dydx(james_black) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =      1,991
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_black
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_black |  -.0822629   .0143924    -5.72   0.000    -.1104714   -.0540543
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   103 .                         margins, dydx(james_black) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =      1,991
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_black
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_black |   .1171434   .0202718     5.78   0.000     .0774114    .1568754
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   104 .                         margins, dydx(james_gay) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =      1,991
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_gay
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_gay |  -.1153367   .0145155    -7.95   0.000    -.1437866   -.0868868
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   105 .                         margins, dydx(james_gay) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =      1,991
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_gay
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_gay |   .1654163   .0203787     8.12   0.000     .1254748    .2053577
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   106 .                         margins, dydx(james_evang) predict(outcome(1))          
+      
+      Average marginal effects                        Number of obs     =      1,991
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_evang
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_evang |    .031338   .0176945     1.77   0.077    -.0033427    .0660186
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   107 .                         margins, dydx(james_evang) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =      1,991
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_evang
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_evang |  -.0439068   .0244859    -1.79   0.073    -.0918983    .0040846
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   108 .                         margins, dydx(james_aa) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =      1,991
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_aa
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+        1.james_aa |  -.0461157   .0169335    -2.72   0.006    -.0793048   -.0129267
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   109 .                         margins, dydx(james_aa) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =      1,991
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_aa
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+        1.james_aa |    .067259   .0252979     2.66   0.008      .017676    .1168421
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   110 .                         margins, dydx(james_lib) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =      1,991
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_lib
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_lib |  -.0547566   .0166566    -3.29   0.001    -.0874029   -.0221104
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   111 .                         margins, dydx(james_lib) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =      1,991
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_lib
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_lib |   .0802732   .0251193     3.20   0.001     .0310404    .1295061
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   112 .                         margins, dydx(james_con) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =      1,991
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_con
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_con |   .0633774   .0184836     3.43   0.001     .0271503    .0996046
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   113 .                         margins, dydx(james_con) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =      1,991
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_con
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_con |  -.0876937   .0247842    -3.54   0.000    -.1362698   -.0391176
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   114 .                 * Nonsuspicious respondents
+   115 .                 ologit cf_ordered i.james_black i.james_gay i.james_evang i.james_aa i.james_lib i.james_con if badactor == 0
+      
+      Iteration 0:   log likelihood = -1517.1303  
+      Iteration 1:   log likelihood = -1442.5121  
+      Iteration 2:   log likelihood = -1441.9411  
+      Iteration 3:   log likelihood = -1441.9409  
+      Iteration 4:   log likelihood = -1441.9409  
+      
+      Ordered logistic regression                     Number of obs     =      1,507
+                                                      LR chi2(6)        =     150.38
+                                                      Prob > chi2       =     0.0000
+      Log likelihood = -1441.9409                     Pseudo R2         =     0.0496
+      
+      -------------------------------------------------------------------------------
+         cf_ordered |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_black |  -.6086237   .1024073    -5.94   0.000    -.8093383   -.4079091
+        1.james_gay |  -.8209579   .1028107    -7.99   0.000    -1.022463   -.6194527
+      1.james_evang |   .2557893   .1215248     2.10   0.035     .0176051    .4939734
+         1.james_aa |  -.2879039   .1272538    -2.26   0.024    -.5373167    -.038491
+        1.james_lib |  -.4126848   .1256021    -3.29   0.001    -.6588605   -.1665092
+        1.james_con |   .3599871   .1229226     2.93   0.003     .1190633     .600911
+      --------------+----------------------------------------------------------------
+              /cut1 |  -.5783497   .1342214                     -.8414189   -.3152805
+              /cut2 |   .6437146   .1347049                       .379698    .9077313
+      -------------------------------------------------------------------------------
+      
+   116 .                         margins james_black james_gay james_evang james_aa james_lib james_con
+      
+      Predictive margins                              Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      1._predict   : Pr(cf_ordered==-1), predict(pr outcome(-1))
+      2._predict   : Pr(cf_ordered==0), predict(pr outcome(0))
+      3._predict   : Pr(cf_ordered==1), predict(pr outcome(1))
+      
+      --------------------------------------------------------------------------------------
+                           |            Delta-method
+                           |     Margin   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      ---------------------+----------------------------------------------------------------
+      _predict#james_black |
+                      1 0  |   .4682187   .0169219    27.67   0.000     .4350525     .501385
+                      1 1  |   .6078115   .0166575    36.49   0.000     .5751633    .6404596
+                           |
+        _predict#james_gay |
+                      1 0  |    .441156   .0171112    25.78   0.000     .4076186    .4746934
+                      1 1  |   .6318357   .0165825    38.10   0.000     .5993345    .6643369
+                           |
+      _predict#james_evang |
+                      1 0  |   .5580752   .0155757    35.83   0.000     .5275474     .588603
+                      1 1  |   .4995121   .0220536    22.65   0.000     .4562878    .5427364
+                           |
+         _predict#james_aa |
+                      1 0  |   .5168217   .0153833    33.60   0.000      .486671    .5469724
+                      1 1  |   .5823816   .0231172    25.19   0.000     .5370727    .6276905
+                           |
+        _predict#james_lib |
+                      1 0  |   .5054318   .0157478    32.10   0.000     .4745668    .5362969
+                      1 1  |   .5996964   .0223606    26.82   0.000     .5558704    .6435225
+                           |
+        _predict#james_con |
+                      1 0  |   .5651045   .0153421    36.83   0.000     .5350345    .5951745
+                      1 1  |   .4823016   .0227769    21.18   0.000     .4376597    .5269435
+                           |
+      _predict#james_black |
+                      2 0  |   .2652351   .0121891    21.76   0.000      .241345    .2891252
+                      2 1  |   .2227963   .0110831    20.10   0.000     .2010737    .2445188
+                           |
+        _predict#james_gay |
+                      2 0  |   .2742323   .0125271    21.89   0.000     .2496796     .298785
+                      2 1  |   .2152132   .0110065    19.55   0.000     .1936407    .2367856
+                           |
+      _predict#james_evang |
+                      2 0  |   .2393414   .0111474    21.47   0.000     .2174929      .26119
+                      2 1  |   .2562407   .0125568    20.41   0.000     .2316297    .2808516
+                           |
+         _predict#james_aa |
+                      2 0  |   .2518453    .011701    21.52   0.000     .2289117     .274779
+                      2 1  |   .2310351   .0124352    18.58   0.000     .2066625    .2554077
+                           |
+        _predict#james_lib |
+                      2 0  |   .2560174   .0118974    21.52   0.000     .2326989    .2793359
+                      2 1  |    .225489    .012328    18.29   0.000     .2013265    .2496515
+                           |
+        _predict#james_con |
+                      2 0  |   .2376447   .0110969    21.42   0.000     .2158952    .2593941
+                      2 1  |   .2611597   .0126649    20.62   0.000     .2363369    .2859825
+                           |
+      _predict#james_black |
+                      3 0  |   .2665462   .0145265    18.35   0.000     .2380747    .2950177
+                      3 1  |   .1693922   .0115795    14.63   0.000     .1466968    .1920877
+                           |
+        _predict#james_gay |
+                      3 0  |   .2846117   .0151578    18.78   0.000      .254903    .3143204
+                      3 1  |   .1529512   .0109722    13.94   0.000     .1314461    .1744562
+                           |
+      _predict#james_evang |
+                      3 0  |   .2025834   .0121454    16.68   0.000     .1787788    .2263879
+                      3 1  |   .2442473   .0171842    14.21   0.000     .2105669    .2779276
+                           |
+         _predict#james_aa |
+                      3 0  |    .231333   .0123507    18.73   0.000     .2071261    .2555398
+                      3 1  |   .1865832   .0161294    11.57   0.000     .1549703    .2181962
+                           |
+        _predict#james_lib |
+                      3 0  |   .2385508   .0127394    18.73   0.000      .213582    .2635196
+                      3 1  |   .1748146   .0151652    11.53   0.000     .1450914    .2045377
+                           |
+        _predict#james_con |
+                      3 0  |   .1972508   .0118127    16.70   0.000     .1740984    .2204032
+                      3 1  |   .2565387   .0181919    14.10   0.000     .2208832    .2921941
+      --------------------------------------------------------------------------------------
+      
+   117 .                         margins, dydx(james_black) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_black
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_black |  -.0971539   .0162932    -5.96   0.000     -.129088   -.0652198
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   118 .                         margins, dydx(james_black) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_black
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_black |   .1395928   .0231006     6.04   0.000     .0943163    .1848692
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   119 .                         margins, dydx(james_gay) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_gay
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_gay |  -.1316605   .0164873    -7.99   0.000    -.1639751   -.0993459
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   120 .                         margins, dydx(james_gay) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_gay
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_gay |   .1906796   .0232362     8.21   0.000     .1451375    .2362218
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   121 .                         margins, dydx(james_evang) predict(outcome(1))          
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_evang
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_evang |   .0416639   .0201859     2.06   0.039     .0021003    .0812275
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   122 .                         margins, dydx(james_evang) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_evang
+      
+      -------------------------------------------------------------------------------
+                    |            Delta-method
+                    |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+      1.james_evang |  -.0585631   .0279307    -2.10   0.036    -.1133062     -.00382
+      -------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   123 .                         margins, dydx(james_aa) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_aa
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+        1.james_aa |  -.0447497   .0192511    -2.32   0.020    -.0824812   -.0070183
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   124 .                         margins, dydx(james_aa) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_aa
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+        1.james_aa |   .0655599   .0288698     2.27   0.023     .0089762    .1221436
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   125 .                         margins, dydx(james_lib) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_lib
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_lib |  -.0637362   .0187315    -3.40   0.001    -.1004493   -.0270231
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   126 .                         margins, dydx(james_lib) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_lib
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_lib |   .0942646   .0285239     3.30   0.001     .0383588    .1501704
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   127 .                         margins, dydx(james_con) predict(outcome(1))
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==1), predict(outcome(1))
+      dy/dx w.r.t. : 1.james_con
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_con |   .0592878   .0208712     2.84   0.005     .0183811    .1001946
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   128 .                         margins, dydx(james_con) predict(outcome(-1))
+      
+      Average marginal effects                        Number of obs     =      1,507
+      Model VCE    : OIM
+      
+      Expression   : Pr(cf_ordered==-1), predict(outcome(-1))
+      dy/dx w.r.t. : 1.james_con
+      
+      ------------------------------------------------------------------------------
+                   |            Delta-method
+                   |      dy/dx   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+       1.james_con |  -.0828029   .0283653    -2.92   0.004    -.1383979   -.0272079
+      ------------------------------------------------------------------------------
+      Note: dy/dx for factor levels is the discrete change from the base level.
+      
+   129 .                 * Recorded and stored, along with estimates from Table SI 4.6, in attenuation_fx.csv
+   130 .                 * Note that we are interested in whether effects "go in the expected direction," so they are stored as absolute magnitudes in that fi
+      > le (and theoretically "x -1" when they "go against the expect direction," though none do)
+   131 . 
+   132 .         * Load that summary data
+   133 .         insheet using "turk_08_17_2018/attenuation_fx.csv", clear names
+      (7 vars, 12 obs)
+      
+   134 .         
+   135 .         gen diff = nonsusp_beta - susp_beta
+      
+   136 .         gen se_diff = sqrt(((nonsusp_se ^ 2) / 1507) + (susp_se ^ 2) / 484)
+      
+   137 .         gen weight = 1 / se_diff
+      
+   138 .         reg diff [aw = weight]
+      (sum of wgt is 6,319.1767578125)
+      
+            Source |       SS           df       MS      Number of obs   =        12
+      -------------+----------------------------------   F(0, 11)        =      0.00
+             Model |           0         0           .   Prob > F        =         .
+          Residual |  .020992615        11   .00190842   R-squared       =    0.0000
+      -------------+----------------------------------   Adj R-squared   =    0.0000
+             Total |  .020992615        11   .00190842   Root MSE        =    .04369
+      
+      ------------------------------------------------------------------------------
+              diff |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+             _cons |   .0368692   .0126109     2.92   0.014     .0091128    .0646256
+      ------------------------------------------------------------------------------
+      
+   139 .         
+   140 .         *average treatment effect in the non-troll group
+   141 .         gen weight_nonsusp = 1 / nonsusp_se
+      
+   142 .         reg nonsusp_beta [aw = weight_nonsusp]
+      (sum of wgt is 551.8906288146973)
+      
+            Source |       SS           df       MS      Number of obs   =        12
+      -------------+----------------------------------   F(0, 11)        =      0.00
+             Model |           0         0           .   Prob > F        =         .
+          Residual |  .022040385        11  .002003671   R-squared       =    0.0000
+      -------------+----------------------------------   Adj R-squared   =    0.0000
+             Total |  .022040385        11  .002003671   Root MSE        =    .04476
+      
+      ------------------------------------------------------------------------------
+      nonsusp_beta |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+             _cons |    .089548   .0129218     6.93   0.000     .0611074    .1179887
+      ------------------------------------------------------------------------------
+      
+   143 .                 
+   144 .                 *getting an attenuation effect, weighted by the inverse of the estimated SE of the differences
+   145 .         gen attn = nonsusp_beta - full_beta
+      
+   146 .         gen se_attn = sqrt(((nonsusp_se ^ 2) / 484) + (full_se ^ 2) / 1991)
+      
+   147 .         gen attn_wt = 1 / se_attn
+      
+   148 .         reg attn [aw = attn_wt] 
+      (sum of wgt is 11,137.9165039063)
+      
+            Source |       SS           df       MS      Number of obs   =        12
+      -------------+----------------------------------   F(0, 11)        =      0.00
+             Model |           0         0           .   Prob > F        =         .
+          Residual |  .001104854        11  .000100441   R-squared       =    0.0000
+      -------------+----------------------------------   Adj R-squared   =    0.0000
+             Total |  .001104854        11  .000100441   Root MSE        =    .01002
+      
+      ------------------------------------------------------------------------------
+              attn |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+             _cons |    .009914   .0028931     3.43   0.006     .0035463    .0162816
+      ------------------------------------------------------------------------------
+      
+   149 . 
+   150 .         *putting it in percentage point terms. we observe treatment effects that are...
+   151 .         gen attn_pct = full_beta / nonsusp_beta
+      
+   152 .         reg attn_pct [aw = attn_wt]
+      (sum of wgt is 11,137.9165039063)
+      
+            Source |       SS           df       MS      Number of obs   =        12
+      -------------+----------------------------------   F(0, 11)        =      0.00
+             Model |           0         0           .   Prob > F        =         .
+          Residual |  .134208188        11  .012200744   R-squared       =    0.0000
+      -------------+----------------------------------   Adj R-squared   =    0.0000
+             Total |  .134208188        11  .012200744   Root MSE        =    .11046
+      
+      ------------------------------------------------------------------------------
+          attn_pct |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+             _cons |   .8991007   .0318862    28.20   0.000     .8289197    .9692818
+      ------------------------------------------------------------------------------
+      
+   153 .                 * .8991007  what they would be without suspicious responses
+   154 . *in other words, our treatment effects are attenuated by...
+   155 .                 display 1 - .8991007 
+      .1008993
+      
+   156 . 
+   157 .                 
+   158 . 
+      end of do-file
+      
+   159 . translate @Results 04_si.txt
+      file 04_si.txt already exists
+      r(602);
+      
+   160 . translate @Results 04_si_log.txt
