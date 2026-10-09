@@ -1,0 +1,5 @@
+"study","payment","fee_multiplier","minutes","flagged_share","source","cents_per_retained_minute"
+"study2",0.75,1.3,15,0.12093023255814,"Published study payment and duration; rebuilt IP rate",7.39417989417989
+"study3",0.35,1.3,5,0.097799511002445,"Published study payment and duration; rebuilt IP rate",10.0864498644986
+"Lucid illustrative",1,1,10,0.02,"Published illustrative payment, duration, and rounded IP rate",10.2040816326531
+"Lucid targeted illustrative",2,1,10,0.016,"Published illustrative payment, duration, and rounded IP rate",20.3252032520325

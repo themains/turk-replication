@@ -1,0 +1,4 @@
+"study","pollname","n","n_ip_observed","n_unique_ip","missing_ip","blacklisted","duplicated","foreign_ip","funny_ip","foreign_or_duplicated","pct_missing_ip","pct_blacklisted","pct_duplicated","pct_foreign_ip","pct_funny_ip"
+"study1","August 2018 Study",2000,1991,1924,9,321,106,119,406,207,0.45,16.05,5.3,5.95,20.3
+"study2","June 2020 Study",1505,1505,1461,0,101,81,17,182,92,0,6.7109634551495,5.38205980066445,1.12956810631229,12.093023255814
+"study3","July 2020 Study",409,409,402,0,24,13,3,40,16,0,5.8679706601467,3.17848410757946,0.733496332518337,9.7799511002445

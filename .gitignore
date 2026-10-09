@@ -16,3 +16,5 @@ data/derived/
 *.out
 *.synctex.gz
 *.toc
+
+*.xdv

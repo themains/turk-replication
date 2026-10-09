@@ -1,0 +1,7 @@
+* text=auto
+original/** -text -whitespace
+data/raw/*.csv -text
+*.pdf binary
+*.png binary
+renv/activate.R -whitespace
+tabs/session-info.txt -whitespace

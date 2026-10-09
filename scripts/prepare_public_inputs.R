@@ -1,0 +1,5 @@
+source("R/sources.R")
+args <- commandArgs(trailingOnly = TRUE)
+if (length(args) != 1L) stop("Usage: Rscript scripts/prepare_public_inputs.R ARCHIVE.zip")
+manifest <- prepare_public_inputs(args[1])
+utils::write.csv(manifest, "docs/source-manifest.csv", row.names = FALSE)

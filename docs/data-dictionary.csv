@@ -1,0 +1,320 @@
+study,column,source_label,definition,n,n_blank,n_literal_NA,n_distinct_nonmissing,n_redacted
+study1,ip_index,,Anonymized IP grouping index; unique within study only; blank for missing IP.,2000,9,0,1924,0
+study1,worktimeinseconds,WorkTimeInSeconds,WorkTimeInSeconds,2000,0,0,1136,0
+study1,startdate,Start.Date,Start.Date,2000,0,9,177,0
+study1,enddate,End.Date,End.Date,2000,0,9,187,0
+study1,responsetype,Response.Type,Response.Type,2000,0,9,1,0
+study1,progress,Progress,Progress,2000,0,9,1,0
+study1,durationinseconds,Duration..in.seconds.,Duration..in.seconds.,2000,0,9,890,0
+study1,finished,Finished,Finished,2000,0,9,1,0
+study1,recordeddate,Recorded.Date,Recorded.Date,2000,0,9,187,0
+study1,distributionchannel,Distribution.Channel,Distribution.Channel,2000,0,9,1,0
+study1,userlanguage,User.Language,User.Language,2000,0,9,1,0
+study1,consent,,consent,2000,0,9,1,0
+study1,state,,state,2000,0,9,51,0
+study1,gender,,gender,2000,0,9,2,0
+study1,age,,age,2000,0,9,5,0
+study1,political_attn,,political_attn,2000,0,9,11,0
+study1,pidselectedchoice,pid...Selected.Choice,pid...Selected.Choice,2000,0,9,4,0
+study1,pidotherpartypleasespecifybelowt,pid...Other.party..please.specify.below....Text,pid...Other.party..please.specify.below....Text,2000,1957,10,22,0
+study1,pid_dem,,pid_dem,2000,0,1163,2,0
+study1,pid_rep,,pid_rep,2000,0,1392,2,0
+study1,pid_ind,,pid_ind,2000,0,1454,3,0
+study1,ideo_3selectedchoice,ideo_3...Selected.Choice,ideo_3...Selected.Choice,2000,0,9,4,0
+study1,ideo_3otherpleasespecifybelowtex,ideo_3...Other..please.specify.below....Text,ideo_3...Other..please.specify.below....Text,2000,1978,9,11,0
+study1,lib_branch,,lib_branch,2000,0,1149,2,0
+study1,con_branch,,con_branch,2000,0,1438,2,0
+study1,mod_branch,,mod_branch,2000,0,1435,3,0
+study1,education,,education,2000,0,9,5,0
+study1,colleges_closed,,colleges_closed,2000,0,9,5,0
+study1,kara_gpa,,kara_gpa,2000,0,9,5,0
+study1,kara_work,,kara_work,2000,0,9,3,0
+study1,james_gpa,,james_gpa,2000,0,9,5,0
+study1,james_cf,,james_cf,2000,0,9,3,0
+study1,pk_kennedy,,pk_kennedy,2000,0,356,4,0
+study1,pk_mcconnell,,pk_mcconnell,2000,0,233,4,0
+study1,pk_vegas,,pk_vegas,2000,0,61,4,0
+study1,pk_ssmlegal,,pk_ssmlegal,2000,0,390,4,0
+study1,gc1,,gc1,2000,0,999,69,0
+study1,gc2,,gc2,2000,0,999,68,0
+study1,gc3,,gc3,2000,0,999,75,0
+study1,gc4,,gc4,2000,0,999,73,0
+study1,gc5,,gc5,2000,0,999,75,0
+study1,pcfieldcomp_group1,pc....Field.comp_group1.,pc....Field.comp_group1.,2000,0,999,63,0
+study1,pcfieldcomp_group2,pc....Field.comp_group2.,pc....Field.comp_group2.,2000,0,999,63,0
+study1,pcfieldcomp_group3,pc....Field.comp_group3.,pc....Field.comp_group3.,2000,0,999,65,0
+study1,pcfieldcomp_group4,pc....Field.comp_group4.,pc....Field.comp_group4.,2000,0,999,65,0
+study1,pcfieldcomp_group5,pc....Field.comp_group5.,pc....Field.comp_group5.,2000,0,999,68,0
+study1,timingfirstclick,Timing...First.Click,Timing...First.Click,2000,0,1797,67,0
+study1,timinglastclick,Timing...Last.Click,Timing...Last.Click,2000,0,1797,67,0
+study1,timingpagesubmit,Timing...Page.Submit,Timing...Page.Submit,2000,0,1797,202,0
+study1,timingclickcount,Timing...Click.Count,Timing...Click.Count,2000,0,1797,8,0
+study1,timingfirstclick1,Timing...First.Click.1,Timing...First.Click.1,2000,0,1800,75,0
+study1,timinglastclick1,Timing...Last.Click.1,Timing...Last.Click.1,2000,0,1800,75,0
+study1,timingpagesubmit1,Timing...Page.Submit.1,Timing...Page.Submit.1,2000,0,1800,199,0
+study1,timingclickcount1,Timing...Click.Count.1,Timing...Click.Count.1,2000,0,1800,9,0
+study1,timingfirstclick2,Timing...First.Click.2,Timing...First.Click.2,2000,0,1801,76,0
+study1,timinglastclick2,Timing...Last.Click.2,Timing...Last.Click.2,2000,0,1801,76,0
+study1,timingpagesubmit2,Timing...Page.Submit.2,Timing...Page.Submit.2,2000,0,1801,196,0
+study1,timingclickcount2,Timing...Click.Count.2,Timing...Click.Count.2,2000,0,1801,12,0
+study1,timingfirstclick3,Timing...First.Click.3,Timing...First.Click.3,2000,0,1903,34,0
+study1,timinglastclick3,Timing...Last.Click.3,Timing...Last.Click.3,2000,0,1903,34,0
+study1,timingpagesubmit3,Timing...Page.Submit.3,Timing...Page.Submit.3,2000,0,1903,96,0
+study1,timingclickcount3,Timing...Click.Count.3,Timing...Click.Count.3,2000,0,1903,7,0
+study1,timingfirstclick4,Timing...First.Click.4,Timing...First.Click.4,2000,0,1889,34,0
+study1,timinglastclick4,Timing...Last.Click.4,Timing...Last.Click.4,2000,0,1889,34,0
+study1,timingpagesubmit4,Timing...Page.Submit.4,Timing...Page.Submit.4,2000,0,1889,111,0
+study1,timingclickcount4,Timing...Click.Count.4,Timing...Click.Count.4,2000,0,1889,10,0
+study1,timingfirstclick5,Timing...First.Click.5,Timing...First.Click.5,2000,0,1910,37,0
+study1,timinglastclick5,Timing...Last.Click.5,Timing...Last.Click.5,2000,0,1910,37,0
+study1,timingpagesubmit5,Timing...Page.Submit.5,Timing...Page.Submit.5,2000,0,1910,90,0
+study1,timingclickcount5,Timing...Click.Count.5,Timing...Click.Count.5,2000,0,1910,7,0
+study1,timingfirstclick6,Timing...First.Click.6,Timing...First.Click.6,2000,0,1910,32,0
+study1,timinglastclick6,Timing...Last.Click.6,Timing...Last.Click.6,2000,0,1910,32,0
+study1,timingpagesubmit6,Timing...Page.Submit.6,Timing...Page.Submit.6,2000,0,1910,90,0
+study1,timingclickcount6,Timing...Click.Count.6,Timing...Click.Count.6,2000,0,1910,10,0
+study1,viz_usa_raceblack,viz_usa_race...Black,viz_usa_race...Black,2000,0,1797,15,0
+study1,viz_usa_racewhite,viz_usa_race...White,viz_usa_race...White,2000,0,1797,20,0
+study1,viz_usa_raceanotherraceethnicity,viz_usa_race...Another.race.ethnicity,viz_usa_race...Another.race.ethnicity,2000,0,1797,15,0
+study1,viz_usa_gendermen,viz_usa_gender...Men,viz_usa_gender...Men,2000,0,1797,12,0
+study1,viz_usa_genderwomen,viz_usa_gender...Women,viz_usa_gender...Women,2000,0,1797,12,0
+study1,viz_dem_raceblack,viz_dem_race...Black,viz_dem_race...Black,2000,0,1412,20,0
+study1,viz_dem_racewhite,viz_dem_race...White,viz_dem_race...White,2000,0,1412,21,0
+study1,viz_dem_raceanotherraceethnicity,viz_dem_race...Another.race.ethnicity,viz_dem_race...Another.race.ethnicity,2000,0,1412,19,0
+study1,viz_dem_gendermen,viz_dem_gender...Men,viz_dem_gender...Men,2000,0,1412,19,0
+study1,viz_dem_genderwomen,viz_dem_gender...Women,viz_dem_gender...Women,2000,0,1412,19,0
+study1,viz_rep_raceblack,viz_rep_race...Black,viz_rep_race...Black,2000,0,1413,21,0
+study1,viz_rep_racewhite,viz_rep_race...White,viz_rep_race...White,2000,0,1413,26,0
+study1,viz_rep_raceanotherraceethnicity,viz_rep_race...Another.race.ethnicity,viz_rep_race...Another.race.ethnicity,2000,0,1413,18,0
+study1,viz_rep_gendermen,viz_rep_gender...Men,viz_rep_gender...Men,2000,0,1413,19,0
+study1,viz_rep_genderwomen,viz_rep_gender...Women,viz_rep_gender...Women,2000,0,1413,19,0
+study1,inparty_pospatriotic,inparty_pos...patriotic,inparty_pos...patriotic,2000,0,1740,5,0
+study1,inparty_posmoral,inparty_pos...moral,inparty_pos...moral,2000,0,1735,5,0
+study1,inparty_posgenerous,inparty_pos...generous,inparty_pos...generous,2000,0,1795,5,0
+study1,inparty_posintelligent,inparty_pos...intelligent,inparty_pos...intelligent,2000,0,1670,5,0
+study1,inparty_postolerant,inparty_pos...tolerant,inparty_pos...tolerant,2000,0,1759,5,0
+study1,inparty_posopenminded,inparty_pos...open.minded,inparty_pos...open.minded,2000,0,1738,5,0
+study1,inparty_poshardworking,inparty_pos...hard.working,inparty_pos...hard.working,2000,0,1685,5,0
+study1,inparty_posknowledgeable,inparty_pos...knowledgeable,inparty_pos...knowledgeable,2000,0,1700,5,0
+study1,inparty_postrustworthy,inparty_pos...trustworthy,inparty_pos...trustworthy,2000,0,1826,5,0
+study1,inparty_posloyal,inparty_pos...loyal,inparty_pos...loyal,2000,0,1811,5,0
+study1,nhood_pospatriotic,nhood_pos...patriotic,nhood_pos...patriotic,2000,0,1765,5,0
+study1,nhood_posmoral,nhood_pos...moral,nhood_pos...moral,2000,0,1748,5,0
+study1,nhood_posgenerous,nhood_pos...generous,nhood_pos...generous,2000,0,1751,5,0
+study1,nhood_posintelligent,nhood_pos...intelligent,nhood_pos...intelligent,2000,0,1767,5,0
+study1,nhood_postolerant,nhood_pos...tolerant,nhood_pos...tolerant,2000,0,1749,6,0
+study1,nhood_posopenminded,nhood_pos...open.minded,nhood_pos...open.minded,2000,0,1772,5,0
+study1,nhood_poshardworking,nhood_pos...hard.working,nhood_pos...hard.working,2000,0,1574,5,0
+study1,nhood_posknowledgeable,nhood_pos...knowledgeable,nhood_pos...knowledgeable,2000,0,1769,5,0
+study1,nhood_postrustworthy,nhood_pos...trustworthy,nhood_pos...trustworthy,2000,0,1706,5,0
+study1,nhood_posloyal,nhood_pos...loyal,nhood_pos...loyal,2000,0,1808,5,0
+study1,nhood_negunpatriotic,nhood_neg...unpatriotic,nhood_neg...unpatriotic,2000,0,1789,15,0
+study1,nhood_negimmoral,nhood_neg...immoral,nhood_neg...immoral,2000,0,1762,13,0
+study1,nhood_negselfish,nhood_neg...selfish,nhood_neg...selfish,2000,0,1598,13,0
+study1,nhood_negunintelligent,nhood_neg...unintelligent,nhood_neg...unintelligent,2000,0,1687,13,0
+study1,nhood_negintolerant,nhood_neg...intolerant,nhood_neg...intolerant,2000,0,1641,13,0
+study1,nhood_negclosedminded,nhood_neg...closed.minded,nhood_neg...closed.minded,2000,0,1580,14,0
+study1,nhood_neglazy,nhood_neg...lazy,nhood_neg...lazy,2000,0,1645,14,0
+study1,nhood_negignorant,nhood_neg...ignorant,nhood_neg...ignorant,2000,0,1616,12,0
+study1,nhood_negdishonest,nhood_neg...dishonest,nhood_neg...dishonest,2000,0,1697,13,0
+study1,nhood_negtreasonous,nhood_neg...treasonous,nhood_neg...treasonous,2000,0,1840,12,0
+study1,outparty_negunpatriotic,outparty_neg...unpatriotic,outparty_neg...unpatriotic,2000,0,1872,5,0
+study1,outparty_negimmoral,outparty_neg...immoral,outparty_neg...immoral,2000,0,1793,5,0
+study1,outparty_negselfish,outparty_neg...selfish,outparty_neg...selfish,2000,0,1678,5,0
+study1,outparty_negunintelligent,outparty_neg...unintelligent,outparty_neg...unintelligent,2000,0,1877,5,0
+study1,outparty_negintolerant,outparty_neg...intolerant,outparty_neg...intolerant,2000,0,1670,5,0
+study1,outparty_negclosedminded,outparty_neg...closed.minded,outparty_neg...closed.minded,2000,0,1653,5,0
+study1,outparty_neglazy,outparty_neg...lazy,outparty_neg...lazy,2000,0,1896,5,0
+study1,outparty_negignorant,outparty_neg...ignorant,outparty_neg...ignorant,2000,0,1733,5,0
+study1,outparty_negdishonest,outparty_neg...dishonest,outparty_neg...dishonest,2000,0,1727,5,0
+study1,outparty_negtreasonous,outparty_neg...treasonous,outparty_neg...treasonous,2000,0,1893,5,0
+study1,freeresp_op,,freeresp_op,2000,1550,9,438,0
+study1,inonesentencepleasetellusaboutat,In.one.sentence..please.tell.us.about.a.time.when..Field.inparty..were...q...QID,In.one.sentence..please.tell.us.about.a.time.when..Field.inparty..were...q...QID,2000,1485,9,505,0
+study1,v168,In.one.sentence..please.tell.us.about.a.time.when.PEOPLE.WHO.LIVE.IN.YOUR.NEIGHB,In.one.sentence..please.tell.us.about.a.time.when.PEOPLE.WHO.LIVE.IN.YOUR.NEIGHB,2000,1474,9,515,0
+study1,v169,In.one.sentence..please.tell.us.about.a.time.when.PEOPLE.WHO.LIVE.IN.YOUR.NEIGHB,In.one.sentence..please.tell.us.about.a.time.when.PEOPLE.WHO.LIVE.IN.YOUR.NEIGHB,2000,1491,9,499,0
+study1,ft_democrats,ft_...Democrats,ft_...Democrats,2000,0,1008,101,0
+study1,ft_republicans,ft_...Republicans,ft_...Republicans,2000,0,1008,101,0
+study1,ft_teachers,ft_...Teachers,ft_...Teachers,2000,0,1008,88,0
+study1,ft_professionalathletes,ft_...Professional.athletes,ft_...Professional.athletes,2000,0,1008,100,0
+study1,ft_collegestudents,ft_...College.students,ft_...College.students,2000,0,1008,98,0
+study1,ft_peoplewholiveinyourneighborho,ft_...People.who.live.in.your.neighborhood,ft_...People.who.live.in.your.neighborhood,2000,0,1008,94,0
+study1,conspiracymassshootingsarestaged,conspiracy...Mass.shootings.are.staged.by.the.government.to.push.gun.control.leg,conspiracy...Mass.shootings.are.staged.by.the.government.to.push.gun.control.leg,2000,0,9,5,0
+study1,conspiracybillandhillaryclintonh,conspiracy...Bill.and.Hillary.Clinton.have.murdered.several.dozen.people.who.pos,conspiracy...Bill.and.Hillary.Clinton.have.murdered.several.dozen.people.who.pos,2000,0,9,5,0
+study1,conspiracymillionsofpeoplevotedi,conspiracy...Millions.of.people.voted.illegally.in.the.2016.election,conspiracy...Millions.of.people.voted.illegally.in.the.2016.election,2000,0,9,5,0
+study1,conspiracycondensationtrailsfrom,conspiracy...Condensation.trails.from.planes.contain.chemicals.that.regulate.the,conspiracy...Condensation.trails.from.planes.contain.chemicals.that.regulate.the,2000,0,9,5,0
+study1,conspiracymuchofourlivesarebeing,conspiracy...Much.of.our.lives.are.being.controlled.by.plots.hatched.in.secret.p,conspiracy...Much.of.our.lives.are.being.controlled.by.plots.hatched.in.secret.p,2000,0,9,5,0
+study1,conspiracymelaniatrumphasabodydo,conspiracy...Melania.Trump.has.a.body.double.who.takes.her.place.at.public.event,conspiracy...Melania.Trump.has.a.body.double.who.takes.her.place.at.public.event,2000,0,9,5,0
+study1,conspiracytherussiangovernmentpo,conspiracy...The.Russian.government.possesses.compromising.information.about.Don,conspiracy...The.Russian.government.possesses.compromising.information.about.Don,2000,0,9,5,0
+study1,conspiracypollutionfreenocostene,conspiracy...Pollution.free..no.cost.energy.sources.are.widely.available.but.are,conspiracy...Pollution.free..no.cost.energy.sources.are.widely.available.but.are,2000,0,9,5,0
+study1,conspiracythepeoplewhoreallyrunt,conspiracy...The.people.who.really..run..the.country.are.not.known.to.voters,conspiracy...The.people.who.really..run..the.country.are.not.known.to.voters,2000,0,9,5,0
+study1,race,,race,2000,1,9,23,0
+study1,relig,,relig,2000,0,9,12,0
+study1,sleep,,sleep,2000,0,9,2,0
+study1,prosthetic,,prosthetic,2000,0,9,2,0
+study1,blind,,blind,2000,0,9,2,0
+study1,deaf,,deaf,2000,0,9,2,0
+study1,gang_resp,,gang_resp,2000,0,9,2,0
+study1,gang_fam,,gang_fam,2000,0,9,2,0
+study1,trolling,,trolling,2000,0,10,5,0
+study1,thanksforhelpinguswithouracademi,Thanks.for.helping.us.with.our.academic.research.project..OPTIONAL..Any.last.com,Thanks.for.helping.us.with.our.academic.research.project..OPTIONAL..Any.last.com,2000,1300,10,382,0
+study1,saw_captcha,,saw_captcha,2000,0,9,2,0
+study1,cf_race,,cf_race,2000,0,9,2,0
+study1,cf_spouse,,cf_spouse,2000,0,9,2,0
+study1,cf_relig,,cf_relig,2000,0,9,3,0
+study1,cf_policy,,cf_policy,2000,0,9,3,0
+study1,party_assn,,party_assn,2000,0,9,4,0
+study1,inparty,,inparty,2000,0,9,2,0
+study1,outparty,,outparty,2000,0,9,2,0
+study1,pcomp,,pcomp,2000,0,9,2,0
+study1,comp_order,,comp_order,2000,990,9,2,0
+study1,viz_cond,,viz_cond,2000,1001,9,5,0
+study1,comp_party,,comp_party,2000,990,9,2,0
+study1,saw_fts,,saw_fts,2000,0,9,2,0
+study1,pid7,,pid7,2000,0,44,7,0
+study1,ideo7,,ideo7,2000,0,22,7,0
+study1,ideo3,,ideo3,2000,13,9,3,0
+study1,pid3,,pid3,2000,35,9,3,0
+study1,maxmindcitynamesen,maxmind.city.names.en,maxmind.city.names.en,2000,0,147,933,0
+study1,maxmindcountrynamesen,maxmind.country.names.en,maxmind.country.names.en,2000,0,11,39,0
+study1,ipvoidblacklist_status,ipvoid.blacklist_status,ipvoid.blacklist_status,2000,0,9,8,0
+study1,pollname,,Study collection month and year.,2000,0,0,1,0
+study1,platform,,Survey recruitment platform.,2000,0,0,1,0
+study1,apivoidanonymityis_vpn,apivoid.anonymity.is_vpn,"VPN indicator, unobserved for every respondent in the three public studies.",2000,0,2000,0,0
+study1,blacklisted,,"IP blacklist indicator; IPVoid in 2018, APIVoid in 2020; missing service results recoded zero in 2020.",2000,0,9,2,0
+study1,missing_ip,,Missing respondent IP address indicator.,2000,0,0,2,0
+study1,duplicated,,Respondent IP shared by another response in the same study; missing when IP is missing.,2000,0,9,2,0
+study1,foreign_ip,,MaxMind country is outside the United States after treating Puerto Rico as United States.,2000,0,11,2,0
+study1,funny_ip,,"Logical OR of missing_ip, blacklisted, duplicated and foreign_ip.",2000,0,0,2,0
+study1,counts,,Count of affirmative responses to six low-incidence questions; missing items contribute zero.,2000,0,0,7,0
+study1,troll_count_2,,At least two affirmative low-incidence responses.,2000,0,0,2,0
+study1,untrustworthy,,Logical OR of funny_ip and troll_count_2.,2000,0,0,2,0
+study2,ip_index,,Anonymized IP grouping index; unique within study only; blank for missing IP.,1505,0,0,1461,0
+study2,startdate,Start.Date,Start.Date,1505,0,0,91,0
+study2,enddate,End.Date,End.Date,1505,0,0,101,0
+study2,responsetype,Response.Type,Response.Type,1505,0,0,1,0
+study2,progress,Progress,Progress,1505,0,0,1,0
+study2,durationinseconds,Duration..in.seconds.,Duration..in.seconds.,1505,0,0,743,0
+study2,finished,Finished,Finished,1505,0,0,1,0
+study2,recordeddate,Recorded.Date,Recorded.Date,1505,0,0,101,0
+study2,distributionchannel,Distribution.Channel,Distribution.Channel,1505,0,0,1,0
+study2,userlanguage,User.Language,User.Language,1505,0,0,1,0
+study2,consent,,consent,1505,0,0,1,0
+study2,state,,state,1505,0,5,52,0
+study2,gender,,gender,1505,0,1,4,0
+study2,age,,age,1505,0,0,8,0
+study2,pid_3selectedchoice,pid_3...Selected.Choice,pid_3...Selected.Choice,1505,0,2,4,0
+study2,pid_3otherpleasespecifytext,pid_3...Other..please.specify....Text,pid_3...Other..please.specify....Text,1505,1495,0,8,0
+study2,pid_rep,,pid_rep,1505,0,871,2,0
+study2,pid_dem,,pid_dem,1505,0,881,2,0
+study2,pid_ind,,pid_ind,1505,0,1260,3,0
+study2,pol_interest,,pol_interest,1505,0,3,11,0
+study2,ft_dems,,ft_dems,1505,0,6,11,0
+study2,ft_reps,,ft_reps,1505,0,9,11,0
+study2,wedliketounderstandhowyouthinkva,We.d.like.to.understand.how.you.think.various.measures.of.the.economy.performed.,We.d.like.to.understand.how.you.think.various.measures.of.the.economy.performed.,1505,0,2,3,0
+study2,v31,We.d.like.to.understand.how.you.think.various.measures.of.the.economy.performed.,We.d.like.to.understand.how.you.think.various.measures.of.the.economy.performed.,1505,0,2,3,0
+study2,v32,We.d.like.to.understand.how.you.think.various.measures.of.the.economy.performed.,We.d.like.to.understand.how.you.think.various.measures.of.the.economy.performed.,1505,0,2,3,0
+study2,reps_economynonamegotbetter,reps_economy...No.Name.....Got.better,reps_economy...No.Name.....Got.better,1505,0,2,54,0
+study2,reps_economynonamestayedaboutthe,reps_economy...No.Name.....Stayed.about.the.same,reps_economy...No.Name.....Stayed.about.the.same,1505,0,2,59,0
+study2,reps_economynonamegotworse,reps_economy...No.Name.....Got.worse,reps_economy...No.Name.....Got.worse,1505,0,2,56,0
+study2,dems_economynonamegotbetter,dems_economy...No.Name.....Got.better,dems_economy...No.Name.....Got.better,1505,0,3,53,0
+study2,dems_economynonamestayedaboutthe,dems_economy...No.Name.....Stayed.about.the.same,dems_economy...No.Name.....Stayed.about.the.same,1505,0,2,54,0
+study2,dems_economynonamegotworse,dems_economy...No.Name.....Got.worse,dems_economy...No.Name.....Got.worse,1505,0,2,57,0
+study2,reps_unemploymentnonamegotbetter,reps_unemployment...No.Name.....Got.better,reps_unemployment...No.Name.....Got.better,1505,0,2,63,0
+study2,reps_unemploymentnonamestayedabo,reps_unemployment...No.Name.....Stayed.about.the.same,reps_unemployment...No.Name.....Stayed.about.the.same,1505,0,2,56,0
+study2,reps_unemploymentnonamegotworse,reps_unemployment...No.Name.....Got.worse,reps_unemployment...No.Name.....Got.worse,1505,0,2,57,0
+study2,dems_unemploymentnonamegotbetter,dems_unemployment...No.Name.....Got.better,dems_unemployment...No.Name.....Got.better,1505,0,2,59,0
+study2,dems_unemploymentnonamestayedabo,dems_unemployment...No.Name.....Stayed.about.the.same,dems_unemployment...No.Name.....Stayed.about.the.same,1505,0,2,57,0
+study2,dems_unemploymentnonamegotworse,dems_unemployment...No.Name.....Got.worse,dems_unemployment...No.Name.....Got.worse,1505,0,2,58,0
+study2,reps_inflationnonamegotbetter,reps_inflation...No.Name.....Got.better,reps_inflation...No.Name.....Got.better,1505,0,2,62,0
+study2,reps_inflationnonamestayedaboutt,reps_inflation...No.Name.....Stayed.about.the.same,reps_inflation...No.Name.....Stayed.about.the.same,1505,0,2,60,0
+study2,reps_inflationnonamegotworse,reps_inflation...No.Name.....Got.worse,reps_inflation...No.Name.....Got.worse,1505,0,2,54,0
+study2,dems_inflationnonamegotbetter,dems_inflation...No.Name.....Got.better,dems_inflation...No.Name.....Got.better,1505,0,2,62,0
+study2,dems_inflationnonamestayedaboutt,dems_inflation...No.Name.....Stayed.about.the.same,dems_inflation...No.Name.....Stayed.about.the.same,1505,0,2,59,0
+study2,dems_inflationnonamegotworse,dems_inflation...No.Name.....Got.worse,dems_inflation...No.Name.....Got.worse,1505,0,2,62,0
+study2,gop_unemployment,,gop_unemployment,1505,0,724,3,0
+study2,gop_inflation,,gop_inflation,1505,0,724,3,0
+study2,obama_unemployment,,obama_unemployment,1505,0,783,3,0
+study2,obama_inflation,,obama_inflation,1505,0,783,3,0
+study2,trump_masks,,trump_masks,1505,0,2,54,0
+study2,latino,,latino,1505,0,2,2,0
+study2,raceselectedchoice,race...Selected.Choice,race...Selected.Choice,1505,3,0,17,0
+study2,raceothertext,race...Other...Text,race...Other...Text,1505,1494,0,10,0
+study2,education,,education,1505,0,3,8,0
+study2,sleep,,sleep,1505,0,2,2,0
+study2,prosthetic,,prosthetic,1505,0,3,2,0
+study2,blind,,blind,1505,0,2,2,0
+study2,deaf,,deaf,1505,0,2,2,0
+study2,gang_resp,,gang_resp,1505,0,3,2,0
+study2,gang_fam,,gang_fam,1505,0,3,2,0
+study2,hits,,hits,1505,0,3,4,0
+study2,date,,date,1505,2,0,62,1
+study2,sincerity,,sincerity,1505,0,2,5,0
+study2,randomization_1,,randomization_1,1505,2,0,2,0
+study2,apivoidblacklistsdetections,apivoid.blacklists.detections,apivoid.blacklists.detections,1505,0,29,4,0
+study2,maxmindcitynamesen,maxmind.city.names.en,maxmind.city.names.en,1505,0,123,699,0
+study2,maxmindcountrynamesen,maxmind.country.names.en,maxmind.country.names.en,1505,0,0,7,0
+study2,pollname,,Study collection month and year.,1505,0,0,1,0
+study2,platform,,Survey recruitment platform.,1505,0,0,1,0
+study2,apivoidanonymityis_vpn,apivoid.anonymity.is_vpn,"VPN indicator, unobserved for every respondent in the three public studies.",1505,0,1505,0,0
+study2,blacklisted,,"IP blacklist indicator; IPVoid in 2018, APIVoid in 2020; missing service results recoded zero in 2020.",1505,0,0,2,0
+study2,missing_ip,,Missing respondent IP address indicator.,1505,0,0,1,0
+study2,duplicated,,Respondent IP shared by another response in the same study; missing when IP is missing.,1505,0,0,2,0
+study2,foreign_ip,,MaxMind country is outside the United States after treating Puerto Rico as United States.,1505,0,0,2,0
+study2,funny_ip,,"Logical OR of missing_ip, blacklisted, duplicated and foreign_ip.",1505,0,0,2,0
+study2,counts,,Count of affirmative responses to six low-incidence questions; missing items contribute zero.,1505,0,0,7,0
+study2,troll_count_2,,At least two affirmative low-incidence responses.,1505,0,0,2,0
+study2,untrustworthy,,Logical OR of funny_ip and troll_count_2.,1505,0,0,2,0
+study3,ip_index,,Anonymized IP grouping index; unique within study only; blank for missing IP.,409,0,0,402,0
+study3,startdate,Start.Date,Start.Date,409,0,0,62,0
+study3,enddate,End.Date,End.Date,409,0,0,74,0
+study3,responsetype,Response.Type,Response.Type,409,0,0,1,0
+study3,progress,Progress,Progress,409,0,0,1,0
+study3,durationinseconds,Duration..in.seconds.,Duration..in.seconds.,409,0,0,314,0
+study3,finished,Finished,Finished,409,0,0,1,0
+study3,recordeddate,Recorded.Date,Recorded.Date,409,0,0,74,0
+study3,distributionchannel,Distribution.Channel,Distribution.Channel,409,0,0,1,0
+study3,userlanguage,User.Language,User.Language,409,0,0,1,0
+study3,consent,,consent,409,0,0,1,0
+study3,state,,state,409,0,3,41,0
+study3,gender,,gender,409,0,0,2,0
+study3,age,,age,409,0,0,8,0
+study3,pid_3selectedchoice,pid_3...Selected.Choice,pid_3...Selected.Choice,409,0,3,4,0
+study3,pid_3otherpleasespecifytext,pid_3...Other..please.specify....Text,pid_3...Other..please.specify....Text,409,406,0,3,0
+study3,pid_rep,,pid_rep,409,0,262,2,0
+study3,pid_dem,,pid_dem,409,0,239,2,0
+study3,pid_ind,,pid_ind,409,0,320,3,0
+study3,roulette_pilot_age,roulette_pilot_...Age,roulette_pilot_...Age,409,0,2,3,0
+study3,roulette_pilot_gender,roulette_pilot_...Gender,roulette_pilot_...Gender,409,0,2,3,0
+study3,roulette_pilot_raceethnicity,roulette_pilot_...Race.ethnicity,roulette_pilot_...Race.ethnicity,409,0,2,3,0
+study3,roulette_pilot_religion,roulette_pilot_...Religion,roulette_pilot_...Religion,409,0,2,3,0
+study3,trump_masks,,trump_masks,409,0,2,5,0
+study3,date,,date,409,2,0,28,2
+study3,color_box,,color_box,409,2,0,94,0
+study3,latino,,latino,409,0,2,2,0
+study3,raceselectedchoice,race...Selected.Choice,race...Selected.Choice,409,2,0,13,0
+study3,raceothertext,race...Other...Text,race...Other...Text,409,0,409,0,0
+study3,education,,education,409,0,2,8,0
+study3,sleep,,sleep,409,0,2,2,0
+study3,prosthetic,,prosthetic,409,0,2,2,0
+study3,blind,,blind,409,0,2,2,0
+study3,deaf,,deaf,409,0,2,2,0
+study3,gang_resp,,gang_resp,409,0,2,2,0
+study3,gang_fam,,gang_fam,409,0,2,2,0
+study3,hits,,hits,409,0,3,4,0
+study3,sincerity,,sincerity,409,0,2,5,0
+study3,roulette_pid,,roulette_pid,409,2,0,2,0
+study3,randomization_1,,randomization_1,409,2,0,2,0
+study3,apivoidblacklistsdetections,apivoid.blacklists.detections,apivoid.blacklists.detections,409,0,5,4,0
+study3,maxmindcitynamesen,maxmind.city.names.en,maxmind.city.names.en,409,0,25,265,0
+study3,maxmindcountrynamesen,maxmind.country.names.en,maxmind.country.names.en,409,0,0,4,0
+study3,pollname,,Study collection month and year.,409,0,0,1,0
+study3,platform,,Survey recruitment platform.,409,0,0,1,0
+study3,apivoidanonymityis_vpn,apivoid.anonymity.is_vpn,"VPN indicator, unobserved for every respondent in the three public studies.",409,0,409,0,0
+study3,blacklisted,,"IP blacklist indicator; IPVoid in 2018, APIVoid in 2020; missing service results recoded zero in 2020.",409,0,0,2,0
+study3,missing_ip,,Missing respondent IP address indicator.,409,0,0,1,0
+study3,duplicated,,Respondent IP shared by another response in the same study; missing when IP is missing.,409,0,0,2,0
+study3,foreign_ip,,MaxMind country is outside the United States after treating Puerto Rico as United States.,409,0,0,2,0
+study3,funny_ip,,"Logical OR of missing_ip, blacklisted, duplicated and foreign_ip.",409,0,0,2,0
+study3,counts,,Count of affirmative responses to six low-incidence questions; missing items contribute zero.,409,0,0,7,0
+study3,troll_count_2,,At least two affirmative low-incidence responses.,409,0,0,2,0
+study3,untrustworthy,,Logical OR of funny_ip and troll_count_2.,409,0,0,2,0

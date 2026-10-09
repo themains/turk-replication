@@ -1,0 +1,16 @@
+"study","pollname","flag","disagreements"
+"study1","August 2018 Study","missing_ip",0
+"study1","August 2018 Study","blacklisted",0
+"study1","August 2018 Study","duplicated",0
+"study1","August 2018 Study","foreign_ip",0
+"study1","August 2018 Study","funny_ip",0
+"study2","June 2020 Study","missing_ip",0
+"study2","June 2020 Study","blacklisted",0
+"study2","June 2020 Study","duplicated",0
+"study2","June 2020 Study","foreign_ip",0
+"study2","June 2020 Study","funny_ip",0
+"study3","July 2020 Study","missing_ip",0
+"study3","July 2020 Study","blacklisted",0
+"study3","July 2020 Study","duplicated",0
+"study3","July 2020 Study","foreign_ip",0
+"study3","July 2020 Study","funny_ip",0

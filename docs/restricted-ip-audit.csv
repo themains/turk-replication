@@ -1,0 +1,10 @@
+"source","group","n","archived_duplicated","within_group_duplicated","archived_flagged","corrected_flagged","archived_pct","corrected_pct","archived_unknown","corrected_unknown"
+"turk_ssi_data/turk_ssi_recoded.csv","AB 2015",2045,291,182,362,254,17.7017114914425,12.4205378973105,0,0
+"turk_ssi_data/turk_ssi_recoded.csv","AG 2015",898,139,28,161,51,17.9287305122494,5.6792873051225,0,0
+"turk_ssi_data/turk_ssi_recoded.csv","IGS 2015",2295,77,72,99,95,4.31372549019608,4.13943355119826,46,46
+"busby_lucid/lucid_ip_recoded.csv","Busby 2019",2531,46,16,56,72,2.21256420387199,2.84472540497827,2475,0
+"busby_lucid/lucid_ip_recoded.csv","Graham Corona 2020",4233,22,22,62,80,1.46468225844555,1.88991259154264,4171,1
+"busby_lucid/lucid_ip_recoded.csv","Graham DK 2019",15623,478,478,98,574,0.62728029187736,3.67407028099597,15525,0
+"busby_lucid/lucid_ip_recoded.csv","Thompson Busby 2019",1798,16,0,29,29,1.61290322580645,1.61290322580645,1769,0
+"graham_lucid/graham_partisanship_6_2019_ip+kyip-20200724.csv","Graham June 2019",7068,NA,95,NA,143,NA,2.02320316921336,NA,0
+"graham_lucid/graham_partyprime_dem_8_2019_ip+kyip-20200724.csv","Graham August 2019",8555,NA,310,NA,358,NA,4.18468731735827,NA,0

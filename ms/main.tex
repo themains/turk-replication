@@ -1,0 +1,211 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,booktabs,longtable,array,graphicx,amsmath,natbib,setspace}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\setstretch{1.12}
+\widowpenalty=10000
+\clubpenalty=10000
+\setlength{\emergencystretch}{2em}
+\graphicspath{{../figs/}}
+\input{../tabs/macros.tex}
+\newcommand{\tabnote}[1]{\par\smallskip{\footnotesize #1\par}}
+\title{The Micro-Task Market for Lemons:\\Data Quality on Amazon's Mechanical Turk\\[0.5em]\large Updated replication and measurement assessment}
+\author{Douglas J. Ahler \and Carolyn E. Roush \and Gaurav Sood}
+\date{Replication edition: October 9, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+\noindent Response-quality screens flag a substantial share of records in three surveys collected on Amazon's Mechanical Turk. IP flags decrease from \IpOne\% in August 2018 to \IpThree\% in July 2020, while endorsement of multiple uncommon traits rises from \RareOne\% to \RareThree\%. Combining the screens flags \CombinedOne\%, \CombinedTwo\%, and \CombinedThree\% in the August 2018, June 2020, and July 2020 surveys. In a randomized economic-evaluation experiment, an out-party rather than an in-party cue lowers unemployment evaluations by \AllJobs{} on a zero-to-one scale in the full sample and by \CleanJobs{} among unflagged records. The full-sample contrast is \ReductionJobs\% smaller (95\% paired IP-cluster bootstrap interval: \ReductionLowJobs\% to \ReductionHighJobs\%). Screening changes the estimated contrasts, but does not identify the causal effect of dishonesty: IP metadata, reported uncommon traits, and date conventions are imperfect measures of response quality. The replication also corrects duplicate-IP coding in historical platform comparisons. These findings support reporting how recruitment and screening choices affect sample composition and inference, with the evidence confined to the archived surveys.
+\end{abstract}
+\noindent\small This is a revised replication manuscript, not the version of record or a journal correction. The published article is \emph{Political Science Research and Methods}, DOI \href{https://doi.org/10.1017/psrm.2021.57}{10.1017/psrm.2021.57}. Its historical text and results remain in the original materials. The results below describe the archived surveys, not the current MTurk population.\normalsize
+
+\section{The question and the evidence}
+
+Online labor markets lowered the cost of recruiting experimental participants and broadened recruitment beyond university subject pools \citep{sears_1986,berinsky_2012,paolacci_2010}. A low recruitment cost does not establish that respondents read questions, satisfy eligibility requirements, or report their experiences accurately. Nor does a response-quality screen by itself establish that a flagged participant is dishonest. The empirical question is how often the available screens flag a record and how the results change when those records are excluded.
+
+The original study fielded an August 2018 survey and two additional surveys in June and July 2020. These surveys combined IP metadata, response times, questions about uncommon traits and behaviors, self-reported sincerity, and randomized experiments. The reconstructed analysis retains those design comparisons and distinguishes the archived definitions from verified coding repairs.
+
+The distinction between a screen and a validated outcome matters throughout. A foreign IP location is not an observation of citizenship. Multiple submissions from an IP can come from a shared household or institution. Endorsing two unusual experiences is not proof of fabrication. These observations still matter to research design, but their meaning must remain narrower than the labels ``bad actor'' or ``troll'' imply.
+
+\section{Incentives and what the design identifies}
+
+A micro-task market connects requesters who pay for tasks with workers who complete them. Ratings can encourage effort when requesters can verify quality. Survey opinions and personal experiences are harder to verify than a classification task with a known answer. A requester may approve questionable work because checking it costs time, because the response could be sincere, or because an incorrect rejection would treat the worker unfairly. The resulting approval rate is an imperfect measure of survey response quality \citep{akerlof1978market,peer_2014}.
+
+A managed panel can accumulate information across repeated interactions with its participants. That difference motivates comparison with MTurk, but it is not experimentally manipulated here. The studies differ in recruitment, calendar time, questionnaire, pay, and eligibility restrictions. Their comparisons describe the samples obtained under those conditions. They do not isolate the causal effect of a platform, an approval threshold, or changes in Amazon's policies. Similarly, reported task experience is associated with measured response patterns; it was not randomly assigned.
+
+Several mechanisms could produce a flagged record: deliberate misrepresentation, inattention, misunderstanding, a valid uncommon experience, a shared network, or an imperfect location service. The archive does not supply verified labels that separate these mechanisms.
+
+\section{Surveys, measures, and denominators}
+
+% Design literals below are from the original manuscript, section 3; they are not estimated results.
+Study 1 was fielded on August 17, 2018, advertised as a ten-minute survey, and paid \$0.60 per completed task. Study 2 was fielded in June 2020, advertised as a fifteen-minute survey, and paid \$0.75. Study 3 was fielded in July 2020, advertised as a five-minute survey, and paid \$0.35. Studies 1 and 3 required a task approval rate of at least 95\%; Study 2 did not. Each sought participants located in the United States. Table~\ref{tab:ip} reports the archived record counts; availability varies across survey items and models. In Study 1 the row unit is a paid assignment. The archive includes one observed survey response linked to two paid assignments, as well as assignments without linked survey data. The baseline retains that archived unit; a separate unique-survey sensitivity removes the repeated response and recalculates IP duplication. Neither unit identifies distinct people.
+
+Qualtrics recorded IP addresses. The original project used Know Your IP to obtain location and blacklist information from external services \citep{kyip}. This edition uses the deposited metadata. IP addresses and blacklist status change, so querying a current service would measure something different from the original survey conditions. Public record identifiers permit counting repeated IPs without publishing addresses.
+
+The IP screen marks records with missing addresses, a positive blacklist indicator, a repeated recorded address, or a location outside the United States. Repeated-address percentages count \emph{responses} attached to an address that appears more than once. The supplementary multiplicity table instead counts distinct observed addresses and reports how many responses those addresses contribute. Missing addresses are not one shared network. Missing blacklist information is uncertainty about that screen, not affirmative evidence that an address was absent from every blacklist.
+
+The rare-trait screen counts affirmative answers about an artificial limb or prosthetic, vision impairment, hearing impairment, gang membership, immediate-family gang membership, and an unusual amount of sleep. The original threshold was two affirmative answers. The sleep item asks average hours per night and flags the categories ``4 or less and ``More than 10. The adjacent ``4--6 category overlaps at the boundary, so the recorded category is preserved. These are reported experiences; the screen is not a diagnosis or a validated measure of insincerity. In particular, questions about \emph{any} vision or hearing impairment cannot be compared directly with population rates of blindness or deafness, and age-restricted population estimates do not automatically match this convenience sample.
+
+The 2020 surveys also asked participants to enter the date. Index 1 combines the IP and rare-trait screens. Index 2 additionally flags the day/month/year convention, and index 3 additionally flags entries that are not dates. These are increasingly inclusive operational definitions, not statistical lower and upper bounds on the number of dishonest or foreign participants. A date convention may reflect upbringing or habit among US residents. The data do not measure its sensitivity or specificity for location.
+
+The original project reported that respondents passed its reCAPTCHA check. Passing an automated challenge does not establish attentive reading of the questionnaire or exclude every form of automation. Where pre-entry failures were not deposited, the replication cannot estimate the check's failure rate among all attempted entrants.
+
+\section{Response patterns across the three surveys}
+
+\begin{table}[htbp]\centering
+\caption{Responses flagged by IP metadata}\label{tab:ip}
+\input{../tabs/ip_summary.tex}
+\tabnote{Percentages of survey records. Categories overlap. A duplicate is a record with an observed IP identifier occurring more than once in its survey. Study 1 rows are paid assignments, including one twice-linked observed response. These metadata identify screening conditions, not verified deception.}
+\end{table}
+
+The IP and rare-trait screens capture different aspects of the data. The combined first index flags \CombinedOne\% in August 2018, \CombinedTwo\% in June 2020, and \CombinedThree\% in July 2020. The rare-trait screen alone flags \RareOne\%, \RareTwo\%, and \RareThree\%, respectively. Table~\ref{tab:ip} compares the IP components, while Figure~\ref{fig:rare} separates the rare-trait items. Reading the screens together preserves the original paper's central descriptive comparison: a reduction in IP flags can coexist with an increase in rare-trait endorsements. The combined indices in Table~\ref{tab:screen} report their overlap rather than adding percentages that may count the same record twice.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{rare_traits.pdf}
+\caption{Reported uncommon traits and behaviors across surveys. Points show affirmative percentages under the archived binary recodes, which treat missing rare-trait responses as negative. The final screen combines the archived rare-trait items. These are descriptive sample proportions, not population prevalence estimates.}\label{fig:rare}
+\end{figure}
+
+\begin{table}[htbp]\centering
+\caption{Combined screens and self-reported insincerity}\label{tab:screen}
+\input{../tabs/screen_summary.tex}
+\tabnote{Percentages use observed values of the named measure; unavailable items are shown as --. Historical insincerity counts some/most/always in 2018 and most/always in 2020; the next row uses some/most/always throughout. Indices 2 and 3 add date-format and non-date flags to index 1. The indices are alternative definitions, not identified bounds on response quality.}
+\end{table}
+
+The self-report of humorous or insincere responding provides a separate comparison with the rare-trait screen. The original main analysis used ``some of the time or more in 2018 but ``most of the time or more in 2020. Table~\ref{tab:screen} labels those historical thresholds and additionally reports a common ``some of the time threshold across all three surveys. Changes in the historical row must not be interpreted as changes in an identically defined measure. Their association is informative, but the measures do not validate one another against observed truth. Both can be affected by misunderstanding or response style. Supplementary tables show the cross-tabulations, their denominators, and tests of association.
+
+\subsection{Experience and completion times}
+
+Respondents in the 2020 surveys reported a category for the number of tasks they had completed. Table~\ref{tab:hits} reports screen prevalence, self-reported insincerity, and average duration within those categories. The pattern can inform recruitment choices, but it cannot establish what would happen if an otherwise identical requester imposed a new threshold. Experienced respondents may read more efficiently, differ in other characteristics, or recognize familiar designs. Those explanations are not separated by these data.
+
+\input{../tabs/hits_summary.tex}
+
+Timing is also an imperfect proxy for quality. A short duration can reflect speed or familiarity; a long duration can include a break. Supplementary tables report quartiles, median duration, and the original study's timing screens. Missing durations remain missing when classifying slow and fast respondents. Tests that fail to reject a treatment interaction do not show that the groups have equivalent responsiveness: the interval determines which differences remain compatible with the data.
+
+\section{Comparisons with other platforms}
+
+The publication compared these surveys with earlier MTurk surveys and with SSI/Dynata and Lucid samples \citep{ahler_broockman,coppock2019validating,graham_dk_2019,graham_corona_2020,thompson_busby_2020}. The audit found two coding problems in these comparisons: some historical duplicate flags were computed across separate surveys, and one combined Lucid flag used a duplicate vector from the wrong dataset. Table~\ref{tab:platform} gives the original and corrected percentages. These repairs change particular platform comparisons and therefore the numerical basis of blanket claims about their relative quality. Some source datasets cannot be redistributed in this public package. Table~\ref{tab:platform} therefore identifies deposited aggregates as historical comparisons and labels the three studies that can be recomputed. Availability of local private data does not make those data part of the public replication.
+
+\input{../tabs/platform_summary.tex}
+
+The comparison concerns IP flags, not every dimension of data quality. A panel with fewer IP flags may still contain inattentive participants. Blacklist metadata retrieved after a survey can change with address reassignment; questionnaire and recruitment differences can also change the composition of a sample. Consequently, these comparisons do not identify the relative causal performance of the platforms or establish current procurement advice.
+
+The paper also compared cost per response-minute after removing IP-flagged records. That quantity is payment plus the assumed platform charge, divided by the fraction retained and the assumed survey length. It is a cost per \emph{unflagged} response-minute, not a validated cost per truthful response. Advertised and observed durations answer different questions, and nominal charges in the original study are historical inputs. Modern prices must not be inferred from this calculation.
+
+\input{../tabs/historical_costs.tex}
+
+\section{Experimental treatment effects and screening}
+
+The June 2020 experiment asked partisans to evaluate small decreases in unemployment and inflation. A randomly assigned cue attributed the period either to President Obama or to Republican control of Congress. The analysis codes the cue relative to the respondent's party, including partisan leaners, and compares an out-party cue with an in-party cue. Responses run from worse to better on a scale from zero to one. The questionnaire wording appears in the appendix.
+
+For each outcome, the subgroup model is
+\begin{equation}
+Y_i=\beta_0+\beta_1 T_i+\beta_2 F_i+\beta_3 T_iF_i+\varepsilon_i,
+\end{equation}
+where $T_i$ indicates the out-party cue and $F_i$ is the specified flag. Figure~\ref{fig:effects} reports subgroup contrasts on the observed outcome scale, including their uncertainty. Supplementary tables give the corresponding model results. A negative effect means less favorable assessment under the out-party cue.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{experiment_effects.pdf}
+\caption{Out-party versus in-party cues in the June 2020 experiment. Points are estimated differences on the zero-to-one economic evaluation scale; lines show 95\% confidence intervals from the fitted models. Samples are item-complete partisan respondents within each reported subgroup. Different subgroup point estimates are not themselves a test of the between-group difference.}\label{fig:effects}
+\end{figure}
+
+The full-sample contrasts are \AllJobs{} for unemployment and \AllPrices{} for inflation. The corresponding unflagged contrasts are \CleanJobs{} and \CleanPrices{}; the flagged contrasts are \FlaggedJobs{} and \FlaggedPrices{}. The appendix shows the arm-specific outcome means and endpoint shares, so the treatment differences can be assessed against their baseline response levels. Conventional, heteroskedasticity-robust, and IP-clustered estimates are retained in the generated results; the appendix gives the clustered intervals.
+
+Randomization supports comparisons between assigned cues within the experimental sample. Flagged and unflagged respondents were not randomly assigned to their screening status. Interpreting a subgroup difference as the effect of dishonesty requires assumptions about what the flag measures and whether its measurement can depend on treatment. The unflagged subgroup is a different analysis population, not an observed error-free counterfactual for the full sample. The original model-based comparison remains useful as a screening sensitivity analysis.
+
+\subsection{What attenuation means here}
+
+Additive mean-zero measurement error in an outcome increases uncertainty without necessarily attenuating a randomized treatment contrast. Attenuation instead follows from a particular response-replacement model. Let $Y_i^*$ be a meaningful response, let $R_i$ identify a replacement response, and write
+\begin{equation}
+Y_i=(1-R_i)Y_i^*+R_i Z_i.
+\end{equation}
+If replacement occurs with probability $q$ independently of treatment and the relevant potential outcomes, and $Z_i$ has the same expectation in each treatment arm, then
+\begin{equation}
+E[Y_i\mid T_i=1]-E[Y_i\mid T_i=0]=(1-q)\tau,
+\end{equation}
+where $\tau$ is the meaningful-response treatment contrast. Systematic or treatment-dependent replacement need not move the estimate toward zero. The screen comparisons do not identify $q$ or establish this mechanism.
+
+For the empirical comparison, define the retention ratio as the full-sample contrast divided by the unflagged-sample contrast. Subtracting that ratio from one gives a relative reduction, expressed as a percentage after multiplication by one hundred. Subtracting the contrasts themselves gives a difference on the outcome scale; multiplying that difference by one hundred yields percentage points only when the outcome is a probability or proportion. Ratios are unstable when their denominator is near zero. Because full and unflagged estimates share observations, their uncertainties are dependent. A pooled ratio must state its weights and propagate that dependence.
+
+\input{../tabs/attenuation.tex}
+
+\section{Implications for survey research}
+
+The data support examining several response-quality indicators and showing how conclusions change under prespecified screens. They do not support equating a disability, a date convention, or a shared IP address with misconduct. Researchers should distinguish eligibility checks, attentive reading, response consistency, and intentional fabrication, because each asks a different question and may require different evidence.
+
+The original recommendations included checking location and repeated submissions, including response-quality items, allowing time to inspect data, considering task experience, and comparing costs across recruitment sources. Those remain design choices to evaluate against their measurement error and effects on sample composition. Participants should know the task and compensation conditions before consenting. Quality bonuses and alternative rating systems are hypotheses about incentives, not interventions tested in these surveys.
+
+IP collection also depends on consent, institutional requirements, and applicable law. Where IP collection is unavailable, other screens can provide information, but neither date conventions nor rare-trait questions are validated substitutes for a participant's location. Any exclusion strategy should report missingness, the records removed, and sensitivity of the substantive findings. The scope of this replication is the archived evidence; the current quality and prices of online recruitment platforms require new data.
+
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{references}
+\clearpage
+\appendix
+\section{Reproduction, corrections, and coverage}
+
+The archived package combines R summaries, Stata survey analysis, and manually assembled exhibits. The rebuilt pipeline separates data coding, estimation, and presentation. Counts and membership are checked exactly where historical evidence permits; fitted estimates are checked with explicit tolerances. Original-code execution and an R reconstruction are distinct forms of evidence and are labeled in the accompanying comparison outputs. Model intervals concern individual contrasts and do not adjust for simultaneous examination of many outcomes. The descriptive sample rates do not acquire population representativeness from a large number of observations.
+
+\input{../tabs/corrections.tex}
+
+The following tables cover the supporting analyses: distributions of observed IP multiplicity and recorded geography; associations between screens; timing distributions and models; subgroup experiments; and ordered-logit models for the James experiment. Country and city labels describe the deposited geolocation service's output. They do not establish residence. The original manual interpretation of the timing of repeated submissions is not reproduced merely by counting duplicates: separating coordinated individuals from one person using several devices requires information these records do not identify.
+
+\input{../tabs/ip_details.tex}
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{rare_counts.pdf}
+\caption{Distribution of the number of affirmative rare-trait items. Each panel uses the archived item recodes and the same percentage scale.}
+\end{figure}
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{date_timing.pdf}
+\caption{Duration distributions by date convention in the two 2020 surveys. Empirical cumulative distributions compare accepted date entries with other entries, including non-dates, and retain long completion times on a logarithmic time axis. Date convention does not establish location or citizenship.}
+\end{figure}
+\input{../tabs/survey_details.tex}
+\input{../tabs/experiment_details.tex}
+
+\section{The James experiment}
+
+The August 2018 experiment varied a fictional person's race, spouse's name, political activity, and religious activity. Participants chose whether James was most likely a salesman, a salesman who supported Democrats, or a salesman who supported Republicans. Choosing either conjunction over the unrestricted salesman description violates the probability ordering. It does not make the conjunction event itself logically impossible. The experiment examines partisan stereotyping through those judgments \citep{ahler2018typecast,ahlersood_2018,TverskyKahneman1974}.
+
+The original analysis orders the three outcomes as Democratic conjunction, unrestricted occupation, and Republican conjunction, then fits a proportional-odds model with randomized attributes and their interactions with the relevant screen. That ordering is a modeling assumption about political direction. It is not an ordering from least to most accurate response. For cutpoint $c_j$ and linear predictor $\eta_i$, the model uses
+\begin{equation}
+\Pr(Y_i\leq j)=\operatorname{logit}^{-1}(c_j-\eta_i).
+\end{equation}
+Reported effects change an attribute from its reference category, calculate the difference in each outcome probability, and average over the specified empirical covariate distribution. They are finite changes for categorical treatments, not derivatives of a continuous exposure. The appendix reports coefficients and probability changes with their uncertainty, including the timing comparison. The archived margins change one indicator while leaving the other indicators as observed. For mutually exclusive religious or political-activity categories, this can create hypothetical profiles containing incompatible categories. We retain those margins to reproduce the archived estimand and also report valid-profile contrasts that set the competing category indicator to zero in both scenarios. The fitted coefficients are unchanged; the standardization target changes.
+
+\input{../tabs/ordered_details.tex}
+
+\section{Question wording}
+\begingroup\small\setstretch{1.0}
+
+The wording and design descriptions below reproduce the original manuscript's instruments. Quotation marks identify verbatim items; unquoted passages summarize instructions. Numbers in quoted stimuli are design inputs, not estimates from the replication.
+
+\subsection{Rare-trait battery and sincerity}
+
+The yes/no items were: ``Do you use an artificial limb or prosthetic?''; ``Are you blind or do you have vision impairment?''; ``Are you deaf or do you have hearing impairment?''; ``Are you in a gang?''; and ``Is one or more of your immediate family members in a gang?'' The sleep item reads: ``On average, how many hours do you sleep each night? Options were ``4 or less, ``4--6, ``6--8, ``8--10, and ``More than 10. These choices and their codes agree across the three locally supplied instruments. The original public deposit does not include those instruments; the replication records the relevant item text and source-file hashes in its instrument-items data dictionary.
+
+The sincerity item read: ``Finally, we sometimes find people don't always take surveys seriously, instead of providing humorous or insincere responses to questions. How often do you do this?'' Options were never, rarely, some of the time, most of the time, and always. The historical main analysis counts some, most, or always in Study 1, but only most or always in Studies 2 and 3. The harmonized comparison counts some, most, or always in every study. Missing responses are excluded from each denominator.
+
+\subsection{Task experience and the date}
+
+Respondents were asked to visit their worker qualifications page and find their ``Total Approved HITs'' number, or give a best guess if unable to find it. The question was ``About how many HITs have you completed on MTurk?'' Options were fewer than 100; between 100 and 500; between 500 and 1,000; and more than 1,000. The original response categories have overlapping boundary language; the replication preserves the recorded category rather than inventing exact counts.
+
+The date prompt was: ``Please write today's date in the text box below. Be sure to type it using the following format: 00/00/0000.'' It did not explicitly request the US convention.
+
+\subsection{Economic experiment}
+
+The introductory cue referred either to Barack Obama being president or to Republicans controlling both Houses of Congress. The unemployment item said: ``During 2016, [cue], unemployment decreased from 5.0\% to 4.8\%, a change of 0.2 percentage points. How would you interpret this change? Would you say that unemployment got better, stayed about the same, or got worse?'' The inflation item said that inflation decreased from 2.1\% to 1.9\%, also a change of 0.2 percentage points, and asked the same evaluation. Options were got better, stayed the same, and got worse.
+
+\subsection{James vignette}
+
+The manipulation read as follows, with alternatives separated by slashes:
+\begin{quote}
+James is a 37-year-old (white / black) man. He attended the University of Michigan, where he double-majored in economics and political science. While there, James was president of a business and marketing club. He also participated in (anti-tax demonstrations / living-wage demonstrations / student government).
+
+James's co-workers describe him as highly driven, outspoken, and confident. He is married to (Karen / Keith) and has one son. In James's free time, he (leads his son's Cub Scouts group, organized through the Baptist Church the family attends / leads his son's Junior Explorers group, led through the Secular Families Foundation / coaches his son's youth sports teams).
+\end{quote}
+
+The grade-point-average question was: ``What do you think James' GPA was in college?'' The categories were 3.80--4.00; 3.50--3.79; 3.00--3.49; 2.50--2.99; and 2.49 or below. The conjunction question asked: ``Which of the following do you think is most likely?'' Options were ``James works in sales''; ``James works in sales and is an active supporter of the Democratic Party''; and ``James works in sales and is an active supporter of the Republican Party.'' The randomized attribute comparisons preserve the reference categories in the deposited code.
+\endgroup
+\end{document}
