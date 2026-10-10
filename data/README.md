@@ -1,85 +1,69 @@
-# Data sources and definitions
+# Data
 
-The three public study files contain 2,000 responses collected in August 2018,
-1,505 in June 2020, and 409 in July 2020. Their source is version 1.0 of the
-[Harvard Dataverse replication deposit](https://doi.org/10.7910/DVN/KF1LAK).
-The deposited ZIP matches the local August 2021 ZIP for these files. Each row
-is an archived analysis record. In Study 1 the records represent paid
-assignments: two assignments by different workers share one survey completion
-code and therefore link to the same survey response. An IP address can occur
-in several rows; `ip_index` is
-an anonymized grouping index that is meaningful only within a study.
+`raw/study1.csv`, `raw/study2.csv`, and `raw/study3.csv` contain 2,000,
+1,505, and 409 records from the August 2018, June 2020, and July 2020 surveys.
+They come from version 1.0 of the
+[Dataverse replication deposit](https://doi.org/10.7910/DVN/KF1LAK).
+`ip_index` groups repeated addresses within a survey without revealing the
+address. Study 1 records are paid assignments; the other studies contain survey
+responses. Missing survey answers remain missing unless a measure's definition
+specifies otherwise.
 
-`raw/study1.csv`, `raw/study2.csv`, and `raw/study3.csv` retain the deposited
-analysis variables. Empty recipient identifiers and unused IP-service
-metadata are omitted. Hostnames and URLs in the deposit contain respondent
-IP addresses. Omitted metadata also include precise coordinates, postal
-codes, network infrastructure information, and other service outputs unused
-by the analysis. Retained metadata are the MaxMind city and country names,
-IPVoid blacklist status, APIVoid detection count, and the all-missing VPN
-placeholder selected by the original code. The retained files have 189, 76,
-and 54 columns. Three ten-digit date responses lacking the survey year are
-replaced with `[numeric response redacted]`: one in Study 2 and two in Study
-3. These remain invalid responses under both the original and updated date
-screens. No rows are removed. All other retained values are unchanged.
-The source byte strings are read as Latin-1 and written as UTF-8;
-analyses use the original column names and standard `read.csv` missing-value
-parsing. The string `NA` is missing; blank numeric cells become missing, while
-blank character cells remain empty strings.
+The [data dictionary](../docs/data-dictionary.csv) lists retained columns and
+source labels. The [source manifest](../docs/source-manifest.csv) records input
+and output hashes and the fields removed during anonymization.
+[Instrument items](../docs/instrument-items.csv) give the sleep and sincerity
+wording and response options from the supplied questionnaires.
 
-[The source manifest](../docs/source-manifest.csv) records archive members,
-SHA-256 hashes before and after processing, sample sizes, and omitted columns.
-[The data dictionary](../docs/data-dictionary.csv) records every retained
-column, available original Stata labels, derived-variable definitions, and
-observed missingness. Source labels retain the original questionnaire wording
-or metadata field name; a source field name alone is not a validated measure
-description.
+## Anonymization
 
-To regenerate the public files from the deposited ZIP, run this command from
-the repository root:
+`R/01_anonymize.R` extracts the three study files from the deposited ZIP. It
+removes unused recipient, network, and fine-location metadata, including
+hostnames and URLs that contain IP addresses. It replaces three phone-shaped
+entries in the date field with `[numeric response redacted]`. It preserves all
+rows and other retained values, and writes UTF-8 CSVs.
+
+Place source files in `data/original/`, which Git ignores. From the repository
+root, run:
 
 ```sh
-Rscript scripts/prepare_public_inputs.R /path/to/replication_public.zip
+Rscript R/01_anonymize.R data/original/replication_public.zip
 ```
 
-The normal analysis uses only the bundled public files and makes no IP-service
-requests. `blacklisted` uses IPVoid in 2018 and APIVoid in 2020. The original
-2020 construction treats unavailable blacklist results as zero; the analysis
-preserves that rule for replication and separately reports the range obtained
-by classifying otherwise unflagged unavailable results as positive. The
-`funny_ip` variable is the union of missing, blacklisted, duplicated, and
-foreign IP indicators. These indicators characterize responses and do not
-establish respondent intent. Repeated addresses can also reflect shared
-networks. Location tables count responses with observed metadata.
+The public build reads the bundled files. It does not need the original ZIP.
 
-The [survey-unit sensitivity](../tabs/ip_unit_sensitivity.csv) retains the
-deposited sample in the default analysis and separately counts each fully
-matching observed survey record once, excluding the assignment-specific
-`worktimeinseconds` field from the comparison. Missing-IP records are excluded
-from duplicate detection because they have no observed survey response in
-Study 1. IP flags are reconstructed after changing the sample. The repeated
-record otherwise has no positive IP or rare-response flags; linking it to two
-assignments mechanically creates two IP-duplication flags. The sensitivity
-also reports rare-response and combined-screen bounds when unanswered rare
-items are counted as negative or positive. These bounds describe uncertainty
-from item nonresponse; they do not establish the prevalence of bad actors.
+## Measures
 
-Third-party surveys used for the paper's cross-study comparison are absent
-from the public deposit. [The restricted-data audit](../docs/restricted-ip-audit.csv)
-contains aggregate calculations from the locally supplied files, with
-[source hashes](../docs/restricted-source-manifest.csv). Those calculations
-cannot be independently reproduced from this repository alone. With authorized
-access to the source data directory, reproduce them using:
+The IP screen combines missing addresses, blacklist indicators, repeated
+addresses within a survey, and locations outside the United States. The
+analysis uses the IP-service metadata collected for the study. In 2020, an
+unavailable blacklist result does not trigger the blacklist flag; sensitivity
+results also report the counts if those unavailable results were positive.
+Country and city fields describe service-reported locations.
 
-```sh
-Rscript scripts/audit_restricted.R /path/to/restricted/data /path/to/audit/output
-```
+The rare-trait screen flags at least two affirmative items. Its component
+recodes treat missing answers as negative; the accompanying sensitivity results
+allow unanswered items to be affirmative. Timing screens exclude missing
+durations. Self-reported insincerity uses some/most/always in 2018 and
+most/always in 2020; a separate some-or-more measure uses the same threshold
+across all three surveys.
 
-The audit compares the archived composite flags with flags reconstructed
-using duplicates within each named survey group. The two Graham 2019
-experiments share one archived group label; the audit also reports each
-experiment separately. The group-level correction isolates the composite
-flag implementation error. Splitting the experiments changes the duplicate
-definition and is a separate comparison. Aggregate percentages use all
-survey responses as the denominator, with unresolved composite flags
-reported explicitly in `corrected_unknown`.
+## Comparison surveys
+
+`raw/comparison_surveys.csv` supplies aggregate counts for eight surveys:
+
+| Column | Meaning |
+|---|---|
+| `survey` | Survey name |
+| `platform` | Recruitment platform |
+| `year` | Survey year |
+| `n` | Number of records |
+| `flagged` | Records flagged by at least one IP indicator |
+| `unknown` | Records whose combined flag remains unresolved |
+
+Repeated addresses are counted within each survey. The June and August Graham
+2019 experiments are separate surveys. The pipeline calculates percentages
+as `100 * flagged / n` and combines them with the three study results to
+produce the platform table. These aggregate counts were calculated from
+restricted comparison files identified in [comparison sources](../docs/comparison-sources.csv).
+The individual records from those surveys are not distributed here.

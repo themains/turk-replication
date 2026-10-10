@@ -129,29 +129,6 @@ experiment_fits <- function(d) {
   do.call(rbind, results)
 }
 
-# The historical pooling treats correlated estimates as independent and divides
-# coefficient variances by sample size again. Retain it only as a reproduction.
-historical_attenuation <- function(summary_data, study) {
-  d <- summary_data
-  n0 <- if (study == "study1") 1507 else 861
-  n1 <- if (study == "study1") 484 else 564
-  n <- if (study == "study1") 1991 else 1425
-  diff <- d$nonsusp_beta - d$susp_beta
-  difference_se <- sqrt(d$nonsusp_se^2 / n0 + d$susp_se^2 / n1)
-  attn_se <- sqrt(d$nonsusp_se^2 / if (study == "study1") 484 else n0 + d$full_se^2 / n)
-  ratios <- d$full_beta / d$nonsusp_beta
-  data.frame(study,
-    measure = c("difference", "unflagged_effect", "attenuation_difference", "retained_ratio"),
-    estimate = c(
-      weighted.mean(diff, 1 / difference_se),
-      weighted.mean(d$nonsusp_beta, 1 / d$nonsusp_se),
-      weighted.mean(d$nonsusp_beta - d$full_beta, 1 / attn_se),
-      weighted.mean(ratios, 1 / attn_se)
-    ),
-    method = "historical inverse-SE pooling; invalid sampling uncertainty"
-  )
-}
-
 attenuation_inputs <- function(experiment, margins) {
   result <- list()
   for (study in c("study1", "study2")) {
@@ -247,7 +224,7 @@ bootstrap_attenuation <- function(prepared, draws = 1999L, seed = 20261009L,
   )
 }
 
-model_results <- function(prepared, original_attenuation = NULL) {
+model_results <- function(prepared) {
   experiment <- experiment_fits(prepared$study2)
   interactions <- list()
   for (predictor in c("combined_troll_1", "fast")) {
@@ -260,7 +237,7 @@ model_results <- function(prepared, original_attenuation = NULL) {
     }
   }
   d <- prepared$study1
-  coefficients <- margins <- predictions <- valid_margins <- list()
+  coefficients <- margins <- predictions <- list()
   groups <- list(
     all = rep(TRUE, nrow(d)), unflagged = d$badactor == 0,
     flagged = d$badactor == 1, flagged_ip = d$funny == 1, rare_responses = d$likely_troll == 1
@@ -270,10 +247,6 @@ model_results <- function(prepared, original_attenuation = NULL) {
     coefficients[[length(coefficients) + 1L]] <- ordered_coefficient_table(fit, group)
     margins[[length(margins) + 1L]] <- ordered_margins(fit, group)
     predictions[[length(predictions) + 1L]] <- ordered_predictions(fit, group)
-    valid_margins[[length(valid_margins) + 1L]] <- ordered_margins(
-      fit, group,
-      valid_profiles = TRUE
-    )
   }
   interactions1 <- list(
     all_flagged = list("badactor", rep(TRUE, nrow(d))),
@@ -300,21 +273,12 @@ model_results <- function(prepared, original_attenuation = NULL) {
       attenuation = 1 - x$full_beta / x$nonsusp_beta
     )
   }))
-  historical <- do.call(rbind, lapply(names(computed), function(study) {
-    values <- if (is.null(original_attenuation)) {
-      computed[[study]]
-    } else {
-      original_attenuation[[study]]
-    }
-    historical_attenuation(values, study)
-  }))
   list(
     experiment_effects = experiment, experiment_interactions = do.call(rbind, interactions),
     study1_linear_models = do.call(rbind, simple),
     ordered_coefficients = do.call(rbind, coefficients),
     ordered_margins = margins, ordered_predictions = do.call(rbind, predictions),
-    ordered_valid_profile_margins = do.call(rbind, valid_margins),
-    attenuation = attenuation, historical_attenuation = historical,
+    attenuation = attenuation,
     attenuation_summary_inputs = do.call(rbind, lapply(names(computed), function(study) {
       data.frame(study, computed[[study]])
     }))

@@ -29,38 +29,6 @@ ip_reconstruct_flags <- function(data) {
   )
 }
 
-ip_unit_sensitivity <- function(data) {
-  survey_columns <- setdiff(names(data), "worktimeinseconds")
-  repeated_survey <- duplicated(data[survey_columns]) & !is.na(data$ip_index)
-  scenarios <- list(
-    deposited_rows = rep(TRUE, nrow(data)), unique_observed_survey = !repeated_survey
-  )
-  rare_columns <- c("prosthetic", "blind", "deaf", "gang_resp", "gang_fam", "sleep")
-  do.call(rbind, lapply(names(scenarios), function(scenario) {
-    subset <- data[scenarios[[scenario]], , drop = FALSE]
-    flags <- ip_reconstruct_flags(subset)
-    rare_positive <- rowSums(subset[rare_columns], na.rm = TRUE)
-    rare_unknown <- rowSums(is.na(subset[rare_columns]))
-    rare_lower <- rare_positive >= 2
-    rare_upper <- (rare_positive + rare_unknown) >= 2
-    totals <- c(
-      ip_flagged = sum(flags$funny_ip, na.rm = TRUE),
-      rare_lower = sum(rare_lower), rare_upper = sum(rare_upper),
-      combined_lower = sum(flags$funny_ip | rare_lower, na.rm = TRUE),
-      combined_upper = sum(flags$funny_ip | rare_upper, na.rm = TRUE)
-    )
-    result <- data.frame(
-      scenario,
-      n = nrow(subset),
-      duplicate_observed_survey_rows = sum(repeated_survey),
-      observed_survey_rows = sum(!is.na(subset$ip_index))
-    )
-    result[names(totals)] <- as.list(totals)
-    result[paste0("pct_", names(totals))] <- as.list(100 * totals / nrow(subset))
-    result
-  }))
-}
-
 analyze_ip <- function(studies) {
   result <- lapply(names(studies), function(study_name) {
     data <- studies[[study_name]]
@@ -110,7 +78,6 @@ analyze_ip <- function(studies) {
       country_counts = cbind(tag, ip_geography(data, "maxmindcountrynamesen", 5)),
       city_counts = cbind(tag, ip_geography(data, "maxmindcitynamesen", 25)),
       ip_missing_sensitivity = cbind(tag, sensitivity),
-      ip_unit_sensitivity = cbind(tag, ip_unit_sensitivity(data)),
       ip_flag_checks = cbind(tag, checks)
     )
   })
@@ -119,4 +86,21 @@ analyze_ip <- function(studies) {
     rownames(table) <- NULL
     table
   }), names(result[[1]]))
+}
+
+platform_summary <- function(ip_summary, path = "data/raw/comparison_surveys.csv") {
+  comparison <- utils::read.csv(path, stringsAsFactors = FALSE)
+  stopifnot(
+    all(comparison$n > 0), all(comparison$flagged >= 0),
+    all(comparison$unknown >= 0),
+    all(comparison$flagged + comparison$unknown <= comparison$n)
+  )
+  public <- data.frame(
+    survey = c("August survey", "June survey", "July survey"),
+    platform = "MTurk", year = c(2018L, 2020L, 2020L),
+    n = ip_summary$n, flagged = ip_summary$funny_ip, unknown = 0L
+  )
+  result <- rbind(comparison, public)
+  result$percent <- 100 * result$flagged / result$n
+  result[order(result$platform, result$year, result$survey), ]
 }

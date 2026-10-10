@@ -1,24 +1,14 @@
 options(stringsAsFactors = FALSE)
-for (file in sort(list.files("R", pattern = "[.]R$", full.names = TRUE))) source(file)
+for (file in sort(list.files("R", pattern = "^0[1-6]_.*[.]R$", full.names = TRUE))) source(file)
 dir.create("tabs", showWarnings = FALSE)
 dir.create("data/derived", recursive = TRUE, showWarnings = FALSE)
 studies <- read_studies()
-original_attenuation <- setNames(lapply(1:2, function(i) {
-  path <- sprintf("original/data/study%d_attenuation.csv", i)
-  text <- paste(readLines(path, warn = FALSE), collapse = "\n")
-  read.csv(text = text)
-}), c("study1", "study2"))
 prepared <- prepare_survey_data(studies)
 results <- c(
   analyze_ip(studies), survey_results(studies),
-  model_results(prepared, original_attenuation)
+  model_results(prepared)
 )
-baseline <- survey_results(studies, corrected = FALSE)
-comparison <- merge(baseline$survey_prevalence, results$survey_prevalence,
-  by = c("study", "measure"), suffixes = c("_original", "_updated")
-)
-comparison$change_pp <- 100 * (comparison$proportion_updated - comparison$proportion_original)
-results$survey_comparison <- comparison
+results$platform_summary <- platform_summary(results$ip_summary)
 cores <- as.integer(Sys.getenv("TURK_CORES", "1"))
 results$attenuation_bootstrap <- bootstrap_attenuation(prepared, cores = cores)
 results$attenuation_cluster_bootstrap <- bootstrap_attenuation(

@@ -18,3 +18,14 @@ data/derived/
 *.toc
 
 *.xdv
+
+/data/original/
+/data/private/
+/replication_public/
+/replication_full/
+/replication_public.zip
+/replication_full.zip
+/data/**/turk_recoded*.csv
+/data/**/merged_survey_ip_*_public.csv
+/data/**/*.sav
+/data/**/*.dta

@@ -78,3 +78,10 @@ prepare_public_inputs <- function(archive, data_dir = "data/raw") {
   })
   do.call(rbind, manifest)
 }
+
+if (sys.nframe() == 0L) {
+  args <- commandArgs(trailingOnly = TRUE)
+  if (length(args) != 1L) stop("Usage: Rscript R/01_anonymize.R ARCHIVE.zip")
+  manifest <- prepare_public_inputs(args[1])
+  utils::write.csv(manifest, "docs/source-manifest.csv", row.names = FALSE)
+}

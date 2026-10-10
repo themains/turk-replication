@@ -1,0 +1,13 @@
+check,sample,classification,quantity,archived_or_lower,corrected_or_upper,finding
+public_flags,three_public_studies,reproduction,flagged responses,628,628,406 + 182 + 40 responses; independent flag reconstruction agrees for every record
+missing_ip_group,study1,correction,distinct observed IP addresses,1925,1924,Original grouping treated nine missing addresses as one address appearing nine times; missing responses now excluded from address multiplicities
+country_unit,three_public_studies,interpretation,unit,,,Country and city frequencies count responses rather than distinct IP addresses
+blacklist_missing,study2,sensitivity,flagged responses,182,210,29 missing service results were set to zero; 28 are otherwise unflagged; upper value assigns these unknowns positive
+blacklist_missing,study3,sensitivity,flagged responses,40,45,5 missing service results were set to zero; all 5 are otherwise unflagged; upper value assigns these unknowns positive
+city_script,three_public_studies,execution,column name,,,Archived city spread references maxmind.city.names.en instead of retained maxmindcitynamesen; corrected execution preserves intended city counts
+graham_grouping,Graham DK 2019,sensitivity,flagged responses,574,501,Corrected union within archived combined group flags574; separate June and August experiments flag143+358=501; grouping definition differs
+privacy,three_public_studies,correction,retained columns by study,212;120;95,189;76;54,Remove empty recipient identifiers and unused network/geolocation metadata; redact one Study2 and two Study3 phone-shaped invalid date responses; preserve date screen categories
+assignment_survey_unit,study1,sensitivity,IP-flagged records / all records,406/2000,404/1999,Two paid assignments link to one valid survey response; keep one observed survey record and recompute IP duplication for sensitivity; default deposited sample retained
+assignment_survey_unit_combined,study1,sensitivity,IP-or-rare flagged records / all records,493/2000,491/1999,Duplicate linked survey record has no other positive IP or rare-screen flags; removal changes its remaining copy from duplicated to nonduplicated
+rare_item_nonresponse,three_public_studies,sensitivity,two-or-more-rare affirmative responses,125;452;86,134;455;88,Assign unanswered rare items all negative versus all positive; combined IP-or-rare counts493/571/113 versus493/574/113 because most missing-item records are already IP-flagged
+foreign_prose,study1,correction,foreign responses,125,119,Published page6 prose says125 foreign responses; deposited flag and original Table1 rate correspond to119/2000; generated tables use119

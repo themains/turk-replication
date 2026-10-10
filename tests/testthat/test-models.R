@@ -53,7 +53,7 @@ testthat::test_that("joint bootstrap is deterministic across serial and parallel
 
 testthat::test_that("all archived ordered margins reproduce with the documented SE correction", {
   d <- prepare_survey_data(read_studies(file.path(project_root, "data/raw")))$study1
-  original <- utils::read.csv(file.path(project_root, "original/data/study1_attenuation.csv"))
+  original <- utils::read.csv(file.path(project_root, "tests/fixtures/ordered_reference.csv"))
   groups <- list(
     unflagged = d$badactor == 0, flagged = d$badactor == 1,
     all = rep(TRUE, nrow(d))

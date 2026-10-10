@@ -18,17 +18,12 @@ testthat::test_that("the public waves preserve recorded sample membership", {
   testthat::expect_equal(sum(d$study3$combined_troll_3), 144)
 })
 
-testthat::test_that("missing duration and sincerity no longer become observed responses", {
-  inputs <- read_studies(file.path(project_root, "data/raw"))
-  original <- prepare_survey_data(inputs, corrected = FALSE)
-  corrected <- prepare_survey_data(inputs)
-  testthat::expect_equal(sum(original$study1$slow), 233)
-  testthat::expect_equal(sum(corrected$study1$slow, na.rm = TRUE), 224)
-  testthat::expect_equal(sum(!is.na(corrected$study1$slow)), 1991)
-  testthat::expect_equal(sum(is.na(corrected$study1$fast)), 9)
-  testthat::expect_equal(mean(original$study3$insincere), 58 / 409)
-  testthat::expect_equal(mean(corrected$study3$insincere, na.rm = TRUE), 58 / 407)
-  testthat::expect_equal(original$study1$rare_deaf, corrected$study1$rare_deaf)
+testthat::test_that("missing duration and sincerity remain missing", {
+  d <- prepare_survey_data(read_studies(file.path(project_root, "data/raw")))
+  testthat::expect_equal(sum(d$study1$slow, na.rm = TRUE), 224)
+  testthat::expect_equal(sum(!is.na(d$study1$slow)), 1991)
+  testthat::expect_equal(sum(is.na(d$study1$fast)), 9)
+  testthat::expect_equal(mean(d$study3$insincere, na.rm = TRUE), 58 / 407)
 })
 
 testthat::test_that("rare-item missingness follows the archived index convention explicitly", {

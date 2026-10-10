@@ -34,20 +34,15 @@ testthat::test_that("geography frequencies count respondents with observed locat
   testthat::expect_equal(city$n, unname(expected_city))
 })
 
-testthat::test_that("survey-unit sensitivity recomputes IP duplication without changing baseline", {
-  studies <- read_studies(file.path(project_root, "data/raw"))
-  result <- analyze_ip(studies)
-  sensitivity <- result$ip_unit_sensitivity
-  deposited <- sensitivity[sensitivity$scenario == "deposited_rows", ]
-  unique_survey <- sensitivity[sensitivity$scenario == "unique_observed_survey", ]
-  testthat::expect_equal(deposited$n, c(2000L, 1505L, 409L))
-  testthat::expect_equal(unique_survey$n, c(1999L, 1505L, 409L))
-  testthat::expect_equal(unique_survey$duplicate_observed_survey_rows, c(1L, 0L, 0L))
-  testthat::expect_equal(unique_survey$ip_flagged, c(404, 182, 40))
-  testthat::expect_equal(unique_survey$combined_lower, c(491, 571, 113))
-  testthat::expect_equal(result$ip_summary$funny_ip, c(406, 182, 40))
-  testthat::expect_equal(deposited$rare_lower, c(125, 452, 86))
-  testthat::expect_equal(deposited$rare_upper, c(134, 455, 88))
-  testthat::expect_equal(deposited$combined_upper, c(493, 574, 113))
-  testthat::expect_equal(unique_survey$observed_survey_rows, c(1990, 1505, 409))
+testthat::test_that("platform percentages use the supplied counts and all-record denominators", {
+  ip <- analyze_ip(read_studies(file.path(project_root, "data/raw")))$ip_summary
+  result <- platform_summary(ip, file.path(project_root, "data/raw/comparison_surveys.csv"))
+  testthat::expect_equal(nrow(result), 11L)
+  testthat::expect_equal(result$percent, 100 * result$flagged / result$n)
+  graham <- result[result$survey %in% c("Graham June", "Graham August"), ]
+  testthat::expect_equal(sum(graham$n), 15623)
+  testthat::expect_equal(sum(graham$flagged), 501)
+  igs <- result[result$survey == "Berkeley IGS Poll", ]
+  testthat::expect_equal(igs$unknown, 46)
+  testthat::expect_equal(igs$percent, 100 * 95 / 2295)
 })

@@ -4,111 +4,93 @@ percent <- function(x, digits = 1) sprintf(paste0("%.", digits, "f%%"), 100 * x)
 ip <- results$ip_summary
 prevalence <- results$survey_prevalence
 combined <- prevalence[prevalence$measure == "combined_troll_1", ]
-boot <- results$attenuation_bootstrap
+rare <- prevalence[prevalence$measure == "likely_troll", ]
+boot <- results$attenuation_cluster_bootstrap
 june <- boot[boot$study == "study2", ]
-harmonized <- prevalence[prevalence$measure == "insincere_si", ]
-slow <- results$survey_comparison
-slow <- slow[slow$study == "study1" & slow$measure == "slow", ]
 ```
 
 # The Micro-Task Market for Lemons
 
 Douglas J. Ahler, Carolyn E. Roush, and Gaurav Sood
 
-Three surveys conducted in 2018 and 2020 document response-quality concerns
-on Amazon's Mechanical Turk. Suspicious-IP indicators flag
-`r paste(percent(ip$funny_ip / ip$n), collapse = ", ")` of responses in August
-2018, June 2020, and July 2020. Combining those indicators with at least two
-affirmative rare-item answers flags `r paste(percent(combined$proportion), collapse = ", ")`.
-These are screening rates in these samples. They do not identify dishonesty,
-automation, or a platform-wide prevalence of low-quality respondents.
+Amazon's Mechanical Turk makes survey recruitment cheap and fast, but researchers
+have limited information about the quality of the responses they buy. Workers
+can earn approval and payment without answering carefully or sincerely. We
+examine how often response-quality screens flag participants and whether
+excluding flagged responses changes experimental results.
 
-The June experiment's full-sample effects are
-`r paste(percent(june$retained_ratio), collapse = " and ")` as large as the
-effects among unflagged respondents for unemployment and inflation judgments.
-Paired respondent-bootstrap 95% intervals are
-`r paste(sprintf("%s–%s", percent(june$ratio_conf_low), percent(june$ratio_conf_high)), collapse = " and ")`.
-The comparisons condition on observed response screens; excluding flagged
-responses does not by itself identify an error-free treatment effect.
+Three surveys conducted in August 2018, June 2020, and July 2020 contain
+2,000, 1,505, and 409 records. Suspicious IP addresses account for
+`r paste(percent(ip$funny_ip / ip$n), collapse = ", ")` of records, respectively.
+The share reporting at least two uncommon traits or experiences is
+`r paste(percent(rare$proportion), collapse = ", ")`.
+Combining these screens flags
+`r paste(percent(combined$proportion), collapse = ", ")`.
+The decline in IP flags therefore does not imply a corresponding improvement
+in every measure of response quality.
+
+Screening also changes experimental estimates. In the June survey, participants
+evaluated the same economic changes under randomly assigned partisan cues.
+The full-sample effects are `r percent(june$attenuation[1], 0)` smaller for
+unemployment and `r percent(june$attenuation[2], 0)` smaller for inflation than
+the effects among unflagged respondents. The respective 95% bootstrap intervals
+are `r percent(june$attenuation_conf_low[1], 0)` to
+`r percent(june$attenuation_conf_high[1], 0)` and
+`r percent(june$attenuation_conf_low[2], 0)` to
+`r percent(june$attenuation_conf_high[2], 0)`.
+These comparisons show how screening affects the estimates; the screens do not
+establish which individual responses are truthful.
 
 ![Experimental effects by response screen](figs/experiment_effects.png)
 
-## Paper and replication
+The [paper](https://doi.org/10.1017/psrm.2021.57) appeared in *Political Science
+Research and Methods*. The original replication archive is on
+[Harvard Dataverse](https://doi.org/10.7910/DVN/KF1LAK).
+This repository builds the analyses and [manuscript](ms/main.pdf) in R.
 
-The [published paper](original/published.pdf) appeared in *Political Science
-Research and Methods*, [doi:10.1017/psrm.2021.57](https://doi.org/10.1017/psrm.2021.57).
-The [supplied supplement](original/supplement.pdf) is preserved with
-[manuscript provenance](docs/paper-sources.csv).
-The [original replication deposit](https://doi.org/10.7910/DVN/KF1LAK), version
-1.0, was released on 6 August 2021. The [updated manuscript](ms/main.pdf)
-rebuilds the analyses in R and distinguishes corrections, sensitivity analyses,
-and measurement limitations. It is not a replacement publisher version.
+## Run the analysis
 
-The archived Stata logs provide reference estimates for the translation.
-A licensed Stata executable was not available for a fresh original-code run.
-The repository retains the deposited programs and logs; it does not treat
-successful R execution as proof that every original program runs unmodified.
-
-Verified changes include the following:
-
-- Missing duration values were classified as slow in the original Stata code.
-  Among respondents with observed duration, the August slow-response rate is
-  `r percent(slow$proportion_updated, 2)`, compared with the archived
-  `r percent(slow$proportion_original, 2)` calculation.
-- The original self-reported-insincerity comparison uses different thresholds
-  across years. Applying the same “some of the time or more” threshold gives
-  `r paste(percent(harmonized$proportion), collapse = ", ")` across the three studies.
-- Nine missing IP addresses were grouped as one repeated address in the
-  original multiplicity table. The updated table counts observed addresses.
-- The historical attenuation spreadsheets contain an incorrect standard error
-  and a sign reversal, and their weighting formula divides estimated variances
-  by sample size again. Outcome-specific ratios and joint bootstrap intervals
-  accompany the preserved historical calculations.
-- Restricted comparison-survey code omits one duplicate flag and pools
-  duplicates across separate surveys. The [aggregate comparisons](docs/restricted-ip-audit.csv)
-  distinguish the implementation corrections from alternative grouping rules.
-  Rebuilding those comparisons requires authorized access to data not in the
-  public deposit.
-
-The [claim inventory](docs/claims.csv) maps the paper and appendix to outputs.
-[IP checks](docs/ip-audit.csv), [survey comparisons](tabs/survey_comparison.csv),
-and [interpretation notes](docs/interpretation.csv) provide the evidence and scope
-of the updates. The [data documentation](data/README.md) explains public-input
-sanitization, retained variables, and the limits of the IP-service measures.
-
-## Reproduce
-
-Requires R 4.6, XeLaTeX, and `latexmk`, or Docker with the standard
-`rocker/r-ver:4.6.0` image.
+With R 4.6, XeLaTeX, `latexmk`, and Poppler installed:
 
 ```sh
 make restore
 make check
 ```
 
-Or run the complete isolated build:
+Or run the complete build and checks in Docker:
 
 ```sh
 make ci-docker
 ```
 
-`make check` runs the analysis, regenerates figures, tables, this README and
-the manuscript, then runs lint and tests. Both bootstrap analyses use 1,999
-draws and a fixed seed. Set `TURK_CORES=4` to use four local processes;
-results do not depend on the process count. No Stata license, private data,
-or IP-service key is needed for the public build.
+Both commands generate the figures in `figs/`, numerical results and tables in
+`tabs/`, and the paper at `ms/main.pdf`. `make check` also runs lint and tests.
+For the paper alone, use `make paper`. Both bootstrap analyses use 1,999 draws
+and fixed seeds; set `TURK_CORES=4` to use four local processes.
 
-| Directory | Contents |
+## Data and code
+
+The bundled inputs include anonymized records for the three surveys and
+aggregate counts for the comparison surveys. The public build uses these files
+without private data or calls to IP services. The [data documentation](data/README.md)
+explains the variables and sources.
+
+`R/00_replicate.R` runs the analysis. The implementation follows this order:
+
+| File | Purpose |
 |---|---|
-| `data/raw/` | Sanitized derivatives of the three deposited public study files |
-| `R/` | Source checks, variable construction, estimates, diagnostics, and presentation |
-| `scripts/` | Analysis and rendering entry points; optional source-preparation and restricted-data checks |
-| `tabs/`, `figs/` | Generated numerical results, tables, and figures |
-| `ms/` | Updated manuscript source and compiled PDF |
-| `original/` | Preserved deposited code and logs, release metadata, and published paper |
-| `docs/` | Source hashes, variable definitions, claim mappings, and aggregate audit evidence |
-| `tests/testthat/` | Data, recoding, archived-result, inference, and privacy checks |
+| `01_anonymize.R` | Prepare public inputs from the deposited survey files |
+| `02_ip.R` | IP screens and comparisons across surveys |
+| `03_survey.R` | Survey measures, response patterns, and timing |
+| `04_models.R` | Experimental estimates and bootstrap intervals |
+| `05_diagnostics.R` | Outcome summaries and inference checks |
+| `06_exhibits.R` | Tables and figures |
 
-`README.Rmd` is the source of this page. Numerical values are read from the
-same results as the manuscript. The original deposit and new code use CC0;
-the published paper retains its publication rights.
+Anonymization is only needed when rebuilding the bundled inputs:
+
+```sh
+Rscript R/01_anonymize.R data/original/replication_public.zip
+```
+
+Keep original survey files in `data/original/`, which Git ignores.
+`README.Rmd` generates this README using the analysis results.

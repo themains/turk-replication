@@ -5,7 +5,7 @@ paper_label <- function(x) {
     all = "All", unflagged = "Unflagged", flagged = "Flagged", flagged_ip = "IP flagged",
     rare_responses = "Rare-trait flagged", high_hits = "Over 1,000 HITs",
     unemploy = "Unemployment", inflation = "Inflation", funny = "IP flagged",
-    likely_troll = "Rare-trait flagged", insincere = "Insincerity (historical)",
+    likely_troll = "Rare-trait flagged", insincere = "Insincerity",
     insincere_si = "Insincerity: some or more", combined_troll_1 = "Index 1",
     combined_troll_2 = "Index 2", combined_troll_3 = "Index 3", respondents = "Sample share",
     time = "Duration (seconds)", fast = "Fast timing screen", slow = "Slow timing screen",
@@ -182,34 +182,20 @@ write_paper_tables <- function(results, path = "tabs") {
     "Task counts are self-reported categories. Item denominators are ",
     "recorded in the accompanying CSV.}"
   ), "\\end{table}"))
-  platform <- read.csv("docs/restricted-ip-audit.csv", stringsAsFactors = FALSE)
-  platform <- platform[!is.na(platform$archived_pct), ]
+  d <- results$platform_summary
   table <- data.frame(
-    Survey = platform$group, N = platform$n,
-    Archived = paper_number(platform$archived_pct, 2),
-    Audited = paper_number(platform$corrected_pct, 2),
-    Source = "Restricted aggregate"
+    Survey = d$survey, Year = d$year, Platform = d$platform,
+    N = d$n, Flagged = paper_number(d$percent, 2), Unknown = d$unknown
   )
-  d <- results$ip_summary
-  table <- rbind(table, data.frame(
-    Survey = paper_label(d$study), N = d$n,
-    Archived = paper_number(d$pct_funny_ip, 2), Audited = paper_number(d$pct_funny_ip, 2),
-    Source = "Public recomputation"
-  ))
   put("platform_summary", c(
     paper_longtable(table,
-      "IP-flagged responses across studies: archived and audited percentages\\label{tab:platform}",
-      widths = c(.27, .09, .12, .12, .24)
+      "IP-flagged responses across surveys (percent)\\label{tab:platform}",
+      widths = c(.29, .09, .16, .11, .12, .12)
     ),
     paste0(
-      "\\noindent\\small AB and AG denote Ahler--Broockman and Ahler--Goggin.",
-      " IGS is SSI/Dynata; Busby, Graham and Thompson--Busby use Lucid. ",
-      "Restricted-source audits were computed locally from the source files ",
-      "identified by the supplied hash manifest. The public build reads these",
-      " aggregates; it cannot independently reproduce them without those ",
-      "files. Graham DK pools two experiments, so within-experiment ",
-      "duplication is additionally reported as a sensitivity ",
-      "analysis.\\normalsize"
+      "\\noindent\\small Comparison-survey counts are supplied as aggregate inputs. ",
+      "Percentages use all records; Unknown counts unresolved flags. Repeated IPs ",
+      "are counted within each survey.\\normalsize"
     )
   ))
   if ("historical_costs" %in% names(results)) {
@@ -262,24 +248,6 @@ write_paper_tables <- function(results, path = "tabs") {
       "sets them to affirmative. These bound the screen under missing answers, not the number ",
       "of dishonest participants.\\normalsize"
     ))
-  }
-  if ("ip_unit_sensitivity" %in% names(results)) {
-    d <- results$ip_unit_sensitivity
-    d <- d[d$study == "study1", ]
-    table <- data.frame(
-      Unit = ifelse(d$scenario == "deposited_rows", "Paid assignments", "Unique observed survey"),
-      N = d$n, IP = d$ip_flagged, Rare = d$rare_lower, Combined = d$combined_lower
-    )
-    details <- c(
-      details,
-      "\\par\\noindent\\begin{minipage}{\\linewidth}\\centering",
-      "\\captionsetup{hypcap=false}",
-      paste0(
-        "\\captionof{table}{Study 1 row-unit sensitivity: ",
-        "removing the twice-linked observed survey response}"
-      ),
-      paper_tabular(table), "\\end{minipage}\\par\\medskip"
-    )
   }
   put("ip_details", details)
   d <- results$survey_crosstabs
@@ -392,23 +360,6 @@ write_paper_tables <- function(results, path = "tabs") {
     "James experiment: average discrete changes in outcome probabilities (percentage points)",
     widths = c(.19, .24, .17, .10, .10, .07)
   ))
-  if ("ordered_valid_profile_margins" %in% names(results)) {
-    d <- results$ordered_valid_profile_margins
-    d <- d[d$group %in% c("all", "unflagged") & d$outcome != 0, ]
-    original <- results$ordered_margins
-    key <- paste(d$group, d$term, d$outcome)
-    matched <- match(key, paste(original$group, original$term, original$outcome))
-    table <- data.frame(
-      Group = paper_label(d$group), Attribute = paper_label(d$term),
-      Outcome = ifelse(d$outcome == -1, "Democratic", "Republican"),
-      Archived = paper_number(100 * original$estimate[matched], 3),
-      Valid = paper_number(100 * d$estimate, 3)
-    )
-    details <- c(details, paper_longtable(table,
-      "James experiment: valid-profile probability contrasts (percentage points)",
-      widths = c(.19, .25, .20, .14, .14)
-    ))
-  }
   put("ordered_details", details)
   d <- results$attenuation
   table <- data.frame(
@@ -439,20 +390,6 @@ write_paper_tables <- function(results, path = "tabs") {
       "CSV.\\normalsize"
     )
   ))
-  d <- results$survey_comparison
-  if (!is.null(d)) {
-    d <- d[abs(d$change_pp) > 1e-12, ]
-    table <- data.frame(
-      Study = paper_label(d$study), Measure = paper_label(d$measure),
-      Original = paper_number(100 * d$proportion_original, 3),
-      Corrected = paper_number(100 * d$proportion_updated, 3),
-      OriginalN = d$n_original, CorrectedN = d$n_updated
-    )
-    put("corrections", paper_longtable(table,
-      "Changed survey proportions after missing-value repairs",
-      widths = c(.16, .24, .12, .12, .12, .12)
-    ))
-  }
   invisible(path)
 }
 
@@ -550,4 +487,13 @@ write_paper_figures <- function(results, path = "figs") {
     grDevices::dev.off()
   }
   invisible(path)
+}
+
+if (sys.nframe() == 0L) {
+  args <- commandArgs(trailingOnly = TRUE)
+  if (length(args) != 1L || !args[1] %in% c("figures", "tables")) {
+    stop("Usage: Rscript R/06_exhibits.R figures|tables")
+  }
+  results <- readRDS("data/derived/results.rds")
+  if (args[1] == "figures") write_paper_figures(results) else write_paper_tables(results)
 }

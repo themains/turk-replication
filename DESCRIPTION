@@ -6,9 +6,9 @@ Authors@R: c(
     person("Douglas J.", "Ahler", role = "aut"),
     person("Carolyn E.", "Roush", role = "aut"),
     person("Gaurav", "Sood", role = c("aut", "cre"), email = "gsood07@gmail.com"))
-Description: Reproduction and updated analysis of three Mechanical Turk surveys,
-    their response-quality screens, and survey experiments. Includes the original
-    deposited analysis code, public analytical data, and a rebuilt manuscript.
+Description: Analysis of three Mechanical Turk surveys, their response-quality
+    screens, and survey experiments. Builds figures, tables, and a manuscript
+    from public analytical data.
 License: CC0
 Encoding: UTF-8
 Imports:

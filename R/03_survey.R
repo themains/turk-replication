@@ -1,4 +1,3 @@
-# Reconstruct the survey variables used in the archived Stata programs.
 numeric_response <- function(x) suppressWarnings(as.numeric(as.character(x)))
 
 binary_response <- function(x, missing_zero = FALSE) {
@@ -38,7 +37,7 @@ survey_dates <- function(study) {
   }
 }
 
-prepare_survey_data <- function(inputs, corrected = TRUE) {
+prepare_survey_data <- function(inputs) {
   stopifnot(all(c("study1", "study2", "study3") %in% names(inputs)))
   result <- lapply(c("study1", "study2", "study3"), function(study) {
     d <- inputs[[study]]
@@ -49,12 +48,6 @@ prepare_survey_data <- function(inputs, corrected = TRUE) {
     for (key in names(indicators)) d[[key]] <- binary_response(d[[indicators[[key]]]])
     rare <- c("prosthetic", "blind", "deaf", "gang_resp", "gang_fam", "sleep")
     for (key in rare) d[[paste0("rare_", key)]] <- binary_response(d[[key]], TRUE)
-    # The original deaf recode references blind; this has no effect in the archive.
-    if (!corrected && study == "study1") {
-      d$rare_deaf <- ifelse(d$deaf %in% 1, 1,
-        ifelse(d$deaf %in% 0 | is.na(d$blind), 0, NA_real_)
-      )
-    }
     d$troll_index <- rowSums(d[paste0("rare_", rare)], na.rm = TRUE)
     d$likely_troll <- as.numeric(d$troll_index >= 2)
     d$combined_troll_1 <- as.numeric(d$funny == 1 | d$likely_troll == 1)
@@ -67,14 +60,9 @@ prepare_survey_data <- function(inputs, corrected = TRUE) {
     )
     d$fast <- as.numeric(d$time <= thresholds[1])
     d$slow <- as.numeric(d$time > thresholds[2])
-    if (!corrected) {
-      d$fast[is.na(d$time)] <- 0
-      d$slow[is.na(d$time)] <- 1
-    }
     sincerity <- numeric_response(if (study == "study1") d$trolling else d$sincerity)
     d$insincere <- as.numeric(sincerity >= if (study == "study1") 3 else 4)
     d$insincere_si <- as.numeric(sincerity >= 3)
-    if (!corrected && study == "study3") d$insincere[is.na(sincerity)] <- 0
     if (study != "study1") {
       dates <- survey_dates(study)
       d$date_ok <- as.numeric(d$date %in% dates$accepted)
@@ -132,8 +120,8 @@ prepare_survey_data <- function(inputs, corrected = TRUE) {
   result
 }
 
-survey_results <- function(inputs, corrected = TRUE) {
-  ds <- prepare_survey_data(inputs, corrected)
+survey_results <- function(inputs) {
+  ds <- prepare_survey_data(inputs)
   prevalence <- crosses <- hits <- timing <- regressions <- list()
   rare_counts <- timing_ecdf <- timing_ks <- list()
   for (study in names(ds)) {
